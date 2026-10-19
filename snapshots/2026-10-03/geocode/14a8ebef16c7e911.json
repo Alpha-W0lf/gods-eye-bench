@@ -1,0 +1,8 @@
+{
+  "key": "GET app:/api/geocode?q=San+Diego",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json"
+  },
+  "body": "{\"status\":\"OK\",\"results\":[{\"geometry\":{\"location\":{\"lat\":32.7157062,\"lng\":-117.1638284},\"bounds\":{\"southwest\":{\"lat\":32.5347979,\"lng\":-117.3098161},\"northeast\":{\"lat\":33.114194,\"lng\":-116.9057417}},\"viewport\":{\"southwest\":{\"lat\":32.5347979,\"lng\":-117.3098161},\"northeast\":{\"lat\":33.114194,\"lng\":-116.9057417}}},\"formatted_address\":\"San Diego, San Diego County, California, United States\",\"types\":[\"locality\",\"political\"],\"address_components\":[{\"long_name\":\"San Diego\",\"short_name\":\"San Diego\",\"types\":[\"locality\",\"political\"]}]}]}"
+}

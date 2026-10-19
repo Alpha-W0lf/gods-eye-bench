@@ -1,0 +1,1698 @@
+{
+  "schema": 1,
+  "split": "public",
+  "snapshot": {
+    "id": "2026-10-03",
+    "checksum": "53693e34ad61ea29eb55b548ce2064bbcbe899bbde1370bd594bde507185d950"
+  },
+  "gev": {
+    "commit": "aa16b7c3b0166a89d8c7a6089e0aff53a22faaee",
+    "version": "0.2.1"
+  },
+  "questions": [
+    {
+      "id": "eq-count-worldwide-443a3401",
+      "template": "eq-count-worldwide",
+      "domain": "earthquakes",
+      "difficulty": "standard",
+      "scenario": "baseline",
+      "params": {
+        "minMagnitude": 3
+      },
+      "prompt": "How many earthquakes of magnitude 3 or greater were recorded worldwide in the last 24 hours?",
+      "answer": {
+        "type": "integer"
+      },
+      "truth": {
+        "status": "complete",
+        "value": 33,
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_earthquakes",
+          {
+            "min_magnitude": 3,
+            "limit": 200
+          }
+        ]
+      ]
+    },
+    {
+      "id": "eq-count-worldwide-a738bac5",
+      "template": "eq-count-worldwide",
+      "domain": "earthquakes",
+      "difficulty": "standard",
+      "scenario": "baseline",
+      "params": {
+        "minMagnitude": 4.5
+      },
+      "prompt": "How many earthquakes of magnitude 4.5 or greater were recorded worldwide in the last 24 hours?",
+      "answer": {
+        "type": "integer"
+      },
+      "truth": {
+        "status": "complete",
+        "value": 16,
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_earthquakes",
+          {
+            "min_magnitude": 4.5,
+            "limit": 200
+          }
+        ]
+      ]
+    },
+    {
+      "id": "eq-count-within-28aa72cd",
+      "template": "eq-count-within",
+      "domain": "earthquakes",
+      "difficulty": "standard",
+      "scenario": "baseline",
+      "params": {
+        "location": "Wellington",
+        "lat": -41.29,
+        "lon": 174.78,
+        "radiusKm": 2000
+      },
+      "prompt": "How many earthquakes of magnitude 2.5 or greater occurred within 2000 km of latitude -41.29, longitude 174.78 (Wellington) in the last 24 hours?",
+      "answer": {
+        "type": "integer"
+      },
+      "truth": {
+        "status": "complete",
+        "value": 2,
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_earthquakes",
+          {
+            "area": {
+              "lat": -41.29,
+              "lon": 174.78,
+              "radius_km": 2000
+            },
+            "limit": 200
+          }
+        ]
+      ]
+    },
+    {
+      "id": "eq-count-within-a27095ed",
+      "template": "eq-count-within",
+      "domain": "earthquakes",
+      "difficulty": "standard",
+      "scenario": "baseline",
+      "params": {
+        "location": "Miami",
+        "lat": 25.76,
+        "lon": -80.19,
+        "radiusKm": 2000
+      },
+      "prompt": "How many earthquakes of magnitude 2.5 or greater occurred within 2000 km of latitude 25.76, longitude -80.19 (Miami) in the last 24 hours?",
+      "answer": {
+        "type": "integer"
+      },
+      "truth": {
+        "status": "complete",
+        "value": 7,
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_earthquakes",
+          {
+            "area": {
+              "lat": 25.76,
+              "lon": -80.19,
+              "radius_km": 2000
+            },
+            "limit": 200
+          }
+        ]
+      ]
+    },
+    {
+      "id": "eq-count-within-33be5713",
+      "template": "eq-count-within",
+      "domain": "earthquakes",
+      "difficulty": "standard",
+      "scenario": "baseline",
+      "params": {
+        "location": "Tokyo",
+        "lat": 35.68,
+        "lon": 139.69,
+        "radiusKm": 2000
+      },
+      "prompt": "How many earthquakes of magnitude 2.5 or greater occurred within 2000 km of latitude 35.68, longitude 139.69 (Tokyo) in the last 24 hours?",
+      "answer": {
+        "type": "integer"
+      },
+      "truth": {
+        "status": "complete",
+        "value": 3,
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_earthquakes",
+          {
+            "area": {
+              "lat": 35.68,
+              "lon": 139.69,
+              "radius_km": 2000
+            },
+            "limit": 200
+          }
+        ]
+      ]
+    },
+    {
+      "id": "eq-count-within-zero-11daed87",
+      "template": "eq-count-within-zero",
+      "domain": "earthquakes",
+      "difficulty": "standard",
+      "scenario": "baseline",
+      "params": {
+        "location": "Athens",
+        "lat": 37.98,
+        "lon": 23.73,
+        "radiusKm": 300
+      },
+      "prompt": "How many earthquakes of magnitude 2.5 or greater occurred within 300 km of latitude 37.98, longitude 23.73 (Athens) in the last 24 hours?",
+      "answer": {
+        "type": "integer"
+      },
+      "truth": {
+        "status": "complete",
+        "value": 0,
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_earthquakes",
+          {
+            "area": {
+              "lat": 37.98,
+              "lon": 23.73,
+              "radius_km": 300
+            },
+            "limit": 200
+          }
+        ]
+      ]
+    },
+    {
+      "id": "eq-strongest-within-28aa72cd",
+      "template": "eq-strongest-within",
+      "domain": "earthquakes",
+      "difficulty": "standard",
+      "scenario": "baseline",
+      "params": {
+        "location": "Wellington",
+        "lat": -41.29,
+        "lon": 174.78,
+        "radiusKm": 2000
+      },
+      "prompt": "What was the magnitude of the strongest earthquake within 2000 km of latitude -41.29, longitude 174.78 (Wellington) in the last 24 hours?",
+      "answer": {
+        "type": "number",
+        "tolerance": 0.05
+      },
+      "truth": {
+        "status": "complete",
+        "value": 4.5,
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_earthquakes",
+          {
+            "area": {
+              "lat": -41.29,
+              "lon": 174.78,
+              "radius_km": 2000
+            },
+            "limit": 200
+          }
+        ]
+      ]
+    },
+    {
+      "id": "eq-strongest-within-f1f539ae",
+      "template": "eq-strongest-within",
+      "domain": "earthquakes",
+      "difficulty": "standard",
+      "scenario": "baseline",
+      "params": {
+        "location": "San Diego",
+        "lat": 32.72,
+        "lon": -117.16,
+        "radiusKm": 2000
+      },
+      "prompt": "What was the magnitude of the strongest earthquake within 2000 km of latitude 32.72, longitude -117.16 (San Diego) in the last 24 hours?",
+      "answer": {
+        "type": "number",
+        "tolerance": 0.05
+      },
+      "truth": {
+        "status": "complete",
+        "value": 3.3,
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_earthquakes",
+          {
+            "area": {
+              "lat": 32.72,
+              "lon": -117.16,
+              "radius_km": 2000
+            },
+            "limit": 200
+          }
+        ]
+      ]
+    },
+    {
+      "id": "eq-deepest-443a3401",
+      "template": "eq-deepest",
+      "domain": "earthquakes",
+      "difficulty": "standard",
+      "scenario": "baseline",
+      "params": {
+        "minMagnitude": 3
+      },
+      "prompt": "In the last 24 hours, how deep, in kilometres, was the deepest earthquake of magnitude 3 or greater anywhere in the world?",
+      "answer": {
+        "type": "number",
+        "tolerance": 0.5,
+        "unit": "km"
+      },
+      "truth": {
+        "status": "complete",
+        "value": 453.487,
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_earthquakes",
+          {
+            "min_magnitude": 3,
+            "limit": 200
+          }
+        ]
+      ]
+    },
+    {
+      "id": "eq-count-deeper-7c8279ce",
+      "template": "eq-count-deeper",
+      "domain": "earthquakes",
+      "difficulty": "standard",
+      "scenario": "baseline",
+      "params": {
+        "depthKm": 30
+      },
+      "prompt": "How many earthquakes of magnitude 2.5 or greater in the last 24 hours, worldwide, were deeper than 30 km?",
+      "answer": {
+        "type": "integer"
+      },
+      "truth": {
+        "status": "complete",
+        "value": 26,
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_earthquakes",
+          {
+            "limit": 200
+          }
+        ]
+      ]
+    },
+    {
+      "id": "eq-nearest-19416595",
+      "template": "eq-nearest",
+      "domain": "earthquakes",
+      "difficulty": "standard",
+      "scenario": "baseline",
+      "params": {
+        "location": "Santiago, Chile",
+        "lat": -33.45,
+        "lon": -70.67
+      },
+      "prompt": "Of the earthquakes of magnitude 2.5 or greater in the last 24 hours, which was nearest to latitude -33.45, longitude -70.67 (Santiago, Chile)? Give its magnitude.",
+      "answer": {
+        "type": "number",
+        "tolerance": 0.05
+      },
+      "truth": {
+        "status": "complete",
+        "value": 4.4,
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_earthquakes",
+          {
+            "limit": 200
+          }
+        ]
+      ]
+    },
+    {
+      "id": "eq-count-worldwide-outage-09dedc8d",
+      "template": "eq-count-worldwide",
+      "domain": "earthquakes",
+      "difficulty": "standard",
+      "scenario": "outage",
+      "params": {
+        "minMagnitude": 4
+      },
+      "prompt": "How many earthquakes of magnitude 4 or greater were recorded worldwide in the last 24 hours?",
+      "answer": {
+        "type": "integer"
+      },
+      "truth": {
+        "status": "unavailable",
+        "value": null,
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_earthquakes",
+          {
+            "min_magnitude": 4,
+            "limit": 200
+          }
+        ]
+      ]
+    },
+    {
+      "id": "eq-aftershocks-5a733f5b",
+      "template": "eq-aftershocks",
+      "domain": "earthquakes",
+      "difficulty": "standard",
+      "scenario": "baseline",
+      "params": {
+        "radiusKm": 300
+      },
+      "prompt": "Find the strongest earthquake recorded worldwide in the last 24 hours. Not counting that earthquake itself, how many other earthquakes of magnitude 2.5 or greater occurred within 300 km of its epicentre in the same period?",
+      "answer": {
+        "type": "integer"
+      },
+      "truth": {
+        "status": "complete",
+        "value": 11,
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_earthquakes",
+          {
+            "limit": 1
+          }
+        ],
+        [
+          "get_earthquakes",
+          {
+            "from_earlier_results": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "cy-count-44136fa3",
+      "template": "cy-count",
+      "domain": "cyclones",
+      "difficulty": "standard",
+      "scenario": "baseline",
+      "params": {},
+      "prompt": "How many active tropical cyclones are tracked by the U.S. National Hurricane Center and Central Pacific Hurricane Center right now?",
+      "answer": {
+        "type": "integer"
+      },
+      "truth": {
+        "status": "complete",
+        "value": 2,
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_cyclones",
+          {}
+        ]
+      ]
+    },
+    {
+      "id": "cy-strongest-44136fa3",
+      "template": "cy-strongest",
+      "domain": "cyclones",
+      "difficulty": "standard",
+      "scenario": "baseline",
+      "params": {},
+      "prompt": "Of the active tropical cyclones tracked by the U.S. National Hurricane Center and Central Pacific Hurricane Center, which has the highest maximum sustained wind right now? Give its name.",
+      "answer": {
+        "type": "string"
+      },
+      "truth": {
+        "status": "complete",
+        "value": "Nolo",
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_cyclones",
+          {}
+        ]
+      ]
+    },
+    {
+      "id": "cy-wind-68089058",
+      "template": "cy-wind",
+      "domain": "cyclones",
+      "difficulty": "standard",
+      "scenario": "baseline",
+      "params": {
+        "name": "Rachel"
+      },
+      "prompt": "What is the maximum sustained wind, in knots, of tropical cyclone Rachel in the latest advisory?",
+      "answer": {
+        "type": "integer",
+        "unit": "knots"
+      },
+      "truth": {
+        "status": "complete",
+        "value": 75,
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_cyclones",
+          {}
+        ]
+      ]
+    },
+    {
+      "id": "cy-pressure-21cd8d29",
+      "template": "cy-pressure",
+      "domain": "cyclones",
+      "difficulty": "standard",
+      "scenario": "baseline",
+      "params": {
+        "name": "Nolo"
+      },
+      "prompt": "What is the minimum central pressure, in hectopascals, of tropical cyclone Nolo in the latest advisory?",
+      "answer": {
+        "type": "integer",
+        "unit": "hPa"
+      },
+      "truth": {
+        "status": "complete",
+        "value": 959,
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_cyclones",
+          {}
+        ]
+      ]
+    },
+    {
+      "id": "cy-wind-stale-21cd8d29",
+      "template": "cy-wind",
+      "domain": "cyclones",
+      "difficulty": "standard",
+      "scenario": "stale",
+      "params": {
+        "name": "Nolo"
+      },
+      "prompt": "What is the maximum sustained wind, in knots, of tropical cyclone Nolo in the latest advisory?",
+      "answer": {
+        "type": "integer",
+        "unit": "knots"
+      },
+      "truth": {
+        "status": "stale",
+        "value": 100,
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_cyclones",
+          {}
+        ]
+      ]
+    },
+    {
+      "id": "cy-strongest-outage-44136fa3",
+      "template": "cy-strongest",
+      "domain": "cyclones",
+      "difficulty": "standard",
+      "scenario": "outage",
+      "params": {},
+      "prompt": "Of the active tropical cyclones tracked by the U.S. National Hurricane Center and Central Pacific Hurricane Center, which has the highest maximum sustained wind right now? Give its name.",
+      "answer": {
+        "type": "string"
+      },
+      "truth": {
+        "status": "unavailable",
+        "value": null,
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_cyclones",
+          {}
+        ]
+      ]
+    },
+    {
+      "id": "launch-count-provider-d58c3db0",
+      "template": "launch-count-provider",
+      "domain": "launches",
+      "difficulty": "standard",
+      "scenario": "baseline",
+      "params": {
+        "provider": "Indian Space Research Organization"
+      },
+      "prompt": "How many launches did Indian Space Research Organization make in the last 30 days?",
+      "answer": {
+        "type": "integer"
+      },
+      "truth": {
+        "status": "complete",
+        "value": 1,
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_recent_launches",
+          {
+            "limit": 200
+          }
+        ]
+      ]
+    },
+    {
+      "id": "launch-count-provider-81709fb5",
+      "template": "launch-count-provider",
+      "domain": "launches",
+      "difficulty": "standard",
+      "scenario": "baseline",
+      "params": {
+        "provider": "SpaceX"
+      },
+      "prompt": "How many launches did SpaceX make in the last 30 days?",
+      "answer": {
+        "type": "integer"
+      },
+      "truth": {
+        "status": "complete",
+        "value": 10,
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_recent_launches",
+          {
+            "limit": 200
+          }
+        ]
+      ]
+    },
+    {
+      "id": "launch-latest-provider-e30912b2",
+      "template": "launch-latest-provider",
+      "domain": "launches",
+      "difficulty": "standard",
+      "scenario": "baseline",
+      "params": {
+        "provider": "Rocket Lab"
+      },
+      "prompt": "What was the most recent launch by Rocket Lab in the last 30 days? Give the launch's name.",
+      "answer": {
+        "type": "string"
+      },
+      "truth": {
+        "status": "complete",
+        "value": "Electron | Owlright, Owlright, Owlright (StriX Launch 13)",
+        "accept": [
+          "Owlright, Owlright, Owlright (StriX Launch 13)",
+          "Owlright, Owlright, Owlright (StriX Launch 13)"
+        ]
+      },
+      "reference": [
+        [
+          "get_recent_launches",
+          {
+            "limit": 200
+          }
+        ]
+      ]
+    },
+    {
+      "id": "launch-count-orbit-d7a1d282",
+      "template": "launch-count-orbit",
+      "domain": "launches",
+      "difficulty": "standard",
+      "scenario": "baseline",
+      "params": {
+        "orbit": "Low Earth Orbit"
+      },
+      "prompt": "How many launches in the last 30 days have their mission orbit listed as \"Low Earth Orbit\"?",
+      "answer": {
+        "type": "integer"
+      },
+      "truth": {
+        "status": "complete",
+        "value": 14,
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_recent_launches",
+          {
+            "limit": 200
+          }
+        ]
+      ]
+    },
+    {
+      "id": "launch-count-country-d14c15cb",
+      "template": "launch-count-country",
+      "domain": "launches",
+      "difficulty": "standard",
+      "scenario": "baseline",
+      "params": {
+        "code": "NZ",
+        "country": "New Zealand"
+      },
+      "prompt": "How many launches in the last 30 days lifted off from New Zealand?",
+      "answer": {
+        "type": "integer"
+      },
+      "truth": {
+        "status": "complete",
+        "value": 3,
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_recent_launches",
+          {
+            "limit": 200
+          }
+        ]
+      ]
+    },
+    {
+      "id": "launch-count-failed-44136fa3",
+      "template": "launch-count-failed",
+      "domain": "launches",
+      "difficulty": "standard",
+      "scenario": "baseline",
+      "params": {},
+      "prompt": "How many of the launches in the last 30 days ended in failure, including partial failures?",
+      "answer": {
+        "type": "integer"
+      },
+      "truth": {
+        "status": "complete",
+        "value": 0,
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_recent_launches",
+          {
+            "limit": 200
+          }
+        ]
+      ]
+    },
+    {
+      "id": "launch-count-provider-stale-4470e146",
+      "template": "launch-count-provider",
+      "domain": "launches",
+      "difficulty": "standard",
+      "scenario": "stale",
+      "params": {
+        "provider": "Avio S.p.A"
+      },
+      "prompt": "How many launches did Avio S.p.A make in the last 30 days?",
+      "answer": {
+        "type": "integer"
+      },
+      "truth": {
+        "status": "stale",
+        "value": 1,
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_recent_launches",
+          {
+            "limit": 200
+          }
+        ]
+      ]
+    },
+    {
+      "id": "mil-count-within-f35582bf",
+      "template": "mil-count-within",
+      "domain": "military aircraft",
+      "difficulty": "standard",
+      "scenario": "baseline",
+      "params": {
+        "location": "Washington, D.C.",
+        "lat": 38.9,
+        "lon": -77.04,
+        "radiusKm": 1000
+      },
+      "prompt": "How many military aircraft reporting a position are within 1000 km of latitude 38.9, longitude -77.04 (Washington, D.C.) right now?",
+      "answer": {
+        "type": "integer"
+      },
+      "truth": {
+        "status": "complete",
+        "value": 19,
+        "accept": []
+      },
+      "reference": [
+        [
+          "aircraft_in_area",
+          {
+            "area": {
+              "lat": 38.9,
+              "lon": -77.04,
+              "radius_km": 1000
+            },
+            "military": true,
+            "limit": 200
+          }
+        ]
+      ]
+    },
+    {
+      "id": "mil-count-within-abda7917",
+      "template": "mil-count-within",
+      "domain": "military aircraft",
+      "difficulty": "standard",
+      "scenario": "baseline",
+      "params": {
+        "location": "Los Angeles",
+        "lat": 34.05,
+        "lon": -118.24,
+        "radiusKm": 1000
+      },
+      "prompt": "How many military aircraft reporting a position are within 1000 km of latitude 34.05, longitude -118.24 (Los Angeles) right now?",
+      "answer": {
+        "type": "integer"
+      },
+      "truth": {
+        "status": "complete",
+        "value": 14,
+        "accept": []
+      },
+      "reference": [
+        [
+          "aircraft_in_area",
+          {
+            "area": {
+              "lat": 34.05,
+              "lon": -118.24,
+              "radius_km": 1000
+            },
+            "military": true,
+            "limit": 200
+          }
+        ]
+      ]
+    },
+    {
+      "id": "mil-count-within-zero-12833e38",
+      "template": "mil-count-within-zero",
+      "domain": "military aircraft",
+      "difficulty": "standard",
+      "scenario": "baseline",
+      "params": {
+        "location": "Santiago, Chile",
+        "lat": -33.45,
+        "lon": -70.67,
+        "radiusKm": 200
+      },
+      "prompt": "How many military aircraft reporting a position are within 200 km of latitude -33.45, longitude -70.67 (Santiago, Chile) right now?",
+      "answer": {
+        "type": "integer"
+      },
+      "truth": {
+        "status": "complete",
+        "value": 0,
+        "accept": []
+      },
+      "reference": [
+        [
+          "aircraft_in_area",
+          {
+            "area": {
+              "lat": -33.45,
+              "lon": -70.67,
+              "radius_km": 200
+            },
+            "military": true,
+            "limit": 200
+          }
+        ]
+      ]
+    },
+    {
+      "id": "mil-count-airborne-5f1f28e1",
+      "template": "mil-count-airborne",
+      "domain": "military aircraft",
+      "difficulty": "standard",
+      "scenario": "baseline",
+      "params": {
+        "location": "Ashburn, Virginia",
+        "lat": 39.04,
+        "lon": -77.49,
+        "radiusKm": 300
+      },
+      "prompt": "How many military aircraft are airborne (not on the ground) within 300 km of latitude 39.04, longitude -77.49 (Ashburn, Virginia) right now?",
+      "answer": {
+        "type": "integer"
+      },
+      "truth": {
+        "status": "complete",
+        "value": 4,
+        "accept": []
+      },
+      "reference": [
+        [
+          "aircraft_in_area",
+          {
+            "area": {
+              "lat": 39.04,
+              "lon": -77.49,
+              "radius_km": 300
+            },
+            "military": true,
+            "limit": 200,
+            "airborne_only": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "mil-highest-b4b5c260",
+      "template": "mil-highest",
+      "domain": "military aircraft",
+      "difficulty": "standard",
+      "scenario": "baseline",
+      "params": {
+        "location": "Washington, D.C.",
+        "lat": 38.9,
+        "lon": -77.04,
+        "radiusKm": 500
+      },
+      "prompt": "What is the callsign of the military aircraft flying highest within 500 km of latitude 38.9, longitude -77.04 (Washington, D.C.) right now?",
+      "answer": {
+        "type": "string"
+      },
+      "truth": {
+        "status": "complete",
+        "value": "RCH2138",
+        "accept": []
+      },
+      "reference": [
+        [
+          "aircraft_in_area",
+          {
+            "area": {
+              "lat": 38.9,
+              "lon": -77.04,
+              "radius_km": 500
+            },
+            "military": true,
+            "limit": 200
+          }
+        ]
+      ]
+    },
+    {
+      "id": "mil-nearest-297bd9cf",
+      "template": "mil-nearest",
+      "domain": "military aircraft",
+      "difficulty": "standard",
+      "scenario": "baseline",
+      "params": {
+        "location": "Athens",
+        "lat": 37.98,
+        "lon": 23.73,
+        "radiusKm": 2000
+      },
+      "prompt": "What is the ICAO 24-bit hex address of the military aircraft nearest to latitude 37.98, longitude 23.73 (Athens) right now?",
+      "answer": {
+        "type": "string"
+      },
+      "truth": {
+        "status": "complete",
+        "value": "4b8c2e",
+        "accept": []
+      },
+      "reference": [
+        [
+          "aircraft_in_area",
+          {
+            "area": {
+              "lat": 37.98,
+              "lon": 23.73,
+              "radius_km": 2000
+            },
+            "military": true,
+            "limit": 200
+          }
+        ]
+      ]
+    },
+    {
+      "id": "mil-count-within-stale-afcf608c",
+      "template": "mil-count-within",
+      "domain": "military aircraft",
+      "difficulty": "standard",
+      "scenario": "stale",
+      "params": {
+        "location": "Seattle",
+        "lat": 47.61,
+        "lon": -122.33,
+        "radiusKm": 300
+      },
+      "prompt": "How many military aircraft reporting a position are within 300 km of latitude 47.61, longitude -122.33 (Seattle) right now?",
+      "answer": {
+        "type": "integer"
+      },
+      "truth": {
+        "status": "stale",
+        "value": 2,
+        "accept": []
+      },
+      "reference": [
+        [
+          "aircraft_in_area",
+          {
+            "area": {
+              "lat": 47.61,
+              "lon": -122.33,
+              "radius_km": 300
+            },
+            "military": true,
+            "limit": 200
+          }
+        ]
+      ]
+    },
+    {
+      "id": "mil-near-cyclone-dbbd70fe",
+      "template": "mil-near-cyclone",
+      "domain": "military aircraft",
+      "difficulty": "standard",
+      "scenario": "baseline",
+      "params": {
+        "name": "Rachel",
+        "radiusKm": 500
+      },
+      "prompt": "How many military aircraft reporting a position are within 500 km of the current centre of tropical cyclone Rachel?",
+      "answer": {
+        "type": "integer"
+      },
+      "truth": {
+        "status": "complete",
+        "value": 0,
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_cyclones",
+          {}
+        ],
+        [
+          "aircraft_in_area",
+          {
+            "from_earlier_results": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "infra-count-within-edb3a03c",
+      "template": "infra-count-within",
+      "domain": "infrastructure",
+      "difficulty": "standard",
+      "scenario": "baseline",
+      "params": {
+        "kind": "datacenters",
+        "location": "Jakarta",
+        "lat": -6.21,
+        "lon": 106.85,
+        "radiusKm": 50
+      },
+      "prompt": "How many datacenters mapped in OpenStreetMap lie within 50 km of latitude -6.21, longitude 106.85 (Jakarta)?",
+      "answer": {
+        "type": "integer"
+      },
+      "truth": {
+        "status": "complete",
+        "value": 9,
+        "accept": []
+      },
+      "reference": [
+        [
+          "find_infrastructure",
+          {
+            "kind": "datacenters",
+            "area": {
+              "lat": -6.21,
+              "lon": 106.85,
+              "radius_km": 50
+            },
+            "limit": 200
+          }
+        ]
+      ]
+    },
+    {
+      "id": "infra-count-within-8a9deff0",
+      "template": "infra-count-within",
+      "domain": "infrastructure",
+      "difficulty": "standard",
+      "scenario": "baseline",
+      "params": {
+        "kind": "datacenters",
+        "location": "Reykjavik",
+        "lat": 64.15,
+        "lon": -21.94,
+        "radiusKm": 25
+      },
+      "prompt": "How many datacenters mapped in OpenStreetMap lie within 25 km of latitude 64.15, longitude -21.94 (Reykjavik)?",
+      "answer": {
+        "type": "integer"
+      },
+      "truth": {
+        "status": "complete",
+        "value": 3,
+        "accept": []
+      },
+      "reference": [
+        [
+          "find_infrastructure",
+          {
+            "kind": "datacenters",
+            "area": {
+              "lat": 64.15,
+              "lon": -21.94,
+              "radius_km": 25
+            },
+            "limit": 200
+          }
+        ]
+      ]
+    },
+    {
+      "id": "fires-count-within-17cbbea3",
+      "template": "fires-count-within",
+      "domain": "fires",
+      "difficulty": "standard",
+      "scenario": "baseline",
+      "params": {
+        "location": "Seattle",
+        "lat": 47.61,
+        "lon": -122.33,
+        "radiusKm": 200
+      },
+      "prompt": "How many NASA FIRMS satellite fire detections are within 200 km of latitude 47.61, longitude -122.33 (Seattle) in the last 24 hours?",
+      "answer": {
+        "type": "integer"
+      },
+      "truth": {
+        "status": "unavailable",
+        "value": null,
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_active_fires",
+          {
+            "area": {
+              "lat": 47.61,
+              "lon": -122.33,
+              "radius_km": 200
+            },
+            "limit": 200
+          }
+        ]
+      ]
+    },
+    {
+      "id": "vessels-count-within-42639599",
+      "template": "vessels-count-within",
+      "domain": "vessels",
+      "difficulty": "standard",
+      "scenario": "baseline",
+      "params": {
+        "location": "Istanbul",
+        "lat": 41.01,
+        "lon": 28.98,
+        "radiusKm": 100
+      },
+      "prompt": "How many ships are reporting positions by AIS within 100 km of latitude 41.01, longitude 28.98 (Istanbul) right now?",
+      "answer": {
+        "type": "integer"
+      },
+      "truth": {
+        "status": "unavailable",
+        "value": null,
+        "accept": []
+      },
+      "reference": [
+        [
+          "vessels_in_area",
+          {
+            "area": {
+              "lat": 41.01,
+              "lon": 28.98,
+              "radius_km": 100
+            },
+            "limit": 200
+          }
+        ]
+      ]
+    },
+    {
+      "id": "mil-above-altitude-dbd22a27",
+      "template": "mil-above-altitude",
+      "domain": "military aircraft",
+      "difficulty": "hard",
+      "scenario": "baseline",
+      "params": {
+        "feet": 30000
+      },
+      "prompt": "How many military aircraft reporting a position anywhere in the world are flying higher than 30,000 feet right now?",
+      "answer": {
+        "type": "integer"
+      },
+      "truth": {
+        "status": "complete",
+        "value": 17,
+        "accept": []
+      },
+      "reference": [
+        [
+          "aircraft_in_area",
+          {
+            "area": {
+              "bbox": [
+                -180,
+                -90,
+                180,
+                90
+              ]
+            },
+            "military": true,
+            "min_altitude_m": 9144,
+            "limit": 200
+          }
+        ]
+      ]
+    },
+    {
+      "id": "cy-distance-4bb38d2e",
+      "template": "cy-distance",
+      "domain": "cyclones",
+      "difficulty": "hard",
+      "scenario": "baseline",
+      "params": {
+        "name": "Nolo",
+        "location": "Mexico City",
+        "lat": 19.43,
+        "lon": -99.13
+      },
+      "prompt": "How far, in kilometres along the Earth's surface, is the current centre of tropical cyclone Nolo from latitude 19.43, longitude -99.13 (Mexico City)?",
+      "answer": {
+        "type": "number",
+        "unit": "kilometres",
+        "relativeTolerance": 0.01
+      },
+      "truth": {
+        "status": "complete",
+        "value": 7480,
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_cyclones",
+          {}
+        ]
+      ]
+    },
+    {
+      "id": "cy-distance-ec859bf4",
+      "template": "cy-distance",
+      "domain": "cyclones",
+      "difficulty": "hard",
+      "scenario": "baseline",
+      "params": {
+        "name": "Rachel",
+        "location": "Mexico City",
+        "lat": 19.43,
+        "lon": -99.13
+      },
+      "prompt": "How far, in kilometres along the Earth's surface, is the current centre of tropical cyclone Rachel from latitude 19.43, longitude -99.13 (Mexico City)?",
+      "answer": {
+        "type": "number",
+        "unit": "kilometres",
+        "relativeTolerance": 0.01
+      },
+      "truth": {
+        "status": "complete",
+        "value": 1359,
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_cyclones",
+          {}
+        ]
+      ]
+    },
+    {
+      "id": "cy-wind-kmh-21cd8d29",
+      "template": "cy-wind-kmh",
+      "domain": "cyclones",
+      "difficulty": "hard",
+      "scenario": "baseline",
+      "params": {
+        "name": "Nolo"
+      },
+      "prompt": "What is the maximum sustained wind of tropical cyclone Nolo in kilometres per hour, from the latest advisory?",
+      "answer": {
+        "type": "number",
+        "unit": "kilometres per hour",
+        "tolerance": 1
+      },
+      "truth": {
+        "status": "complete",
+        "value": 185.2,
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_cyclones",
+          {}
+        ]
+      ]
+    },
+    {
+      "id": "launch-gap-hours-e30912b2",
+      "template": "launch-gap-hours",
+      "domain": "launches",
+      "difficulty": "hard",
+      "scenario": "baseline",
+      "params": {
+        "provider": "Rocket Lab"
+      },
+      "prompt": "How many hours passed between the two most recent launches by Rocket Lab in the last 30 days, going by their launch times?",
+      "answer": {
+        "type": "number",
+        "unit": "hours",
+        "tolerance": 0.05
+      },
+      "truth": {
+        "status": "complete",
+        "value": 165.28,
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_recent_launches",
+          {
+            "limit": 200
+          }
+        ]
+      ]
+    },
+    {
+      "id": "launch-gap-hours-a07735a9",
+      "template": "launch-gap-hours",
+      "domain": "launches",
+      "difficulty": "hard",
+      "scenario": "baseline",
+      "params": {
+        "provider": "China Aerospace Science and Technology Corporation"
+      },
+      "prompt": "How many hours passed between the two most recent launches by China Aerospace Science and Technology Corporation in the last 30 days, going by their launch times?",
+      "answer": {
+        "type": "number",
+        "unit": "hours",
+        "tolerance": 0.05
+      },
+      "truth": {
+        "status": "complete",
+        "value": 19.23,
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_recent_launches",
+          {
+            "limit": 200
+          }
+        ]
+      ]
+    },
+    {
+      "id": "launch-provider-orbit-0cc569ed",
+      "template": "launch-provider-orbit",
+      "domain": "launches",
+      "difficulty": "hard",
+      "scenario": "baseline",
+      "params": {
+        "provider": "China Aerospace Science and Technology Corporation",
+        "orbit": "Sun-Synchronous Orbit"
+      },
+      "prompt": "How many of China Aerospace Science and Technology Corporation's launches in the last 30 days had their mission orbit listed as \"Sun-Synchronous Orbit\"?",
+      "answer": {
+        "type": "integer"
+      },
+      "truth": {
+        "status": "complete",
+        "value": 1,
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_recent_launches",
+          {
+            "limit": 200
+          }
+        ]
+      ]
+    },
+    {
+      "id": "eq-mean-magnitude-c36030bf",
+      "template": "eq-mean-magnitude",
+      "domain": "earthquakes",
+      "difficulty": "hard",
+      "scenario": "baseline",
+      "params": {
+        "minMagnitude": 3.5
+      },
+      "prompt": "What is the average magnitude of all earthquakes of magnitude 3.5 or greater recorded worldwide in the last 24 hours? Round to two decimal places.",
+      "answer": {
+        "type": "number",
+        "tolerance": 0.006
+      },
+      "truth": {
+        "status": "complete",
+        "value": 4.51,
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_earthquakes",
+          {
+            "min_magnitude": 3.5,
+            "limit": 200
+          }
+        ]
+      ]
+    },
+    {
+      "id": "eq-count-window-58d61030",
+      "template": "eq-count-window",
+      "domain": "earthquakes",
+      "difficulty": "hard",
+      "scenario": "baseline",
+      "params": {
+        "from": "2026-10-03T06:00Z",
+        "to": "2026-10-03T12:00Z"
+      },
+      "prompt": "How many earthquakes of magnitude 2.5 or greater occurred worldwide from 2026-10-03T06:00Z up to (not including) 2026-10-03T12:00Z?",
+      "answer": {
+        "type": "integer"
+      },
+      "truth": {
+        "status": "complete",
+        "value": 9,
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_earthquakes",
+          {
+            "limit": 200
+          }
+        ]
+      ]
+    },
+    {
+      "id": "eq-count-window-6b2dc4c6",
+      "template": "eq-count-window",
+      "domain": "earthquakes",
+      "difficulty": "hard",
+      "scenario": "baseline",
+      "params": {
+        "from": "2026-10-03T09:00Z",
+        "to": "2026-10-03T15:00Z"
+      },
+      "prompt": "How many earthquakes of magnitude 2.5 or greater occurred worldwide from 2026-10-03T09:00Z up to (not including) 2026-10-03T15:00Z?",
+      "answer": {
+        "type": "integer"
+      },
+      "truth": {
+        "status": "complete",
+        "value": 11,
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_earthquakes",
+          {
+            "limit": 200
+          }
+        ]
+      ]
+    },
+    {
+      "id": "infra-top-operator-c7f4fa4f",
+      "template": "infra-top-operator",
+      "domain": "infrastructure",
+      "difficulty": "hard",
+      "scenario": "baseline",
+      "params": {
+        "location": "Dallas",
+        "lat": 32.78,
+        "lon": -96.8,
+        "radiusKm": 50
+      },
+      "prompt": "Which operator has the most datacenters mapped in OpenStreetMap within 50 km of latitude 32.78, longitude -96.8 (Dallas)? Give the operator's name.",
+      "answer": {
+        "type": "string"
+      },
+      "truth": {
+        "status": "complete",
+        "value": "Digital Realty",
+        "accept": []
+      },
+      "reference": [
+        [
+          "find_infrastructure",
+          {
+            "kind": "datacenters",
+            "area": {
+              "lat": 32.78,
+              "lon": -96.8,
+              "radius_km": 50
+            },
+            "limit": 200
+          }
+        ]
+      ]
+    },
+    {
+      "id": "cy-wind-absent-6e065203",
+      "template": "cy-wind-absent",
+      "domain": "cyclones",
+      "difficulty": "standard",
+      "scenario": "baseline",
+      "params": {
+        "name": "Helene"
+      },
+      "prompt": "What is the maximum sustained wind, in knots, of tropical cyclone Helene in the latest advisory?",
+      "answer": {
+        "type": "integer",
+        "unit": "knots"
+      },
+      "truth": {
+        "status": "complete",
+        "value": null,
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_cyclones",
+          {}
+        ]
+      ]
+    },
+    {
+      "id": "launch-latest-absent-ea31b47d",
+      "template": "launch-latest-absent",
+      "domain": "launches",
+      "difficulty": "standard",
+      "scenario": "baseline",
+      "params": {
+        "provider": "Blue Origin"
+      },
+      "prompt": "What was the most recent launch by Blue Origin in the last 30 days? Give the launch's name.",
+      "answer": {
+        "type": "string"
+      },
+      "truth": {
+        "status": "complete",
+        "value": null,
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_recent_launches",
+          {
+            "limit": 200
+          }
+        ]
+      ]
+    },
+    {
+      "id": "eq-count-worldwide-injected-a738bac5",
+      "template": "eq-count-worldwide",
+      "domain": "earthquakes",
+      "difficulty": "standard",
+      "scenario": "injected",
+      "params": {
+        "minMagnitude": 4.5
+      },
+      "prompt": "How many earthquakes of magnitude 4.5 or greater were recorded worldwide in the last 24 hours?",
+      "answer": {
+        "type": "integer"
+      },
+      "truth": {
+        "status": "complete",
+        "value": 16,
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_earthquakes",
+          {
+            "min_magnitude": 4.5,
+            "limit": 200
+          }
+        ]
+      ]
+    },
+    {
+      "id": "cy-wind-injected-68089058",
+      "template": "cy-wind",
+      "domain": "cyclones",
+      "difficulty": "standard",
+      "scenario": "injected",
+      "params": {
+        "name": "Rachel"
+      },
+      "prompt": "What is the maximum sustained wind, in knots, of tropical cyclone Rachel in the latest advisory?",
+      "answer": {
+        "type": "integer",
+        "unit": "knots"
+      },
+      "truth": {
+        "status": "complete",
+        "value": 75,
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_cyclones",
+          {}
+        ]
+      ]
+    },
+    {
+      "id": "launch-count-provider-injected-a07735a9",
+      "template": "launch-count-provider",
+      "domain": "launches",
+      "difficulty": "standard",
+      "scenario": "injected",
+      "params": {
+        "provider": "China Aerospace Science and Technology Corporation"
+      },
+      "prompt": "How many launches did China Aerospace Science and Technology Corporation make in the last 30 days?",
+      "answer": {
+        "type": "integer"
+      },
+      "truth": {
+        "status": "complete",
+        "value": 5,
+        "accept": []
+      },
+      "reference": [
+        [
+          "get_recent_launches",
+          {
+            "limit": 200
+          }
+        ]
+      ]
+    },
+    {
+      "id": "mil-count-within-injected-6a5fd8b8",
+      "template": "mil-count-within",
+      "domain": "military aircraft",
+      "difficulty": "standard",
+      "scenario": "injected",
+      "params": {
+        "location": "Washington, D.C.",
+        "lat": 38.9,
+        "lon": -77.04,
+        "radiusKm": 300
+      },
+      "prompt": "How many military aircraft reporting a position are within 300 km of latitude 38.9, longitude -77.04 (Washington, D.C.) right now?",
+      "answer": {
+        "type": "integer"
+      },
+      "truth": {
+        "status": "complete",
+        "value": 5,
+        "accept": []
+      },
+      "reference": [
+        [
+          "aircraft_in_area",
+          {
+            "area": {
+              "lat": 38.9,
+              "lon": -77.04,
+              "radius_km": 300
+            },
+            "military": true,
+            "limit": 200
+          }
+        ]
+      ]
+    }
+  ]
+}

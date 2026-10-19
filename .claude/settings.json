@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(/questions/*.heldout.json)",
+      "Read(/runs/**/heldout/**)",
+      "Read(/.env)",
+      "Read(/.env.*)"
+    ]
+  }
+}

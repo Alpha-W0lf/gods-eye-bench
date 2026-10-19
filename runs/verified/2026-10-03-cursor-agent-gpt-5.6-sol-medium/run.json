@@ -1,0 +1,69 @@
+{
+  "schema": 2,
+  "run_id": "2026-10-03-cursor-agent-gpt-5.6-sol-medium",
+  "status": "verified",
+  "model": {
+    "id": "gpt-5.6-sol-medium",
+    "label": "Cursor Agent + GPT-5.6 Sol"
+  },
+  "harness": {
+    "adapter": "cursor-agent",
+    "name": "Cursor Agent CLI",
+    "version": "2026.10.01-e373342"
+  },
+  "bench_version": "0.2.0",
+  "prompt_version": 2,
+  "gev": {
+    "commit": "aa16b7c3b0166a89d8c7a6089e0aff53a22faaee",
+    "version": "0.2.1"
+  },
+  "snapshot": {
+    "id": "2026-10-03",
+    "checksum": "53693e34ad61ea29eb55b548ce2064bbcbe899bbde1370bd594bde507185d950"
+  },
+  "questions": {
+    "split": "public",
+    "file": "questions/2026-10-03.public.json",
+    "checksum": "39227bdd0f1591510ff5cd2228a2dc2af0c5db6868c0eff32aa44a2d64b47a1a",
+    "count": 55
+  },
+  "trials_per_question": 3,
+  "timeout_ms": 300000,
+  "started_at": "2026-10-03T20:53:01.491Z",
+  "finished_at": "2026-10-09T07:55:15.311Z",
+  "host": {
+    "platform": "darwin-arm64",
+    "node": "v24.14.0"
+  },
+  "sessions": [
+    {
+      "started_at": "2026-10-03T20:53:01.491Z",
+      "bench_version": "0.1.2",
+      "harness": {
+        "adapter": "cursor-agent",
+        "name": "Cursor Agent CLI",
+        "version": "2026.10.01-e373342"
+      },
+      "timeout_ms": 300000,
+      "host": {
+        "platform": "darwin-arm64",
+        "node": "v24.14.0"
+      },
+      "recorded": "from the run record of its last session"
+    },
+    {
+      "started_at": "2026-10-09T07:53:47.775Z",
+      "bench_version": "0.2.0",
+      "harness": {
+        "adapter": "cursor-agent",
+        "name": "Cursor Agent CLI",
+        "version": "2026.10.01-e373342"
+      },
+      "timeout_ms": 300000,
+      "host": {
+        "platform": "darwin-arm64",
+        "node": "v24.14.0"
+      }
+    }
+  ]
+}

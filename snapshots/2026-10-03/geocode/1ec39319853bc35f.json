@@ -1,0 +1,8 @@
+{
+  "key": "GET app:/api/geocode?q=Istanbul",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json"
+  },
+  "body": "{\"status\":\"OK\",\"results\":[{\"geometry\":{\"location\":{\"lat\":41.006381,\"lng\":28.9758715},\"bounds\":{\"southwest\":{\"lat\":40.846381,\"lng\":28.8158715},\"northeast\":{\"lat\":41.166381,\"lng\":29.1358715}},\"viewport\":{\"southwest\":{\"lat\":40.846381,\"lng\":28.8158715},\"northeast\":{\"lat\":41.166381,\"lng\":29.1358715}}},\"formatted_address\":\"Istanbul, Fatih, Istanbul, Marmara Region, 34122, Turkey\",\"types\":[\"locality\",\"political\"],\"address_components\":[{\"long_name\":\"Istanbul\",\"short_name\":\"Istanbul\",\"types\":[\"locality\",\"political\"]}]}]}"
+}

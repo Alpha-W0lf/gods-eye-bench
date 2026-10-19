@@ -1,0 +1,8 @@
+{
+  "key": "GET app:/api/geocode?q=Athens",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json"
+  },
+  "body": "{\"status\":\"OK\",\"results\":[{\"geometry\":{\"location\":{\"lat\":37.9755648,\"lng\":23.7348324},\"bounds\":{\"southwest\":{\"lat\":37.8155648,\"lng\":23.5748324},\"northeast\":{\"lat\":38.1355648,\"lng\":23.8948324}},\"viewport\":{\"southwest\":{\"lat\":37.8155648,\"lng\":23.5748324},\"northeast\":{\"lat\":38.1355648,\"lng\":23.8948324}}},\"formatted_address\":\"Athens, Municipality of Athens, Regional Unit of Central Athens, Attica, 105 57, Greece\",\"types\":[\"locality\",\"political\"],\"address_components\":[{\"long_name\":\"Athens\",\"short_name\":\"Athens\",\"types\":[\"locality\",\"political\"]}]}]}"
+}

@@ -1,0 +1,8 @@
+{
+  "key": "GET app:/api/firms",
+  "status": 503,
+  "headers": {
+    "content-type": "application/json"
+  },
+  "body": "{\"error\":\"no_key\"}"
+}

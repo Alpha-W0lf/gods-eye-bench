@@ -1,0 +1,8 @@
+{
+  "key": "GET app:/api/geocode?q=Manila",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json"
+  },
+  "body": "{\"status\":\"OK\",\"results\":[{\"geometry\":{\"location\":{\"lat\":14.5904492,\"lng\":120.9803621},\"bounds\":{\"southwest\":{\"lat\":14.5508249,\"lng\":120.7917034},\"northeast\":{\"lat\":14.6395473,\"lng\":121.0261685}},\"viewport\":{\"southwest\":{\"lat\":14.5508249,\"lng\":120.7917034},\"northeast\":{\"lat\":14.6395473,\"lng\":121.0261685}}},\"formatted_address\":\"Manila, Capital District, Metro Manila, Philippines\",\"types\":[\"locality\",\"political\"],\"address_components\":[{\"long_name\":\"Manila\",\"short_name\":\"Manila\",\"types\":[\"locality\",\"political\"]}]}]}"
+}

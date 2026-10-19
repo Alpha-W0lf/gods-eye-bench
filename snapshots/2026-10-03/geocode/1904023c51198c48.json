@@ -1,0 +1,8 @@
+{
+  "key": "GET app:/api/geocode?q=Singapore",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json"
+  },
+  "body": "{\"status\":\"OK\",\"results\":[{\"geometry\":{\"location\":{\"lat\":1.357107,\"lng\":103.8194992},\"bounds\":{\"southwest\":{\"lat\":1.1303611,\"lng\":103.5655797},\"northeast\":{\"lat\":1.5143183,\"lng\":104.5712337}},\"viewport\":{\"southwest\":{\"lat\":1.1303611,\"lng\":103.5655797},\"northeast\":{\"lat\":1.5143183,\"lng\":104.5712337}}},\"formatted_address\":\"Singapore\",\"types\":[\"country\",\"political\"],\"address_components\":[{\"long_name\":\"Singapore\",\"short_name\":\"Singapore\",\"types\":[\"country\",\"political\"]}]}]}"
+}

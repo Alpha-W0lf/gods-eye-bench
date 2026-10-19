@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "run_id": "2026-10-03-claude-code-claude-fable-5-1",
+  "status": "verified",
+  "model": {
+    "id": "claude-fable-5-1",
+    "label": "Claude Code + Claude Fable 5.1"
+  },
+  "harness": {
+    "adapter": "claude-code",
+    "name": "Claude Code",
+    "version": "2.1.288"
+  },
+  "bench_version": "0.1.0",
+  "prompt_version": 2,
+  "gev": {
+    "commit": "aa16b7c3b0166a89d8c7a6089e0aff53a22faaee",
+    "version": "0.2.1"
+  },
+  "snapshot": {
+    "id": "2026-10-03",
+    "checksum": "53693e34ad61ea29eb55b548ce2064bbcbe899bbde1370bd594bde507185d950"
+  },
+  "questions": {
+    "split": "public",
+    "file": "questions/2026-10-03.public.json",
+    "checksum": "39227bdd0f1591510ff5cd2228a2dc2af0c5db6868c0eff32aa44a2d64b47a1a",
+    "count": 55
+  },
+  "trials_per_question": 3,
+  "timeout_ms": 300000,
+  "started_at": "2026-10-03T20:01:33.060Z",
+  "finished_at": "2026-10-03T20:06:47.013Z",
+  "host": {
+    "platform": "darwin-arm64",
+    "node": "v24.14.0"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "key": "GET app:/api/geocode?q=Seattle",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json"
+  },
+  "body": "{\"status\":\"OK\",\"results\":[{\"geometry\":{\"location\":{\"lat\":47.6038321,\"lng\":-122.330062},\"bounds\":{\"southwest\":{\"lat\":47.4810022,\"lng\":-122.459696},\"northeast\":{\"lat\":47.7341503,\"lng\":-122.224433}},\"viewport\":{\"southwest\":{\"lat\":47.4810022,\"lng\":-122.459696},\"northeast\":{\"lat\":47.7341503,\"lng\":-122.224433}}},\"formatted_address\":\"Seattle, King County, Washington, United States\",\"types\":[\"locality\",\"political\"],\"address_components\":[{\"long_name\":\"Seattle\",\"short_name\":\"Seattle\",\"types\":[\"locality\",\"political\"]}]}]}"
+}

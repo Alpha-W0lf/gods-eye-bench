@@ -1,0 +1,2 @@
+FROM granite4.1:8b
+PARAMETER num_ctx 32768

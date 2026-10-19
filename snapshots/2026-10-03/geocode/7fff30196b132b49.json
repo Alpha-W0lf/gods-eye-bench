@@ -1,0 +1,8 @@
+{
+  "key": "GET app:/api/geocode?q=Kaiserslautern",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json"
+  },
+  "body": "{\"status\":\"OK\",\"results\":[{\"geometry\":{\"location\":{\"lat\":49.4432174,\"lng\":7.7689951},\"bounds\":{\"southwest\":{\"lat\":49.3587066,\"lng\":7.6271007},\"northeast\":{\"lat\":49.4951266,\"lng\":7.8706819}},\"viewport\":{\"southwest\":{\"lat\":49.3587066,\"lng\":7.6271007},\"northeast\":{\"lat\":49.4951266,\"lng\":7.8706819}}},\"formatted_address\":\"Kaiserslautern, Rhineland-Palatinate, Germany\",\"types\":[\"locality\",\"political\"],\"address_components\":[{\"long_name\":\"Kaiserslautern\",\"short_name\":\"Kaiserslautern\",\"types\":[\"locality\",\"political\"]}]}]}"
+}

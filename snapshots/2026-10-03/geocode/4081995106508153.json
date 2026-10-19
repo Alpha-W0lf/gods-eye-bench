@@ -1,0 +1,8 @@
+{
+  "key": "GET app:/api/geocode?q=Tokyo",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json"
+  },
+  "body": "{\"status\":\"OK\",\"results\":[{\"geometry\":{\"location\":{\"lat\":35.6768601,\"lng\":139.7638947},\"bounds\":{\"southwest\":{\"lat\":20.2145811,\"lng\":135.8536855},\"northeast\":{\"lat\":35.8984245,\"lng\":154.205541}},\"viewport\":{\"southwest\":{\"lat\":20.2145811,\"lng\":135.8536855},\"northeast\":{\"lat\":35.8984245,\"lng\":154.205541}}},\"formatted_address\":\"Tokyo, Japan\",\"types\":[\"locality\",\"political\"],\"address_components\":[{\"long_name\":\"Tokyo\",\"short_name\":\"Tokyo\",\"types\":[\"locality\",\"political\"]}]}]}"
+}

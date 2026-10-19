@@ -1,0 +1,8 @@
+{
+  "key": "GET app:/api/geocode?q=Wellington",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json"
+  },
+  "body": "{\"status\":\"OK\",\"results\":[{\"geometry\":{\"location\":{\"lat\":-41.2887953,\"lng\":174.7772114},\"bounds\":{\"southwest\":{\"lat\":-41.4487953,\"lng\":174.6172114},\"northeast\":{\"lat\":-41.1287953,\"lng\":174.9372114}},\"viewport\":{\"southwest\":{\"lat\":-41.4487953,\"lng\":174.6172114},\"northeast\":{\"lat\":-41.1287953,\"lng\":174.9372114}}},\"formatted_address\":\"Wellington, Wellington City, Wellington, 6011, New Zealand\",\"types\":[\"locality\",\"political\"],\"address_components\":[{\"long_name\":\"Wellington\",\"short_name\":\"Wellington\",\"types\":[\"locality\",\"political\"]}]}]}"
+}

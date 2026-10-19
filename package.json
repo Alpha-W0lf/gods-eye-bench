@@ -1,0 +1,32 @@
+{
+  "name": "gods-eye-bench",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Reproducible benchmark for AI agents on live-world MCP tools: recorded feeds replayed through God's Eye View's own MCP server, exact scoring, planted-instruction tests. Independent; not affiliated with or endorsed by God's Eye View or Halfpixel.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Tom Chacko",
+  "engines": {
+    "node": ">=24.14.0 <25 || >=26 <27"
+  },
+  "bin": {
+    "geb": "bin/geb.js"
+  },
+  "scripts": {
+    "geb": "node bin/geb.js",
+    "setup": "node bin/geb.js setup",
+    "test": "node --test \"src/**/*.test.mjs\"",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "npm run lint && npm run format:check && npm test",
+    "scan:secrets": "gitleaks git --no-banner --redact .",
+    "bench": "node bin/geb.js bench"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.12.0",
+    "globals": "^17.13.0",
+    "prettier": "3.9.6"
+  }
+}

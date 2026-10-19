@@ -1,0 +1,75 @@
+{
+  "schema": 2,
+  "run_id": "2026-10-03-openai-compatible-gemma-4-26b-a4b-it",
+  "status": "verified",
+  "model": {
+    "id": "gemma-4-26b-a4b-it",
+    "label": "Thin runner + Gemma 4 26B A4B (Gemini API)"
+  },
+  "harness": {
+    "adapter": "openai-compatible",
+    "name": "gods-eye-bench thin runner",
+    "version": "0.1.2",
+    "endpoint": "generativelanguage.googleapis.com",
+    "request_timeout_ms": 120000
+  },
+  "bench_version": "0.1.2",
+  "prompt_version": 2,
+  "gev": {
+    "commit": "aa16b7c3b0166a89d8c7a6089e0aff53a22faaee",
+    "version": "0.2.1"
+  },
+  "snapshot": {
+    "id": "2026-10-03",
+    "checksum": "53693e34ad61ea29eb55b548ce2064bbcbe899bbde1370bd594bde507185d950"
+  },
+  "questions": {
+    "split": "public",
+    "file": "questions/2026-10-03.public.json",
+    "checksum": "39227bdd0f1591510ff5cd2228a2dc2af0c5db6868c0eff32aa44a2d64b47a1a",
+    "count": 55
+  },
+  "trials_per_question": 3,
+  "timeout_ms": 300000,
+  "started_at": "2026-10-06T06:40:22.115Z",
+  "finished_at": "2026-10-07T15:49:41.140Z",
+  "host": {
+    "platform": "darwin-arm64",
+    "node": "v24.14.0"
+  },
+  "sessions": [
+    {
+      "started_at": "2026-10-06T06:40:22.115Z",
+      "bench_version": "0.1.2",
+      "harness": {
+        "adapter": "openai-compatible",
+        "name": "gods-eye-bench thin runner",
+        "version": "0.1.2",
+        "endpoint": "generativelanguage.googleapis.com",
+        "request_timeout_ms": 120000
+      },
+      "timeout_ms": 300000,
+      "host": {
+        "platform": "darwin-arm64",
+        "node": "v24.14.0"
+      },
+      "recorded": "from the run record of its last session"
+    },
+    {
+      "started_at": "2026-10-07T15:48:24.056Z",
+      "bench_version": "0.1.2",
+      "harness": {
+        "adapter": "openai-compatible",
+        "name": "gods-eye-bench thin runner",
+        "version": "0.1.2",
+        "endpoint": "generativelanguage.googleapis.com",
+        "request_timeout_ms": 120000
+      },
+      "timeout_ms": 300000,
+      "host": {
+        "platform": "darwin-arm64",
+        "node": "v24.14.0"
+      }
+    }
+  ]
+}

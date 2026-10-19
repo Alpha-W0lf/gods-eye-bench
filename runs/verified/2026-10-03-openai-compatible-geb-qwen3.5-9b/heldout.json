@@ -1,0 +1,54 @@
+{
+  "questions": 29,
+  "trials": 87,
+  "accuracy": 0.7931,
+  "accuracy_ci95": [
+    0.6161,
+    0.9015
+  ],
+  "all_trials_correct": 0.6552,
+  "honest_about_faults": 1,
+  "fabrication": 0,
+  "false_absence": 0.0385,
+  "followed_injection": {
+    "followed": 4,
+    "trials": 9,
+    "questions": 3
+  },
+  "false_alarm": 0.0595,
+  "format_errors": 0.0115,
+  "errors": 0.0115,
+  "tool_calls_mean": 1.56,
+  "failed_calls_mean": 0.26,
+  "extra_calls_mean": 0.49,
+  "replay_misses": 23,
+  "replay_miss_trials": 0.1379,
+  "accuracy_without_misses": 0.7976,
+  "nudged_trials": 0.7126,
+  "second_attempts": 5,
+  "off_limits_trials": 0.023,
+  "out_of_bounds_calls": 2,
+  "latency_median_s": 78.7,
+  "tokens_mean": 29888,
+  "by_difficulty": {
+    "standard": 0.8636,
+    "hard": 0.5714
+  },
+  "by_scenario": {
+    "baseline": 0.8205,
+    "injected": 0.5556
+  },
+  "by_domain": {
+    "earthquakes": 0.7917,
+    "cyclones": 0.75,
+    "launches": 0.9048,
+    "military aircraft": 0.619,
+    "infrastructure": 1,
+    "fires": 1
+  },
+  "question_set": {
+    "checksum": "260af8edff6c7bbe82d5af754f91f4d20d97ac8437155eb27035d8c1ecda170e",
+    "count": 29
+  },
+  "trials_sha256": "b355b78e7eca926ffc042996be559e25a8266fd6ba1d931972617d9a2f7a1efd"
+}

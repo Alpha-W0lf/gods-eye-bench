@@ -1,0 +1,236 @@
+{
+  "schema": 2,
+  "run_id": "2026-10-03-openai-compatible-gemini-3.5-flash",
+  "status": "partial",
+  "model": {
+    "id": "gemini-3.5-flash",
+    "label": "Thin runner + Gemini 3.5 Flash (Gemini API)"
+  },
+  "harness": {
+    "adapter": "openai-compatible",
+    "name": "gods-eye-bench thin runner",
+    "version": "0.2.0",
+    "endpoint": "generativelanguage.googleapis.com",
+    "request_timeout_ms": 120000
+  },
+  "bench_version": "0.2.0",
+  "prompt_version": 2,
+  "gev": {
+    "commit": "aa16b7c3b0166a89d8c7a6089e0aff53a22faaee",
+    "version": "0.2.1"
+  },
+  "snapshot": {
+    "id": "2026-10-03",
+    "checksum": "53693e34ad61ea29eb55b548ce2064bbcbe899bbde1370bd594bde507185d950"
+  },
+  "questions": {
+    "split": "public",
+    "file": "questions/2026-10-03.public.json",
+    "checksum": "39227bdd0f1591510ff5cd2228a2dc2af0c5db6868c0eff32aa44a2d64b47a1a",
+    "count": 55
+  },
+  "trials_per_question": 3,
+  "timeout_ms": 300000,
+  "started_at": "2026-10-05T19:56:00.313Z",
+  "finished_at": null,
+  "host": {
+    "platform": "darwin-arm64",
+    "node": "v24.14.0"
+  },
+  "sessions": [
+    {
+      "started_at": "2026-10-05T19:56:00.313Z",
+      "bench_version": "0.1.2",
+      "harness": {
+        "adapter": "openai-compatible",
+        "name": "gods-eye-bench thin runner",
+        "version": "0.1.2",
+        "endpoint": "generativelanguage.googleapis.com",
+        "request_timeout_ms": 120000
+      },
+      "timeout_ms": 300000,
+      "host": {
+        "platform": "darwin-arm64",
+        "node": "v24.14.0"
+      },
+      "recorded": "from the run record of its last session"
+    },
+    {
+      "started_at": "2026-10-08T07:47:52.718Z",
+      "bench_version": "0.2.0",
+      "harness": {
+        "adapter": "openai-compatible",
+        "name": "gods-eye-bench thin runner",
+        "version": "0.2.0",
+        "endpoint": "generativelanguage.googleapis.com",
+        "request_timeout_ms": 120000
+      },
+      "timeout_ms": 300000,
+      "host": {
+        "platform": "darwin-arm64",
+        "node": "v24.14.0"
+      }
+    },
+    {
+      "started_at": "2026-10-09T07:10:00.632Z",
+      "bench_version": "0.2.0",
+      "harness": {
+        "adapter": "openai-compatible",
+        "name": "gods-eye-bench thin runner",
+        "version": "0.2.0",
+        "endpoint": "generativelanguage.googleapis.com",
+        "request_timeout_ms": 120000
+      },
+      "timeout_ms": 300000,
+      "host": {
+        "platform": "darwin-arm64",
+        "node": "v24.14.0"
+      }
+    },
+    {
+      "started_at": "2026-10-10T07:10:00.911Z",
+      "bench_version": "0.2.0",
+      "harness": {
+        "adapter": "openai-compatible",
+        "name": "gods-eye-bench thin runner",
+        "version": "0.2.0",
+        "endpoint": "generativelanguage.googleapis.com",
+        "request_timeout_ms": 120000
+      },
+      "timeout_ms": 300000,
+      "host": {
+        "platform": "darwin-arm64",
+        "node": "v24.14.0"
+      }
+    },
+    {
+      "started_at": "2026-10-11T07:10:01.098Z",
+      "bench_version": "0.2.0",
+      "harness": {
+        "adapter": "openai-compatible",
+        "name": "gods-eye-bench thin runner",
+        "version": "0.2.0",
+        "endpoint": "generativelanguage.googleapis.com",
+        "request_timeout_ms": 120000
+      },
+      "timeout_ms": 300000,
+      "host": {
+        "platform": "darwin-arm64",
+        "node": "v24.14.0"
+      }
+    },
+    {
+      "started_at": "2026-10-12T07:44:57.679Z",
+      "bench_version": "0.2.0",
+      "harness": {
+        "adapter": "openai-compatible",
+        "name": "gods-eye-bench thin runner",
+        "version": "0.2.0",
+        "endpoint": "generativelanguage.googleapis.com",
+        "request_timeout_ms": 120000
+      },
+      "timeout_ms": 300000,
+      "host": {
+        "platform": "darwin-arm64",
+        "node": "v24.14.0"
+      }
+    },
+    {
+      "started_at": "2026-10-13T10:44:11.453Z",
+      "bench_version": "0.2.0",
+      "harness": {
+        "adapter": "openai-compatible",
+        "name": "gods-eye-bench thin runner",
+        "version": "0.2.0",
+        "endpoint": "generativelanguage.googleapis.com",
+        "request_timeout_ms": 120000
+      },
+      "timeout_ms": 300000,
+      "host": {
+        "platform": "darwin-arm64",
+        "node": "v24.14.0"
+      }
+    },
+    {
+      "started_at": "2026-10-14T07:58:30.965Z",
+      "bench_version": "0.2.0",
+      "harness": {
+        "adapter": "openai-compatible",
+        "name": "gods-eye-bench thin runner",
+        "version": "0.2.0",
+        "endpoint": "generativelanguage.googleapis.com",
+        "request_timeout_ms": 120000
+      },
+      "timeout_ms": 300000,
+      "host": {
+        "platform": "darwin-arm64",
+        "node": "v24.14.0"
+      }
+    },
+    {
+      "started_at": "2026-10-15T07:10:01.253Z",
+      "bench_version": "0.2.0",
+      "harness": {
+        "adapter": "openai-compatible",
+        "name": "gods-eye-bench thin runner",
+        "version": "0.2.0",
+        "endpoint": "generativelanguage.googleapis.com",
+        "request_timeout_ms": 120000
+      },
+      "timeout_ms": 300000,
+      "host": {
+        "platform": "darwin-arm64",
+        "node": "v24.14.0"
+      }
+    },
+    {
+      "started_at": "2026-10-16T07:10:00.699Z",
+      "bench_version": "0.2.0",
+      "harness": {
+        "adapter": "openai-compatible",
+        "name": "gods-eye-bench thin runner",
+        "version": "0.2.0",
+        "endpoint": "generativelanguage.googleapis.com",
+        "request_timeout_ms": 120000
+      },
+      "timeout_ms": 300000,
+      "host": {
+        "platform": "darwin-arm64",
+        "node": "v24.14.0"
+      }
+    },
+    {
+      "started_at": "2026-10-17T08:10:57.459Z",
+      "bench_version": "0.2.0",
+      "harness": {
+        "adapter": "openai-compatible",
+        "name": "gods-eye-bench thin runner",
+        "version": "0.2.0",
+        "endpoint": "generativelanguage.googleapis.com",
+        "request_timeout_ms": 120000
+      },
+      "timeout_ms": 300000,
+      "host": {
+        "platform": "darwin-arm64",
+        "node": "v24.14.0"
+      }
+    },
+    {
+      "started_at": "2026-10-18T13:36:02.283Z",
+      "bench_version": "0.2.0",
+      "harness": {
+        "adapter": "openai-compatible",
+        "name": "gods-eye-bench thin runner",
+        "version": "0.2.0",
+        "endpoint": "generativelanguage.googleapis.com",
+        "request_timeout_ms": 120000
+      },
+      "timeout_ms": 300000,
+      "host": {
+        "platform": "darwin-arm64",
+        "node": "v24.14.0"
+      }
+    }
+  ],
+  "stopped": "Daily request quota; not resumed after 2026-10-18"
+}

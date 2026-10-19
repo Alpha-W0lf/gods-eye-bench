@@ -1,0 +1,8 @@
+{
+  "key": "GET app:/api/geocode?q=Hag%C3%A5t%C3%B1a%2C+Guam",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json"
+  },
+  "body": "{\"status\":\"OK\",\"results\":[{\"geometry\":{\"location\":{\"lat\":13.4738606,\"lng\":144.7520557},\"bounds\":{\"southwest\":{\"lat\":13.46302,\"lng\":144.7250661},\"northeast\":{\"lat\":13.4853497,\"lng\":144.7650111}},\"viewport\":{\"southwest\":{\"lat\":13.46302,\"lng\":144.7250661},\"northeast\":{\"lat\":13.4853497,\"lng\":144.7650111}}},\"formatted_address\":\"Hagåtña, Hagåtña Municipality, Guam, United States\",\"types\":[\"locality\",\"political\"],\"address_components\":[{\"long_name\":\"Hagåtña\",\"short_name\":\"Hagåtña\",\"types\":[\"locality\",\"political\"]}]}]}"
+}

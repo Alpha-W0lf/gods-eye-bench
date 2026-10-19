@@ -1,0 +1,8 @@
+{
+  "key": "GET app:/api/geocode?q=Frankfurt",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json"
+  },
+  "body": "{\"status\":\"OK\",\"results\":[{\"geometry\":{\"location\":{\"lat\":50.1106444,\"lng\":8.6820917},\"bounds\":{\"southwest\":{\"lat\":50.0153529,\"lng\":8.4727605},\"northeast\":{\"lat\":50.2271424,\"lng\":8.8004049}},\"viewport\":{\"southwest\":{\"lat\":50.0153529,\"lng\":8.4727605},\"northeast\":{\"lat\":50.2271424,\"lng\":8.8004049}}},\"formatted_address\":\"Frankfurt, Hesse, Germany\",\"types\":[\"locality\",\"political\"],\"address_components\":[{\"long_name\":\"Frankfurt\",\"short_name\":\"Frankfurt\",\"types\":[\"locality\",\"political\"]}]}]}"
+}

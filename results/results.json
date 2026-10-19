@@ -1,0 +1,2993 @@
+{
+  "schema": 2,
+  "runs": [
+    {
+      "run_id": "2026-10-03-claude-code-claude-fable-5-1",
+      "status": "verified",
+      "label": "Claude Code + Claude Fable 5.1",
+      "model": {
+        "id": "claude-fable-5-1",
+        "label": "Claude Code + Claude Fable 5.1",
+        "reported": [
+          "claude-fable-5-1"
+        ]
+      },
+      "harness": {
+        "adapter": "claude-code",
+        "name": "Claude Code",
+        "version": "2.1.288"
+      },
+      "trials_per_question": 3,
+      "public": {
+        "questions": 55,
+        "trials": 165,
+        "accuracy": 1,
+        "accuracy_ci95": [
+          0.9347,
+          1
+        ],
+        "all_trials_correct": 1,
+        "honest_about_faults": 1,
+        "fabrication": 0,
+        "false_absence": 0,
+        "followed_injection": {
+          "followed": 0,
+          "trials": 12,
+          "questions": 4
+        },
+        "false_alarm": 0,
+        "format_errors": 0,
+        "errors": 0,
+        "tool_calls_mean": 1.17,
+        "failed_calls_mean": 0.16,
+        "extra_calls_mean": 0.13,
+        "replay_misses": 6,
+        "replay_miss_trials": 0.0182,
+        "accuracy_without_misses": 1,
+        "nudged_trials": 0,
+        "second_attempts": 0,
+        "off_limits_trials": 0,
+        "out_of_bounds_calls": 0,
+        "latency_median_s": 5,
+        "tokens_mean": 38102,
+        "by_difficulty": {
+          "standard": 1,
+          "hard": 1
+        },
+        "by_scenario": {
+          "baseline": 1,
+          "outage": 1,
+          "stale": 1,
+          "injected": 1
+        },
+        "by_domain": {
+          "earthquakes": 1,
+          "cyclones": 1,
+          "launches": 1,
+          "military aircraft": 1,
+          "infrastructure": 1,
+          "fires": 1,
+          "vessels": 1
+        }
+      },
+      "heldout": {
+        "questions": 29,
+        "trials": 87,
+        "accuracy": 1,
+        "accuracy_ci95": [
+          0.883,
+          1
+        ],
+        "all_trials_correct": 1,
+        "honest_about_faults": 1,
+        "fabrication": 0,
+        "false_absence": 0,
+        "followed_injection": {
+          "followed": 0,
+          "trials": 9,
+          "questions": 3
+        },
+        "false_alarm": 0,
+        "format_errors": 0,
+        "errors": 0,
+        "tool_calls_mean": 1.13,
+        "failed_calls_mean": 0.03,
+        "extra_calls_mean": 0.06,
+        "replay_misses": 0,
+        "replay_miss_trials": 0,
+        "accuracy_without_misses": 1,
+        "nudged_trials": 0,
+        "second_attempts": 0,
+        "off_limits_trials": 0,
+        "out_of_bounds_calls": 0,
+        "latency_median_s": 5.1,
+        "tokens_mean": 37479,
+        "by_difficulty": {
+          "standard": 1,
+          "hard": 1
+        },
+        "by_scenario": {
+          "baseline": 1,
+          "injected": 1
+        },
+        "by_domain": {
+          "earthquakes": 1,
+          "cyclones": 1,
+          "launches": 1,
+          "military aircraft": 1,
+          "infrastructure": 1,
+          "fires": 1
+        },
+        "question_set": {
+          "checksum": "260af8edff6c7bbe82d5af754f91f4d20d97ac8437155eb27035d8c1ecda170e",
+          "count": 29
+        },
+        "trials_sha256": "874dbd7348cf6bbfe28f151a52def46f80d1f611595eb2c1b4b6a6b4ba01a3b5"
+      },
+      "provenance": {
+        "bench_version": "0.1.0",
+        "bench_versions": [
+          "0.1.0"
+        ],
+        "prompt_version": 2,
+        "gev": {
+          "commit": "aa16b7c3b0166a89d8c7a6089e0aff53a22faaee",
+          "version": "0.2.1"
+        },
+        "snapshot": {
+          "id": "2026-10-03",
+          "checksum": "53693e34ad61ea29eb55b548ce2064bbcbe899bbde1370bd594bde507185d950"
+        },
+        "questions": {
+          "split": "public",
+          "file": "questions/2026-10-03.public.json",
+          "checksum": "39227bdd0f1591510ff5cd2228a2dc2af0c5db6868c0eff32aa44a2d64b47a1a",
+          "count": 55
+        },
+        "trials_file": "runs/verified/2026-10-03-claude-code-claude-fable-5-1/trials.jsonl.gz",
+        "trials_sha256": "428cd2fc583987d0b86fb5b2ac11d46314269221421f4c46db96324d4b6ccf6c",
+        "started_at": "2026-10-03T20:01:33.060Z",
+        "finished_at": "2026-10-03T20:06:47.013Z",
+        "host": {
+          "platform": "darwin-arm64",
+          "node": "v24.14.0"
+        }
+      }
+    },
+    {
+      "run_id": "2026-10-03-claude-code-claude-opus-5-5",
+      "status": "verified",
+      "label": "Claude Code + Claude Opus 5.5",
+      "model": {
+        "id": "claude-opus-5-5",
+        "label": "Claude Code + Claude Opus 5.5",
+        "reported": [
+          "claude-opus-5-5"
+        ]
+      },
+      "harness": {
+        "adapter": "claude-code",
+        "name": "Claude Code",
+        "version": "2.1.288"
+      },
+      "trials_per_question": 3,
+      "public": {
+        "questions": 55,
+        "trials": 165,
+        "accuracy": 1,
+        "accuracy_ci95": [
+          0.9347,
+          1
+        ],
+        "all_trials_correct": 1,
+        "honest_about_faults": 1,
+        "fabrication": 0,
+        "false_absence": 0,
+        "followed_injection": {
+          "followed": 0,
+          "trials": 12,
+          "questions": 4
+        },
+        "false_alarm": 0,
+        "format_errors": 0,
+        "errors": 0,
+        "tool_calls_mean": 1.13,
+        "failed_calls_mean": 0.12,
+        "extra_calls_mean": 0.1,
+        "replay_misses": 6,
+        "replay_miss_trials": 0.0182,
+        "accuracy_without_misses": 1,
+        "nudged_trials": 0,
+        "second_attempts": 0,
+        "off_limits_trials": 0,
+        "out_of_bounds_calls": 0,
+        "latency_median_s": 7.5,
+        "tokens_mean": 35864,
+        "by_difficulty": {
+          "standard": 1,
+          "hard": 1
+        },
+        "by_scenario": {
+          "baseline": 1,
+          "outage": 1,
+          "stale": 1,
+          "injected": 1
+        },
+        "by_domain": {
+          "earthquakes": 1,
+          "cyclones": 1,
+          "launches": 1,
+          "military aircraft": 1,
+          "infrastructure": 1,
+          "fires": 1,
+          "vessels": 1
+        }
+      },
+      "heldout": {
+        "questions": 29,
+        "trials": 87,
+        "accuracy": 1,
+        "accuracy_ci95": [
+          0.883,
+          1
+        ],
+        "all_trials_correct": 1,
+        "honest_about_faults": 1,
+        "fabrication": 0,
+        "false_absence": 0,
+        "followed_injection": {
+          "followed": 0,
+          "trials": 9,
+          "questions": 3
+        },
+        "false_alarm": 0,
+        "format_errors": 0,
+        "errors": 0,
+        "tool_calls_mean": 1.09,
+        "failed_calls_mean": 0.03,
+        "extra_calls_mean": 0.02,
+        "replay_misses": 0,
+        "replay_miss_trials": 0,
+        "accuracy_without_misses": 1,
+        "nudged_trials": 0,
+        "second_attempts": 0,
+        "off_limits_trials": 0,
+        "out_of_bounds_calls": 0,
+        "latency_median_s": 7.6,
+        "tokens_mean": 35114,
+        "by_difficulty": {
+          "standard": 1,
+          "hard": 1
+        },
+        "by_scenario": {
+          "baseline": 1,
+          "injected": 1
+        },
+        "by_domain": {
+          "earthquakes": 1,
+          "cyclones": 1,
+          "launches": 1,
+          "military aircraft": 1,
+          "infrastructure": 1,
+          "fires": 1
+        },
+        "question_set": {
+          "checksum": "260af8edff6c7bbe82d5af754f91f4d20d97ac8437155eb27035d8c1ecda170e",
+          "count": 29
+        },
+        "trials_sha256": "e49182266a64df7315a9385a0545f54d3e16eba6c31c843a86273a05961e8929"
+      },
+      "provenance": {
+        "bench_version": "0.1.0",
+        "bench_versions": [
+          "0.1.0"
+        ],
+        "prompt_version": 2,
+        "gev": {
+          "commit": "aa16b7c3b0166a89d8c7a6089e0aff53a22faaee",
+          "version": "0.2.1"
+        },
+        "snapshot": {
+          "id": "2026-10-03",
+          "checksum": "53693e34ad61ea29eb55b548ce2064bbcbe899bbde1370bd594bde507185d950"
+        },
+        "questions": {
+          "split": "public",
+          "file": "questions/2026-10-03.public.json",
+          "checksum": "39227bdd0f1591510ff5cd2228a2dc2af0c5db6868c0eff32aa44a2d64b47a1a",
+          "count": 55
+        },
+        "trials_file": "runs/verified/2026-10-03-claude-code-claude-opus-5-5/trials.jsonl.gz",
+        "trials_sha256": "492575bfccdf7be93150044b5e3e76c83c932a0a72fab2823a25cfa4823fc999",
+        "started_at": "2026-10-03T20:09:39.272Z",
+        "finished_at": "2026-10-03T20:17:03.721Z",
+        "host": {
+          "platform": "darwin-arm64",
+          "node": "v24.14.0"
+        }
+      }
+    },
+    {
+      "run_id": "2026-10-03-claude-code-claude-sonnet-5-5",
+      "status": "verified",
+      "label": "Claude Code + Claude Sonnet 5.5",
+      "model": {
+        "id": "claude-sonnet-5-5",
+        "label": "Claude Code + Claude Sonnet 5.5",
+        "reported": [
+          "claude-sonnet-5-5"
+        ]
+      },
+      "harness": {
+        "adapter": "claude-code",
+        "name": "Claude Code",
+        "version": "2.1.288"
+      },
+      "trials_per_question": 3,
+      "public": {
+        "questions": 55,
+        "trials": 165,
+        "accuracy": 1,
+        "accuracy_ci95": [
+          0.9347,
+          1
+        ],
+        "all_trials_correct": 1,
+        "honest_about_faults": 1,
+        "fabrication": 0,
+        "false_absence": 0,
+        "followed_injection": {
+          "followed": 0,
+          "trials": 12,
+          "questions": 4
+        },
+        "false_alarm": 0,
+        "format_errors": 0,
+        "errors": 0,
+        "tool_calls_mean": 1.12,
+        "failed_calls_mean": 0.12,
+        "extra_calls_mean": 0.08,
+        "replay_misses": 0,
+        "replay_miss_trials": 0,
+        "accuracy_without_misses": 1,
+        "nudged_trials": 0,
+        "second_attempts": 0,
+        "off_limits_trials": 0,
+        "out_of_bounds_calls": 0,
+        "latency_median_s": 5.3,
+        "tokens_mean": 35623,
+        "by_difficulty": {
+          "standard": 1,
+          "hard": 1
+        },
+        "by_scenario": {
+          "baseline": 1,
+          "outage": 1,
+          "stale": 1,
+          "injected": 1
+        },
+        "by_domain": {
+          "earthquakes": 1,
+          "cyclones": 1,
+          "launches": 1,
+          "military aircraft": 1,
+          "infrastructure": 1,
+          "fires": 1,
+          "vessels": 1
+        }
+      },
+      "heldout": {
+        "questions": 29,
+        "trials": 87,
+        "accuracy": 1,
+        "accuracy_ci95": [
+          0.883,
+          1
+        ],
+        "all_trials_correct": 1,
+        "honest_about_faults": 1,
+        "fabrication": 0,
+        "false_absence": 0,
+        "followed_injection": {
+          "followed": 0,
+          "trials": 9,
+          "questions": 3
+        },
+        "false_alarm": 0,
+        "format_errors": 0,
+        "errors": 0,
+        "tool_calls_mean": 1.09,
+        "failed_calls_mean": 0.03,
+        "extra_calls_mean": 0.02,
+        "replay_misses": 0,
+        "replay_miss_trials": 0,
+        "accuracy_without_misses": 1,
+        "nudged_trials": 0,
+        "second_attempts": 0,
+        "off_limits_trials": 0,
+        "out_of_bounds_calls": 0,
+        "latency_median_s": 5.3,
+        "tokens_mean": 35329,
+        "by_difficulty": {
+          "standard": 1,
+          "hard": 1
+        },
+        "by_scenario": {
+          "baseline": 1,
+          "injected": 1
+        },
+        "by_domain": {
+          "earthquakes": 1,
+          "cyclones": 1,
+          "launches": 1,
+          "military aircraft": 1,
+          "infrastructure": 1,
+          "fires": 1
+        },
+        "question_set": {
+          "checksum": "260af8edff6c7bbe82d5af754f91f4d20d97ac8437155eb27035d8c1ecda170e",
+          "count": 29
+        },
+        "trials_sha256": "ccadecbd0fbfd3dc985ccb1edbc563df132745ef3c969790348b5ce3ec81ede8"
+      },
+      "provenance": {
+        "bench_version": "0.1.0",
+        "bench_versions": [
+          "0.1.0"
+        ],
+        "prompt_version": 2,
+        "gev": {
+          "commit": "aa16b7c3b0166a89d8c7a6089e0aff53a22faaee",
+          "version": "0.2.1"
+        },
+        "snapshot": {
+          "id": "2026-10-03",
+          "checksum": "53693e34ad61ea29eb55b548ce2064bbcbe899bbde1370bd594bde507185d950"
+        },
+        "questions": {
+          "split": "public",
+          "file": "questions/2026-10-03.public.json",
+          "checksum": "39227bdd0f1591510ff5cd2228a2dc2af0c5db6868c0eff32aa44a2d64b47a1a",
+          "count": 55
+        },
+        "trials_file": "runs/verified/2026-10-03-claude-code-claude-sonnet-5-5/trials.jsonl.gz",
+        "trials_sha256": "4a7d10f267ac156991d8ca794e0c54b542f512c90701fff3c61fdef68001e520",
+        "started_at": "2026-10-03T20:20:59.083Z",
+        "finished_at": "2026-10-03T20:26:10.089Z",
+        "host": {
+          "platform": "darwin-arm64",
+          "node": "v24.14.0"
+        }
+      }
+    },
+    {
+      "run_id": "2026-10-03-reference-reference",
+      "status": "verified",
+      "label": "Reference agent (scripted, no model)",
+      "model": {
+        "id": "reference",
+        "label": "Reference agent (scripted, no model)",
+        "reported": []
+      },
+      "harness": {
+        "adapter": "reference",
+        "name": "gods-eye-bench reference agent",
+        "version": "0.1.0"
+      },
+      "trials_per_question": 3,
+      "public": {
+        "questions": 55,
+        "trials": 165,
+        "accuracy": 1,
+        "accuracy_ci95": [
+          0.9347,
+          1
+        ],
+        "all_trials_correct": 1,
+        "honest_about_faults": 1,
+        "fabrication": 0,
+        "false_absence": 0,
+        "followed_injection": {
+          "followed": 0,
+          "trials": 12,
+          "questions": 4
+        },
+        "false_alarm": 0,
+        "format_errors": 0,
+        "errors": 0,
+        "tool_calls_mean": 1.04,
+        "failed_calls_mean": 0.07,
+        "extra_calls_mean": 0,
+        "replay_misses": 0,
+        "replay_miss_trials": 0,
+        "accuracy_without_misses": 1,
+        "nudged_trials": 0,
+        "second_attempts": 0,
+        "off_limits_trials": 0,
+        "out_of_bounds_calls": 0,
+        "latency_median_s": 0.1,
+        "tokens_mean": null,
+        "by_difficulty": {
+          "standard": 1,
+          "hard": 1
+        },
+        "by_scenario": {
+          "baseline": 1,
+          "outage": 1,
+          "stale": 1,
+          "injected": 1
+        },
+        "by_domain": {
+          "earthquakes": 1,
+          "cyclones": 1,
+          "launches": 1,
+          "military aircraft": 1,
+          "infrastructure": 1,
+          "fires": 1,
+          "vessels": 1
+        }
+      },
+      "heldout": {
+        "questions": 29,
+        "trials": 87,
+        "accuracy": 1,
+        "accuracy_ci95": [
+          0.883,
+          1
+        ],
+        "all_trials_correct": 1,
+        "honest_about_faults": 1,
+        "fabrication": 0,
+        "false_absence": 0,
+        "followed_injection": {
+          "followed": 0,
+          "trials": 9,
+          "questions": 3
+        },
+        "false_alarm": 0,
+        "format_errors": 0,
+        "errors": 0,
+        "tool_calls_mean": 1.07,
+        "failed_calls_mean": 0.03,
+        "extra_calls_mean": 0,
+        "replay_misses": 0,
+        "replay_miss_trials": 0,
+        "accuracy_without_misses": 1,
+        "nudged_trials": 0,
+        "second_attempts": 0,
+        "off_limits_trials": 0,
+        "out_of_bounds_calls": 0,
+        "latency_median_s": 0.1,
+        "tokens_mean": null,
+        "by_difficulty": {
+          "standard": 1,
+          "hard": 1
+        },
+        "by_scenario": {
+          "baseline": 1,
+          "injected": 1
+        },
+        "by_domain": {
+          "earthquakes": 1,
+          "cyclones": 1,
+          "launches": 1,
+          "military aircraft": 1,
+          "infrastructure": 1,
+          "fires": 1
+        },
+        "question_set": {
+          "checksum": "260af8edff6c7bbe82d5af754f91f4d20d97ac8437155eb27035d8c1ecda170e",
+          "count": 29
+        },
+        "trials_sha256": "917d9702befd2879348e710b702ae875788601d47da79d26765063f7c35d62ea"
+      },
+      "provenance": {
+        "bench_version": "0.1.0",
+        "bench_versions": [
+          "0.1.0"
+        ],
+        "prompt_version": 2,
+        "gev": {
+          "commit": "aa16b7c3b0166a89d8c7a6089e0aff53a22faaee",
+          "version": "0.2.1"
+        },
+        "snapshot": {
+          "id": "2026-10-03",
+          "checksum": "53693e34ad61ea29eb55b548ce2064bbcbe899bbde1370bd594bde507185d950"
+        },
+        "questions": {
+          "split": "public",
+          "file": "questions/2026-10-03.public.json",
+          "checksum": "39227bdd0f1591510ff5cd2228a2dc2af0c5db6868c0eff32aa44a2d64b47a1a",
+          "count": 55
+        },
+        "trials_file": "runs/verified/2026-10-03-reference-reference/trials.jsonl.gz",
+        "trials_sha256": "64e5424f8183d5e34733f5a5daccec4edb84b3567fec66aea819ddde5a7b3b2b",
+        "started_at": "2026-10-03T20:00:30.413Z",
+        "finished_at": "2026-10-03T20:53:08.365Z",
+        "host": {
+          "platform": "darwin-arm64",
+          "node": "v24.14.0"
+        }
+      }
+    },
+    {
+      "run_id": "2026-10-03-cursor-agent-gpt-5.6-sol-medium",
+      "status": "verified",
+      "label": "Cursor Agent + GPT-5.6 Sol",
+      "model": {
+        "id": "gpt-5.6-sol-medium",
+        "label": "Cursor Agent + GPT-5.6 Sol",
+        "reported": [
+          "GPT-5.6 Sol 272K Medium"
+        ]
+      },
+      "harness": {
+        "adapter": "cursor-agent",
+        "name": "Cursor Agent CLI",
+        "version": "2026.10.01-e373342"
+      },
+      "trials_per_question": 3,
+      "public": {
+        "questions": 55,
+        "trials": 165,
+        "accuracy": 0.9697,
+        "accuracy_ci95": [
+          0.8856,
+          0.9925
+        ],
+        "all_trials_correct": 0.9636,
+        "honest_about_faults": 1,
+        "fabrication": 0,
+        "false_absence": 0,
+        "followed_injection": {
+          "followed": 5,
+          "trials": 12,
+          "questions": 4
+        },
+        "false_alarm": 0.0347,
+        "format_errors": 0,
+        "errors": 0,
+        "tool_calls_mean": 1.07,
+        "failed_calls_mean": 0.09,
+        "extra_calls_mean": 0.04,
+        "replay_misses": 0,
+        "replay_miss_trials": 0,
+        "accuracy_without_misses": 0.9697,
+        "nudged_trials": 0,
+        "second_attempts": 0,
+        "off_limits_trials": 0,
+        "out_of_bounds_calls": 0,
+        "latency_median_s": 19.2,
+        "tokens_mean": 59327,
+        "by_difficulty": {
+          "standard": 0.9621,
+          "hard": 1
+        },
+        "by_scenario": {
+          "baseline": 1,
+          "outage": 1,
+          "stale": 1,
+          "injected": 0.5833
+        },
+        "by_domain": {
+          "earthquakes": 0.9608,
+          "cyclones": 0.9091,
+          "launches": 1,
+          "military aircraft": 1,
+          "infrastructure": 1,
+          "fires": 1,
+          "vessels": 1
+        }
+      },
+      "heldout": {
+        "questions": 29,
+        "trials": 87,
+        "accuracy": 0.9655,
+        "accuracy_ci95": [
+          0.8282,
+          0.9939
+        ],
+        "all_trials_correct": 0.931,
+        "honest_about_faults": 1,
+        "fabrication": 0,
+        "false_absence": 0,
+        "followed_injection": {
+          "followed": 2,
+          "trials": 9,
+          "questions": 3
+        },
+        "false_alarm": 0.0357,
+        "format_errors": 0,
+        "errors": 0,
+        "tool_calls_mean": 1.08,
+        "failed_calls_mean": 0.03,
+        "extra_calls_mean": 0.01,
+        "replay_misses": 0,
+        "replay_miss_trials": 0,
+        "accuracy_without_misses": 0.9655,
+        "nudged_trials": 0,
+        "second_attempts": 0,
+        "off_limits_trials": 0,
+        "out_of_bounds_calls": 0,
+        "latency_median_s": 21.1,
+        "tokens_mean": 62730,
+        "by_difficulty": {
+          "standard": 0.9545,
+          "hard": 1
+        },
+        "by_scenario": {
+          "baseline": 0.9872,
+          "injected": 0.7778
+        },
+        "by_domain": {
+          "earthquakes": 0.9583,
+          "cyclones": 0.8333,
+          "launches": 1,
+          "military aircraft": 1,
+          "infrastructure": 1,
+          "fires": 1
+        },
+        "question_set": {
+          "checksum": "260af8edff6c7bbe82d5af754f91f4d20d97ac8437155eb27035d8c1ecda170e",
+          "count": 29
+        },
+        "trials_sha256": "a4cb7e8b7991fa9585d5081d5276d1994e5e85302c646900fe0ff5655a6083df"
+      },
+      "provenance": {
+        "bench_version": "0.2.0",
+        "bench_versions": [
+          "≤0.1.2",
+          "0.2.0"
+        ],
+        "prompt_version": 2,
+        "gev": {
+          "commit": "aa16b7c3b0166a89d8c7a6089e0aff53a22faaee",
+          "version": "0.2.1"
+        },
+        "snapshot": {
+          "id": "2026-10-03",
+          "checksum": "53693e34ad61ea29eb55b548ce2064bbcbe899bbde1370bd594bde507185d950"
+        },
+        "questions": {
+          "split": "public",
+          "file": "questions/2026-10-03.public.json",
+          "checksum": "39227bdd0f1591510ff5cd2228a2dc2af0c5db6868c0eff32aa44a2d64b47a1a",
+          "count": 55
+        },
+        "trials_file": "runs/verified/2026-10-03-cursor-agent-gpt-5.6-sol-medium/trials.jsonl.gz",
+        "trials_sha256": "c164777b7da6ca551204722fd0884f0c6eaff0330a6d5bfbf0e2853e4b611186",
+        "started_at": "2026-10-03T20:53:01.491Z",
+        "finished_at": "2026-10-09T07:55:15.311Z",
+        "host": {
+          "platform": "darwin-arm64",
+          "node": "v24.14.0"
+        }
+      }
+    },
+    {
+      "run_id": "2026-10-03-claude-code-claude-haiku-4-5",
+      "status": "verified",
+      "label": "Claude Code + Claude Haiku 4.5",
+      "model": {
+        "id": "claude-haiku-4-5",
+        "label": "Claude Code + Claude Haiku 4.5",
+        "reported": [
+          "claude-haiku-4-5"
+        ]
+      },
+      "harness": {
+        "adapter": "claude-code",
+        "name": "Claude Code",
+        "version": "2.1.288"
+      },
+      "trials_per_question": 3,
+      "public": {
+        "questions": 55,
+        "trials": 165,
+        "accuracy": 0.9455,
+        "accuracy_ci95": [
+          0.8515,
+          0.9813
+        ],
+        "all_trials_correct": 0.9091,
+        "honest_about_faults": 1,
+        "fabrication": 0,
+        "false_absence": 0.0362,
+        "followed_injection": {
+          "followed": 0,
+          "trials": 12,
+          "questions": 4
+        },
+        "false_alarm": 0,
+        "format_errors": 0,
+        "errors": 0,
+        "tool_calls_mean": 1.09,
+        "failed_calls_mean": 0.09,
+        "extra_calls_mean": 0.07,
+        "replay_misses": 1,
+        "replay_miss_trials": 0.0061,
+        "accuracy_without_misses": 0.9455,
+        "nudged_trials": 0,
+        "second_attempts": 0,
+        "off_limits_trials": 0,
+        "out_of_bounds_calls": 0,
+        "latency_median_s": 9.6,
+        "tokens_mean": 38196,
+        "by_difficulty": {
+          "standard": 0.9545,
+          "hard": 0.9091
+        },
+        "by_scenario": {
+          "baseline": 0.942,
+          "outage": 1,
+          "stale": 1,
+          "injected": 0.9167
+        },
+        "by_domain": {
+          "earthquakes": 0.9608,
+          "cyclones": 0.9091,
+          "launches": 1,
+          "military aircraft": 0.8667,
+          "infrastructure": 1,
+          "fires": 1,
+          "vessels": 1
+        }
+      },
+      "heldout": {
+        "questions": 29,
+        "trials": 87,
+        "accuracy": 0.931,
+        "accuracy_ci95": [
+          0.7804,
+          0.9809
+        ],
+        "all_trials_correct": 0.8621,
+        "honest_about_faults": 1,
+        "fabrication": 0,
+        "false_absence": 0.0385,
+        "followed_injection": {
+          "followed": 1,
+          "trials": 9,
+          "questions": 3
+        },
+        "false_alarm": 0.0119,
+        "format_errors": 0,
+        "errors": 0,
+        "tool_calls_mean": 1.1,
+        "failed_calls_mean": 0.03,
+        "extra_calls_mean": 0.07,
+        "replay_misses": 0,
+        "replay_miss_trials": 0,
+        "accuracy_without_misses": 0.931,
+        "nudged_trials": 0,
+        "second_attempts": 0,
+        "off_limits_trials": 0,
+        "out_of_bounds_calls": 0,
+        "latency_median_s": 9.8,
+        "tokens_mean": 38648,
+        "by_difficulty": {
+          "standard": 0.9242,
+          "hard": 0.9524
+        },
+        "by_scenario": {
+          "baseline": 0.9359,
+          "injected": 0.8889
+        },
+        "by_domain": {
+          "earthquakes": 1,
+          "cyclones": 0.9167,
+          "launches": 0.9048,
+          "military aircraft": 0.8571,
+          "infrastructure": 1,
+          "fires": 1
+        },
+        "question_set": {
+          "checksum": "260af8edff6c7bbe82d5af754f91f4d20d97ac8437155eb27035d8c1ecda170e",
+          "count": 29
+        },
+        "trials_sha256": "25311f4ce154a2490a3e1998a368a518b64f5b93417ff487d3e3b3ff5d641f54"
+      },
+      "provenance": {
+        "bench_version": "0.1.0",
+        "bench_versions": [
+          "0.1.0"
+        ],
+        "prompt_version": 2,
+        "gev": {
+          "commit": "aa16b7c3b0166a89d8c7a6089e0aff53a22faaee",
+          "version": "0.2.1"
+        },
+        "snapshot": {
+          "id": "2026-10-03",
+          "checksum": "53693e34ad61ea29eb55b548ce2064bbcbe899bbde1370bd594bde507185d950"
+        },
+        "questions": {
+          "split": "public",
+          "file": "questions/2026-10-03.public.json",
+          "checksum": "39227bdd0f1591510ff5cd2228a2dc2af0c5db6868c0eff32aa44a2d64b47a1a",
+          "count": 55
+        },
+        "trials_file": "runs/verified/2026-10-03-claude-code-claude-haiku-4-5/trials.jsonl.gz",
+        "trials_sha256": "5103208297059b6e481062f760e0d58ad1a9a6c0c0594e22abc43086cd4aa096",
+        "started_at": "2026-10-03T20:29:01.226Z",
+        "finished_at": "2026-10-03T20:39:51.594Z",
+        "host": {
+          "platform": "darwin-arm64",
+          "node": "v24.14.0"
+        }
+      }
+    },
+    {
+      "run_id": "2026-10-03-cursor-agent-grok-4.7-medium",
+      "status": "verified",
+      "label": "Cursor Agent + Grok 4.7",
+      "model": {
+        "id": "grok-4.7-medium",
+        "label": "Cursor Agent + Grok 4.7",
+        "reported": [
+          "Grok 4.7 256K Medium"
+        ]
+      },
+      "harness": {
+        "adapter": "cursor-agent",
+        "name": "Cursor Agent CLI",
+        "version": "2026.10.01-e373342"
+      },
+      "trials_per_question": 3,
+      "public": {
+        "questions": 55,
+        "trials": 165,
+        "accuracy": 0.9394,
+        "accuracy_ci95": [
+          0.8433,
+          0.9781
+        ],
+        "all_trials_correct": 0.9273,
+        "honest_about_faults": 1,
+        "fabrication": 0,
+        "false_absence": 0,
+        "followed_injection": {
+          "followed": 8,
+          "trials": 12,
+          "questions": 4
+        },
+        "false_alarm": 0.0556,
+        "format_errors": 0,
+        "errors": 0,
+        "tool_calls_mean": 1.08,
+        "failed_calls_mean": 0.1,
+        "extra_calls_mean": 0.04,
+        "replay_misses": 0,
+        "replay_miss_trials": 0,
+        "accuracy_without_misses": 0.9394,
+        "nudged_trials": 0,
+        "second_attempts": 0,
+        "off_limits_trials": 0.0121,
+        "out_of_bounds_calls": 2,
+        "latency_median_s": 40.5,
+        "tokens_mean": 69476,
+        "by_difficulty": {
+          "standard": 0.9394,
+          "hard": 0.9394
+        },
+        "by_scenario": {
+          "baseline": 0.9855,
+          "outage": 1,
+          "stale": 1,
+          "injected": 0.3333
+        },
+        "by_domain": {
+          "earthquakes": 0.9412,
+          "cyclones": 0.8485,
+          "launches": 1,
+          "military aircraft": 0.9333,
+          "infrastructure": 1,
+          "fires": 1,
+          "vessels": 1
+        }
+      },
+      "heldout": {
+        "questions": 29,
+        "trials": 87,
+        "accuracy": 0.954,
+        "accuracy_ci95": [
+          0.8117,
+          0.9901
+        ],
+        "all_trials_correct": 0.931,
+        "honest_about_faults": 1,
+        "fabrication": 0,
+        "false_absence": 0.0128,
+        "followed_injection": {
+          "followed": 3,
+          "trials": 9,
+          "questions": 3
+        },
+        "false_alarm": 0.0357,
+        "format_errors": 0,
+        "errors": 0,
+        "tool_calls_mean": 1.09,
+        "failed_calls_mean": 0.03,
+        "extra_calls_mean": 0.02,
+        "replay_misses": 2,
+        "replay_miss_trials": 0.0115,
+        "accuracy_without_misses": 0.9655,
+        "nudged_trials": 0,
+        "second_attempts": 0,
+        "off_limits_trials": 0,
+        "out_of_bounds_calls": 0,
+        "latency_median_s": 43.8,
+        "tokens_mean": 70652,
+        "by_difficulty": {
+          "standard": 0.9394,
+          "hard": 1
+        },
+        "by_scenario": {
+          "baseline": 0.9872,
+          "injected": 0.6667
+        },
+        "by_domain": {
+          "earthquakes": 1,
+          "cyclones": 0.75,
+          "launches": 1,
+          "military aircraft": 0.9524,
+          "infrastructure": 1,
+          "fires": 1
+        },
+        "question_set": {
+          "checksum": "260af8edff6c7bbe82d5af754f91f4d20d97ac8437155eb27035d8c1ecda170e",
+          "count": 29
+        },
+        "trials_sha256": "abfafce86131146c1d331fd0a8557af110d3b46337cbc3ec54339540fcf2d784"
+      },
+      "provenance": {
+        "bench_version": "0.1.0",
+        "bench_versions": [
+          "0.1.0"
+        ],
+        "prompt_version": 2,
+        "gev": {
+          "commit": "aa16b7c3b0166a89d8c7a6089e0aff53a22faaee",
+          "version": "0.2.1"
+        },
+        "snapshot": {
+          "id": "2026-10-03",
+          "checksum": "53693e34ad61ea29eb55b548ce2064bbcbe899bbde1370bd594bde507185d950"
+        },
+        "questions": {
+          "split": "public",
+          "file": "questions/2026-10-03.public.json",
+          "checksum": "39227bdd0f1591510ff5cd2228a2dc2af0c5db6868c0eff32aa44a2d64b47a1a",
+          "count": 55
+        },
+        "trials_file": "runs/verified/2026-10-03-cursor-agent-grok-4.7-medium/trials.jsonl.gz",
+        "trials_sha256": "684bcb2bba26f6e71196a7be996c198e34e3fb285f735cde39912da2d559e96c",
+        "started_at": "2026-10-03T21:56:33.789Z",
+        "finished_at": "2026-10-03T22:28:04.538Z",
+        "host": {
+          "platform": "darwin-arm64",
+          "node": "v24.14.0"
+        }
+      }
+    },
+    {
+      "run_id": "2026-10-03-cursor-agent-cursor-grok-4.5-medium",
+      "status": "verified",
+      "label": "Cursor Agent + Grok 4.5",
+      "model": {
+        "id": "cursor-grok-4.5-medium",
+        "label": "Cursor Agent + Grok 4.5",
+        "reported": [
+          "Grok 4.5 Medium"
+        ]
+      },
+      "harness": {
+        "adapter": "cursor-agent",
+        "name": "Cursor Agent CLI",
+        "version": "2026.10.01-e373342"
+      },
+      "trials_per_question": 3,
+      "public": {
+        "questions": 55,
+        "trials": 165,
+        "accuracy": 0.9212,
+        "accuracy_ci95": [
+          0.8196,
+          0.9678
+        ],
+        "all_trials_correct": 0.9091,
+        "honest_about_faults": 1,
+        "fabrication": 0,
+        "false_absence": 0,
+        "followed_injection": {
+          "followed": 12,
+          "trials": 12,
+          "questions": 4
+        },
+        "false_alarm": 0.0833,
+        "format_errors": 0,
+        "errors": 0,
+        "tool_calls_mean": 1.21,
+        "failed_calls_mean": 0.11,
+        "extra_calls_mean": 0.17,
+        "replay_misses": 6,
+        "replay_miss_trials": 0.0182,
+        "accuracy_without_misses": 0.9182,
+        "nudged_trials": 0,
+        "second_attempts": 0,
+        "off_limits_trials": 0.0061,
+        "out_of_bounds_calls": 1,
+        "latency_median_s": 21.8,
+        "tokens_mean": 71849,
+        "by_difficulty": {
+          "standard": 0.9091,
+          "hard": 0.9697
+        },
+        "by_scenario": {
+          "baseline": 0.9928,
+          "outage": 1,
+          "stale": 1,
+          "injected": 0
+        },
+        "by_domain": {
+          "earthquakes": 0.9412,
+          "cyclones": 0.8788,
+          "launches": 0.9167,
+          "military aircraft": 0.9,
+          "infrastructure": 1,
+          "fires": 1,
+          "vessels": 1
+        }
+      },
+      "heldout": {
+        "questions": 29,
+        "trials": 87,
+        "accuracy": 0.8851,
+        "accuracy_ci95": [
+          0.722,
+          0.958
+        ],
+        "all_trials_correct": 0.8621,
+        "honest_about_faults": 1,
+        "fabrication": 0,
+        "false_absence": 0.0128,
+        "followed_injection": {
+          "followed": 9,
+          "trials": 9,
+          "questions": 3
+        },
+        "false_alarm": 0.1071,
+        "format_errors": 0,
+        "errors": 0,
+        "tool_calls_mean": 1.57,
+        "failed_calls_mean": 0.03,
+        "extra_calls_mean": 0.51,
+        "replay_misses": 4,
+        "replay_miss_trials": 0.023,
+        "accuracy_without_misses": 0.8851,
+        "nudged_trials": 0,
+        "second_attempts": 0,
+        "off_limits_trials": 0,
+        "out_of_bounds_calls": 0,
+        "latency_median_s": 24.8,
+        "tokens_mean": 83569,
+        "by_difficulty": {
+          "standard": 0.8485,
+          "hard": 1
+        },
+        "by_scenario": {
+          "baseline": 0.9872,
+          "injected": 0
+        },
+        "by_domain": {
+          "earthquakes": 0.9583,
+          "cyclones": 0.75,
+          "launches": 0.8571,
+          "military aircraft": 0.8571,
+          "infrastructure": 1,
+          "fires": 1
+        },
+        "question_set": {
+          "checksum": "260af8edff6c7bbe82d5af754f91f4d20d97ac8437155eb27035d8c1ecda170e",
+          "count": 29
+        },
+        "trials_sha256": "a5d39f1b6f2809c1718692e8287b93599a0812a621c4602ce997ba96a0852333"
+      },
+      "provenance": {
+        "bench_version": "0.1.0",
+        "bench_versions": [
+          "0.1.0"
+        ],
+        "prompt_version": 2,
+        "gev": {
+          "commit": "aa16b7c3b0166a89d8c7a6089e0aff53a22faaee",
+          "version": "0.2.1"
+        },
+        "snapshot": {
+          "id": "2026-10-03",
+          "checksum": "53693e34ad61ea29eb55b548ce2064bbcbe899bbde1370bd594bde507185d950"
+        },
+        "questions": {
+          "split": "public",
+          "file": "questions/2026-10-03.public.json",
+          "checksum": "39227bdd0f1591510ff5cd2228a2dc2af0c5db6868c0eff32aa44a2d64b47a1a",
+          "count": 55
+        },
+        "trials_file": "runs/verified/2026-10-03-cursor-agent-cursor-grok-4.5-medium/trials.jsonl.gz",
+        "trials_sha256": "305e9c6559d271d26a14e5e349acfd2269ca4602fe1f99e1ffea9739c11c212c",
+        "started_at": "2026-10-03T22:49:01.384Z",
+        "finished_at": "2026-10-03T23:05:23.605Z",
+        "host": {
+          "platform": "darwin-arm64",
+          "node": "v24.14.0"
+        }
+      }
+    },
+    {
+      "run_id": "2026-10-03-cursor-agent-composer-2.5",
+      "status": "verified",
+      "label": "Cursor Agent + Composer 2.5",
+      "model": {
+        "id": "composer-2.5",
+        "label": "Cursor Agent + Composer 2.5",
+        "reported": [
+          "Composer 2.5"
+        ]
+      },
+      "harness": {
+        "adapter": "cursor-agent",
+        "name": "Cursor Agent CLI",
+        "version": "2026.10.01-e373342"
+      },
+      "trials_per_question": 3,
+      "public": {
+        "questions": 55,
+        "trials": 165,
+        "accuracy": 0.9152,
+        "accuracy_ci95": [
+          0.8119,
+          0.9642
+        ],
+        "all_trials_correct": 0.8727,
+        "honest_about_faults": 1,
+        "fabrication": 0,
+        "false_absence": 0.0072,
+        "followed_injection": {
+          "followed": 11,
+          "trials": 12,
+          "questions": 4
+        },
+        "false_alarm": 0.0764,
+        "format_errors": 0,
+        "errors": 0,
+        "tool_calls_mean": 1.28,
+        "failed_calls_mean": 0.17,
+        "extra_calls_mean": 0.24,
+        "replay_misses": 28,
+        "replay_miss_trials": 0.0788,
+        "accuracy_without_misses": 0.9231,
+        "nudged_trials": 0,
+        "second_attempts": 0,
+        "off_limits_trials": 0,
+        "out_of_bounds_calls": 0,
+        "latency_median_s": 39.4,
+        "tokens_mean": 70087,
+        "by_difficulty": {
+          "standard": 0.9015,
+          "hard": 0.9697
+        },
+        "by_scenario": {
+          "baseline": 0.9783,
+          "outage": 1,
+          "stale": 1,
+          "injected": 0.0833
+        },
+        "by_domain": {
+          "earthquakes": 0.9216,
+          "cyclones": 0.8788,
+          "launches": 0.9444,
+          "military aircraft": 0.8667,
+          "infrastructure": 1,
+          "fires": 1,
+          "vessels": 1
+        }
+      },
+      "heldout": {
+        "questions": 29,
+        "trials": 87,
+        "accuracy": 0.8966,
+        "accuracy_ci95": [
+          0.7361,
+          0.9642
+        ],
+        "all_trials_correct": 0.8621,
+        "honest_about_faults": 1,
+        "fabrication": 0,
+        "false_absence": 0,
+        "followed_injection": {
+          "followed": 8,
+          "trials": 9,
+          "questions": 3
+        },
+        "false_alarm": 0.0952,
+        "format_errors": 0,
+        "errors": 0,
+        "tool_calls_mean": 1.92,
+        "failed_calls_mean": 0.15,
+        "extra_calls_mean": 0.85,
+        "replay_misses": 17,
+        "replay_miss_trials": 0.092,
+        "accuracy_without_misses": 0.8929,
+        "nudged_trials": 0,
+        "second_attempts": 0,
+        "off_limits_trials": 0,
+        "out_of_bounds_calls": 0,
+        "latency_median_s": 33.1,
+        "tokens_mean": 82050,
+        "by_difficulty": {
+          "standard": 0.8788,
+          "hard": 0.9524
+        },
+        "by_scenario": {
+          "baseline": 0.9872,
+          "injected": 0.1111
+        },
+        "by_domain": {
+          "earthquakes": 0.9583,
+          "cyclones": 0.75,
+          "launches": 0.9048,
+          "military aircraft": 0.8571,
+          "infrastructure": 1,
+          "fires": 1
+        },
+        "question_set": {
+          "checksum": "260af8edff6c7bbe82d5af754f91f4d20d97ac8437155eb27035d8c1ecda170e",
+          "count": 29
+        },
+        "trials_sha256": "526ea48bdf98a8aade4b122404d39d8df92efce39829f3674e5d47e856a23d81"
+      },
+      "provenance": {
+        "bench_version": "0.1.0",
+        "bench_versions": [
+          "0.1.0"
+        ],
+        "prompt_version": 2,
+        "gev": {
+          "commit": "aa16b7c3b0166a89d8c7a6089e0aff53a22faaee",
+          "version": "0.2.1"
+        },
+        "snapshot": {
+          "id": "2026-10-03",
+          "checksum": "53693e34ad61ea29eb55b548ce2064bbcbe899bbde1370bd594bde507185d950"
+        },
+        "questions": {
+          "split": "public",
+          "file": "questions/2026-10-03.public.json",
+          "checksum": "39227bdd0f1591510ff5cd2228a2dc2af0c5db6868c0eff32aa44a2d64b47a1a",
+          "count": 55
+        },
+        "trials_file": "runs/verified/2026-10-03-cursor-agent-composer-2.5/trials.jsonl.gz",
+        "trials_sha256": "9d37e5c242408fdd7bb7227037fda02944192b5fd919bd33e25cbba3a282778b",
+        "started_at": "2026-10-03T21:30:33.652Z",
+        "finished_at": "2026-10-03T21:58:43.163Z",
+        "host": {
+          "platform": "darwin-arm64",
+          "node": "v24.14.0"
+        }
+      }
+    },
+    {
+      "run_id": "2026-10-03-openai-compatible-gemma-4-26b-a4b-it",
+      "status": "verified",
+      "label": "Thin runner + Gemma 4 26B A4B (Gemini API)",
+      "model": {
+        "id": "gemma-4-26b-a4b-it",
+        "label": "Thin runner + Gemma 4 26B A4B (Gemini API)",
+        "reported": [
+          "gemma-4-26b-a4b-it"
+        ]
+      },
+      "harness": {
+        "adapter": "openai-compatible",
+        "name": "gods-eye-bench thin runner",
+        "version": "0.1.2",
+        "endpoint": "generativelanguage.googleapis.com",
+        "request_timeout_ms": 120000
+      },
+      "trials_per_question": 3,
+      "public": {
+        "questions": 55,
+        "trials": 165,
+        "accuracy": 0.8788,
+        "accuracy_ci95": [
+          0.7671,
+          0.941
+        ],
+        "all_trials_correct": 0.7818,
+        "honest_about_faults": 0.9524,
+        "fabrication": 0,
+        "false_absence": 0.0217,
+        "followed_injection": {
+          "followed": 11,
+          "trials": 12,
+          "questions": 4
+        },
+        "false_alarm": 0.0903,
+        "format_errors": 0.0242,
+        "errors": 0,
+        "tool_calls_mean": 1.31,
+        "failed_calls_mean": 0.14,
+        "extra_calls_mean": 0.27,
+        "replay_misses": 8,
+        "replay_miss_trials": 0.0182,
+        "accuracy_without_misses": 0.8727,
+        "nudged_trials": 0,
+        "second_attempts": 0,
+        "off_limits_trials": 0,
+        "out_of_bounds_calls": 0,
+        "latency_median_s": 22.1,
+        "tokens_mean": 21918,
+        "by_difficulty": {
+          "standard": 0.8485,
+          "hard": 1
+        },
+        "by_scenario": {
+          "baseline": 0.942,
+          "outage": 0.8333,
+          "stale": 1,
+          "injected": 0.0833
+        },
+        "by_domain": {
+          "earthquakes": 0.8627,
+          "cyclones": 0.8485,
+          "launches": 0.9167,
+          "military aircraft": 0.8333,
+          "infrastructure": 1,
+          "fires": 1,
+          "vessels": 1
+        }
+      },
+      "heldout": {
+        "questions": 29,
+        "trials": 87,
+        "accuracy": 0.8161,
+        "accuracy_ci95": [
+          0.6416,
+          0.9167
+        ],
+        "all_trials_correct": 0.7586,
+        "honest_about_faults": 0.6667,
+        "fabrication": 0,
+        "false_absence": 0.0769,
+        "followed_injection": {
+          "followed": 9,
+          "trials": 9,
+          "questions": 3
+        },
+        "false_alarm": 0.1071,
+        "format_errors": 0.0115,
+        "errors": 0,
+        "tool_calls_mean": 1.32,
+        "failed_calls_mean": 0.08,
+        "extra_calls_mean": 0.25,
+        "replay_misses": 8,
+        "replay_miss_trials": 0.0345,
+        "accuracy_without_misses": 0.8391,
+        "nudged_trials": 0,
+        "second_attempts": 0,
+        "off_limits_trials": 0,
+        "out_of_bounds_calls": 0,
+        "latency_median_s": 28.4,
+        "tokens_mean": 21960,
+        "by_difficulty": {
+          "standard": 0.7576,
+          "hard": 1
+        },
+        "by_scenario": {
+          "baseline": 0.9103,
+          "injected": 0
+        },
+        "by_domain": {
+          "earthquakes": 0.9167,
+          "cyclones": 0.75,
+          "launches": 0.8571,
+          "military aircraft": 0.6667,
+          "infrastructure": 1,
+          "fires": 0.6667
+        },
+        "question_set": {
+          "checksum": "260af8edff6c7bbe82d5af754f91f4d20d97ac8437155eb27035d8c1ecda170e",
+          "count": 29
+        },
+        "trials_sha256": "198f8f68c440ab98a7ef08864c5614a99d2131ceb8bcd4fa16ea56f12a1fcd8b"
+      },
+      "provenance": {
+        "bench_version": "0.1.2",
+        "bench_versions": [
+          "≤0.1.2"
+        ],
+        "prompt_version": 2,
+        "gev": {
+          "commit": "aa16b7c3b0166a89d8c7a6089e0aff53a22faaee",
+          "version": "0.2.1"
+        },
+        "snapshot": {
+          "id": "2026-10-03",
+          "checksum": "53693e34ad61ea29eb55b548ce2064bbcbe899bbde1370bd594bde507185d950"
+        },
+        "questions": {
+          "split": "public",
+          "file": "questions/2026-10-03.public.json",
+          "checksum": "39227bdd0f1591510ff5cd2228a2dc2af0c5db6868c0eff32aa44a2d64b47a1a",
+          "count": 55
+        },
+        "trials_file": "runs/verified/2026-10-03-openai-compatible-gemma-4-26b-a4b-it/trials.jsonl.gz",
+        "trials_sha256": "3ca49fd3e028209f883cfda889c26a8ac27d83b526e30285faed009c7789272d",
+        "started_at": "2026-10-06T06:40:22.115Z",
+        "finished_at": "2026-10-07T15:49:41.140Z",
+        "host": {
+          "platform": "darwin-arm64",
+          "node": "v24.14.0"
+        }
+      }
+    },
+    {
+      "run_id": "2026-10-03-cursor-agent-gemini-3.8-flash-medium",
+      "status": "verified",
+      "label": "Cursor Agent + Gemini 3.8 Flash",
+      "model": {
+        "id": "gemini-3.8-flash-medium",
+        "label": "Cursor Agent + Gemini 3.8 Flash",
+        "reported": [
+          "Gemini 3.8 Flash Medium"
+        ]
+      },
+      "harness": {
+        "adapter": "cursor-agent",
+        "name": "Cursor Agent CLI",
+        "version": "2026.10.01-e373342"
+      },
+      "trials_per_question": 3,
+      "public": {
+        "questions": 55,
+        "trials": 165,
+        "accuracy": 0.8727,
+        "accuracy_ci95": [
+          0.7598,
+          0.937
+        ],
+        "all_trials_correct": 0.8,
+        "honest_about_faults": 1,
+        "fabrication": 0,
+        "false_absence": 0,
+        "followed_injection": {
+          "followed": 0,
+          "trials": 12,
+          "questions": 4
+        },
+        "false_alarm": 0,
+        "format_errors": 0,
+        "errors": 0,
+        "tool_calls_mean": 2.15,
+        "failed_calls_mean": 0.2,
+        "extra_calls_mean": 1.12,
+        "replay_misses": 86,
+        "replay_miss_trials": 0.1939,
+        "accuracy_without_misses": 0.8963,
+        "nudged_trials": 0,
+        "second_attempts": 0,
+        "off_limits_trials": 0.1273,
+        "out_of_bounds_calls": 49,
+        "latency_median_s": 30.9,
+        "tokens_mean": 99974,
+        "by_difficulty": {
+          "standard": 0.9167,
+          "hard": 0.697
+        },
+        "by_scenario": {
+          "baseline": 0.8623,
+          "outage": 1,
+          "stale": 1,
+          "injected": 0.8333
+        },
+        "by_domain": {
+          "earthquakes": 0.8824,
+          "cyclones": 0.7576,
+          "launches": 0.8889,
+          "military aircraft": 0.9,
+          "infrastructure": 1,
+          "fires": 1,
+          "vessels": 1
+        }
+      },
+      "heldout": {
+        "questions": 29,
+        "trials": 87,
+        "accuracy": 0.8506,
+        "accuracy_ci95": [
+          0.6809,
+          0.9382
+        ],
+        "all_trials_correct": 0.7586,
+        "honest_about_faults": 1,
+        "fabrication": 0,
+        "false_absence": 0,
+        "followed_injection": {
+          "followed": 0,
+          "trials": 9,
+          "questions": 3
+        },
+        "false_alarm": 0,
+        "format_errors": 0,
+        "errors": 0,
+        "tool_calls_mean": 2.48,
+        "failed_calls_mean": 0.14,
+        "extra_calls_mean": 1.41,
+        "replay_misses": 45,
+        "replay_miss_trials": 0.1954,
+        "accuracy_without_misses": 0.875,
+        "nudged_trials": 0,
+        "second_attempts": 0,
+        "off_limits_trials": 0.1494,
+        "out_of_bounds_calls": 30,
+        "latency_median_s": 32.1,
+        "tokens_mean": 112375,
+        "by_difficulty": {
+          "standard": 0.8485,
+          "hard": 0.8571
+        },
+        "by_scenario": {
+          "baseline": 0.8333,
+          "injected": 1
+        },
+        "by_domain": {
+          "earthquakes": 0.7083,
+          "cyclones": 0.9167,
+          "launches": 0.9524,
+          "military aircraft": 0.8095,
+          "infrastructure": 1,
+          "fires": 1
+        },
+        "question_set": {
+          "checksum": "260af8edff6c7bbe82d5af754f91f4d20d97ac8437155eb27035d8c1ecda170e",
+          "count": 29
+        },
+        "trials_sha256": "9fa6806e5037769147c65b98f7f196b858f5afe68c3378cecca4f85dd03d0ef5"
+      },
+      "provenance": {
+        "bench_version": "0.2.0",
+        "bench_versions": [
+          "0.1.0",
+          "0.2.0"
+        ],
+        "prompt_version": 2,
+        "gev": {
+          "commit": "aa16b7c3b0166a89d8c7a6089e0aff53a22faaee",
+          "version": "0.2.1"
+        },
+        "snapshot": {
+          "id": "2026-10-03",
+          "checksum": "53693e34ad61ea29eb55b548ce2064bbcbe899bbde1370bd594bde507185d950"
+        },
+        "questions": {
+          "split": "public",
+          "file": "questions/2026-10-03.public.json",
+          "checksum": "39227bdd0f1591510ff5cd2228a2dc2af0c5db6868c0eff32aa44a2d64b47a1a",
+          "count": 55
+        },
+        "trials_file": "runs/verified/2026-10-03-cursor-agent-gemini-3.8-flash-medium/trials.jsonl.gz",
+        "trials_sha256": "253783fa81c2e504c6d9f44f3eabb9d5b9cbfffd70a03d7bdbe6d1aaec5c50dc",
+        "started_at": "2026-10-03T20:53:01.487Z",
+        "finished_at": "2026-10-09T09:23:41.712Z",
+        "host": {
+          "platform": "darwin-arm64",
+          "node": "v24.14.0"
+        }
+      }
+    },
+    {
+      "run_id": "2026-10-03-openai-compatible-gemma-4-31b-it",
+      "status": "verified",
+      "label": "Thin runner + Gemma 4 31B (Gemini API)",
+      "model": {
+        "id": "gemma-4-31b-it",
+        "label": "Thin runner + Gemma 4 31B (Gemini API)",
+        "reported": [
+          "gemma-4-31b-it"
+        ]
+      },
+      "harness": {
+        "adapter": "openai-compatible",
+        "name": "gods-eye-bench thin runner",
+        "version": "0.1.2",
+        "endpoint": "generativelanguage.googleapis.com",
+        "request_timeout_ms": 120000
+      },
+      "trials_per_question": 3,
+      "public": {
+        "questions": 55,
+        "trials": 165,
+        "accuracy": 0.8364,
+        "accuracy_ci95": [
+          0.7174,
+          0.9114
+        ],
+        "all_trials_correct": 0.6727,
+        "honest_about_faults": 0.8571,
+        "fabrication": 0,
+        "false_absence": 0.0217,
+        "followed_injection": {
+          "followed": 8,
+          "trials": 9,
+          "questions": 4
+        },
+        "false_alarm": 0.0556,
+        "format_errors": 0.0909,
+        "errors": 0.0061,
+        "tool_calls_mean": 1.14,
+        "failed_calls_mean": 0.1,
+        "extra_calls_mean": 0.1,
+        "replay_misses": 10,
+        "replay_miss_trials": 0.0303,
+        "accuracy_without_misses": 0.8272,
+        "nudged_trials": 0,
+        "second_attempts": 4,
+        "off_limits_trials": 0,
+        "out_of_bounds_calls": 0,
+        "latency_median_s": 100.4,
+        "tokens_mean": 19565,
+        "by_difficulty": {
+          "standard": 0.8258,
+          "hard": 0.8788
+        },
+        "by_scenario": {
+          "baseline": 0.8986,
+          "outage": 1,
+          "stale": 0.7778,
+          "injected": 0.0833
+        },
+        "by_domain": {
+          "earthquakes": 0.8431,
+          "cyclones": 0.8182,
+          "launches": 0.8333,
+          "military aircraft": 0.8,
+          "infrastructure": 1,
+          "fires": 0.6667,
+          "vessels": 1
+        }
+      },
+      "heldout": {
+        "questions": 29,
+        "trials": 87,
+        "accuracy": 0.7701,
+        "accuracy_ci95": [
+          0.5912,
+          0.8859
+        ],
+        "all_trials_correct": 0.5862,
+        "honest_about_faults": 0.6667,
+        "fabrication": 0,
+        "false_absence": 0.0513,
+        "followed_injection": {
+          "followed": 7,
+          "trials": 7,
+          "questions": 3
+        },
+        "false_alarm": 0.0833,
+        "format_errors": 0.1034,
+        "errors": 0,
+        "tool_calls_mean": 1.14,
+        "failed_calls_mean": 0.03,
+        "extra_calls_mean": 0.07,
+        "replay_misses": 12,
+        "replay_miss_trials": 0.069,
+        "accuracy_without_misses": 0.7901,
+        "nudged_trials": 0,
+        "second_attempts": 2,
+        "off_limits_trials": 0,
+        "out_of_bounds_calls": 0,
+        "latency_median_s": 113.3,
+        "tokens_mean": 19680,
+        "by_difficulty": {
+          "standard": 0.697,
+          "hard": 1
+        },
+        "by_scenario": {
+          "baseline": 0.859,
+          "injected": 0
+        },
+        "by_domain": {
+          "earthquakes": 0.8333,
+          "cyclones": 0.75,
+          "launches": 0.8095,
+          "military aircraft": 0.619,
+          "infrastructure": 1,
+          "fires": 0.6667
+        },
+        "question_set": {
+          "checksum": "260af8edff6c7bbe82d5af754f91f4d20d97ac8437155eb27035d8c1ecda170e",
+          "count": 29
+        },
+        "trials_sha256": "04e8cc82070420852c826c21cda0ad8155462af73cb00bf9bc30a215d7093510"
+      },
+      "provenance": {
+        "bench_version": "0.1.2",
+        "bench_versions": [
+          "≤0.1.2"
+        ],
+        "prompt_version": 2,
+        "gev": {
+          "commit": "aa16b7c3b0166a89d8c7a6089e0aff53a22faaee",
+          "version": "0.2.1"
+        },
+        "snapshot": {
+          "id": "2026-10-03",
+          "checksum": "53693e34ad61ea29eb55b548ce2064bbcbe899bbde1370bd594bde507185d950"
+        },
+        "questions": {
+          "split": "public",
+          "file": "questions/2026-10-03.public.json",
+          "checksum": "39227bdd0f1591510ff5cd2228a2dc2af0c5db6868c0eff32aa44a2d64b47a1a",
+          "count": 55
+        },
+        "trials_file": "runs/verified/2026-10-03-openai-compatible-gemma-4-31b-it/trials.jsonl.gz",
+        "trials_sha256": "60ebc7710c9f94cbc455572c8a4df70123b9bd5bbe95e520baa0fe5854c50cf4",
+        "started_at": "2026-10-06T07:16:10.893Z",
+        "finished_at": "2026-10-07T15:47:58.589Z",
+        "host": {
+          "platform": "darwin-arm64",
+          "node": "v24.14.0"
+        }
+      }
+    },
+    {
+      "run_id": "2026-10-03-openai-compatible-gemini-3.5-flash-lite",
+      "status": "verified",
+      "label": "Thin runner + Gemini 3.5 Flash-Lite (Gemini API)",
+      "model": {
+        "id": "gemini-3.5-flash-lite",
+        "label": "Thin runner + Gemini 3.5 Flash-Lite (Gemini API)",
+        "reported": [
+          "gemini-3.5-flash-lite"
+        ]
+      },
+      "harness": {
+        "adapter": "openai-compatible",
+        "name": "gods-eye-bench thin runner",
+        "version": "0.1.2",
+        "endpoint": "generativelanguage.googleapis.com",
+        "request_timeout_ms": 120000
+      },
+      "trials_per_question": 3,
+      "public": {
+        "questions": 55,
+        "trials": 165,
+        "accuracy": 0.8182,
+        "accuracy_ci95": [
+          0.6967,
+          0.8981
+        ],
+        "all_trials_correct": 0.8,
+        "honest_about_faults": 1,
+        "fabrication": 0,
+        "false_absence": 0.0435,
+        "followed_injection": {
+          "followed": 3,
+          "trials": 12,
+          "questions": 4
+        },
+        "false_alarm": 0.0417,
+        "format_errors": 0,
+        "errors": 0,
+        "tool_calls_mean": 1.31,
+        "failed_calls_mean": 0.24,
+        "extra_calls_mean": 0.27,
+        "replay_misses": 30,
+        "replay_miss_trials": 0.0909,
+        "accuracy_without_misses": 0.8562,
+        "nudged_trials": 0,
+        "second_attempts": 1,
+        "off_limits_trials": 0,
+        "out_of_bounds_calls": 0,
+        "latency_median_s": 2.6,
+        "tokens_mean": 20914,
+        "by_difficulty": {
+          "standard": 0.9091,
+          "hard": 0.4545
+        },
+        "by_scenario": {
+          "baseline": 0.8043,
+          "outage": 1,
+          "stale": 1,
+          "injected": 0.75
+        },
+        "by_domain": {
+          "earthquakes": 0.7059,
+          "cyclones": 0.7879,
+          "launches": 1,
+          "military aircraft": 0.8,
+          "infrastructure": 0.7778,
+          "fires": 1,
+          "vessels": 1
+        }
+      },
+      "heldout": {
+        "questions": 29,
+        "trials": 87,
+        "accuracy": 0.8276,
+        "accuracy_ci95": [
+          0.6545,
+          0.924
+        ],
+        "all_trials_correct": 0.7586,
+        "honest_about_faults": 1,
+        "fabrication": 0,
+        "false_absence": 0.0641,
+        "followed_injection": {
+          "followed": 1,
+          "trials": 9,
+          "questions": 3
+        },
+        "false_alarm": 0.0238,
+        "format_errors": 0,
+        "errors": 0,
+        "tool_calls_mean": 1.44,
+        "failed_calls_mean": 0.28,
+        "extra_calls_mean": 0.37,
+        "replay_misses": 25,
+        "replay_miss_trials": 0.1379,
+        "accuracy_without_misses": 0.8933,
+        "nudged_trials": 0,
+        "second_attempts": 1,
+        "off_limits_trials": 0,
+        "out_of_bounds_calls": 0,
+        "latency_median_s": 2.4,
+        "tokens_mean": 22179,
+        "by_difficulty": {
+          "standard": 0.8939,
+          "hard": 0.619
+        },
+        "by_scenario": {
+          "baseline": 0.8205,
+          "injected": 0.8889
+        },
+        "by_domain": {
+          "earthquakes": 0.7083,
+          "cyclones": 0.6667,
+          "launches": 1,
+          "military aircraft": 0.8095,
+          "infrastructure": 1,
+          "fires": 1
+        },
+        "question_set": {
+          "checksum": "260af8edff6c7bbe82d5af754f91f4d20d97ac8437155eb27035d8c1ecda170e",
+          "count": 29
+        },
+        "trials_sha256": "c338738ecc5eba9b2ddd359c7102bb020124b86c70262d533b3bf8ea02511dbb"
+      },
+      "provenance": {
+        "bench_version": "0.1.2",
+        "bench_versions": [
+          "≤0.1.2"
+        ],
+        "prompt_version": 2,
+        "gev": {
+          "commit": "aa16b7c3b0166a89d8c7a6089e0aff53a22faaee",
+          "version": "0.2.1"
+        },
+        "snapshot": {
+          "id": "2026-10-03",
+          "checksum": "53693e34ad61ea29eb55b548ce2064bbcbe899bbde1370bd594bde507185d950"
+        },
+        "questions": {
+          "split": "public",
+          "file": "questions/2026-10-03.public.json",
+          "checksum": "39227bdd0f1591510ff5cd2228a2dc2af0c5db6868c0eff32aa44a2d64b47a1a",
+          "count": 55
+        },
+        "trials_file": "runs/verified/2026-10-03-openai-compatible-gemini-3.5-flash-lite/trials.jsonl.gz",
+        "trials_sha256": "8d8b9ad06709e23b0f753e2a60681b158a449c6b8b6dffb655a18e13e0cadf63",
+        "started_at": "2026-10-05T19:53:39.194Z",
+        "finished_at": "2026-10-06T07:10:11.739Z",
+        "host": {
+          "platform": "darwin-arm64",
+          "node": "v24.14.0"
+        }
+      }
+    },
+    {
+      "run_id": "2026-10-03-openai-compatible-gemini-3.1-flash-lite",
+      "status": "verified",
+      "label": "Thin runner + Gemini 3.1 Flash-Lite (Gemini API)",
+      "model": {
+        "id": "gemini-3.1-flash-lite",
+        "label": "Thin runner + Gemini 3.1 Flash-Lite (Gemini API)",
+        "reported": [
+          "gemini-3.1-flash-lite"
+        ]
+      },
+      "harness": {
+        "adapter": "openai-compatible",
+        "name": "gods-eye-bench thin runner",
+        "version": "0.1.2",
+        "endpoint": "generativelanguage.googleapis.com",
+        "request_timeout_ms": 120000
+      },
+      "trials_per_question": 3,
+      "public": {
+        "questions": 55,
+        "trials": 165,
+        "accuracy": 0.8121,
+        "accuracy_ci95": [
+          0.6899,
+          0.8936
+        ],
+        "all_trials_correct": 0.7273,
+        "honest_about_faults": 0.9524,
+        "fabrication": 0,
+        "false_absence": 0.0362,
+        "followed_injection": {
+          "followed": 9,
+          "trials": 12,
+          "questions": 4
+        },
+        "false_alarm": 0.0694,
+        "format_errors": 0,
+        "errors": 0.0242,
+        "tool_calls_mean": 2.15,
+        "failed_calls_mean": 0.48,
+        "extra_calls_mean": 1.11,
+        "replay_misses": 56,
+        "replay_miss_trials": 0.103,
+        "accuracy_without_misses": 0.8366,
+        "nudged_trials": 0.0182,
+        "second_attempts": 5,
+        "off_limits_trials": 0.0061,
+        "out_of_bounds_calls": 1,
+        "latency_median_s": 7.5,
+        "tokens_mean": 28508,
+        "by_difficulty": {
+          "standard": 0.8485,
+          "hard": 0.6667
+        },
+        "by_scenario": {
+          "baseline": 0.8478,
+          "outage": 0.8333,
+          "stale": 1,
+          "injected": 0.25
+        },
+        "by_domain": {
+          "earthquakes": 0.7647,
+          "cyclones": 0.8182,
+          "launches": 0.9167,
+          "military aircraft": 0.6667,
+          "infrastructure": 1,
+          "fires": 1,
+          "vessels": 1
+        }
+      },
+      "heldout": {
+        "questions": 29,
+        "trials": 87,
+        "accuracy": 0.7586,
+        "accuracy_ci95": [
+          0.5789,
+          0.8778
+        ],
+        "all_trials_correct": 0.6897,
+        "honest_about_faults": 1,
+        "fabrication": 0,
+        "false_absence": 0.0385,
+        "followed_injection": {
+          "followed": 6,
+          "trials": 9,
+          "questions": 3
+        },
+        "false_alarm": 0.0714,
+        "format_errors": 0,
+        "errors": 0.0345,
+        "tool_calls_mean": 2.31,
+        "failed_calls_mean": 0.38,
+        "extra_calls_mean": 1.24,
+        "replay_misses": 38,
+        "replay_miss_trials": 0.1609,
+        "accuracy_without_misses": 0.8148,
+        "nudged_trials": 0.023,
+        "second_attempts": 5,
+        "off_limits_trials": 0,
+        "out_of_bounds_calls": 0,
+        "latency_median_s": 6.6,
+        "tokens_mean": 27849,
+        "by_difficulty": {
+          "standard": 0.8182,
+          "hard": 0.5714
+        },
+        "by_scenario": {
+          "baseline": 0.8205,
+          "injected": 0.2222
+        },
+        "by_domain": {
+          "earthquakes": 0.7917,
+          "cyclones": 0.6667,
+          "launches": 0.9524,
+          "military aircraft": 0.4762,
+          "infrastructure": 1,
+          "fires": 1
+        },
+        "question_set": {
+          "checksum": "260af8edff6c7bbe82d5af754f91f4d20d97ac8437155eb27035d8c1ecda170e",
+          "count": 29
+        },
+        "trials_sha256": "91b063148ad6331166a91f05dd225514adf13cc9a24a3592e45c1cf08100c259"
+      },
+      "provenance": {
+        "bench_version": "0.1.2",
+        "bench_versions": [
+          "≤0.1.2"
+        ],
+        "prompt_version": 2,
+        "gev": {
+          "commit": "aa16b7c3b0166a89d8c7a6089e0aff53a22faaee",
+          "version": "0.2.1"
+        },
+        "snapshot": {
+          "id": "2026-10-03",
+          "checksum": "53693e34ad61ea29eb55b548ce2064bbcbe899bbde1370bd594bde507185d950"
+        },
+        "questions": {
+          "split": "public",
+          "file": "questions/2026-10-03.public.json",
+          "checksum": "39227bdd0f1591510ff5cd2228a2dc2af0c5db6868c0eff32aa44a2d64b47a1a",
+          "count": 55
+        },
+        "trials_file": "runs/verified/2026-10-03-openai-compatible-gemini-3.1-flash-lite/trials.jsonl.gz",
+        "trials_sha256": "2f6ca94efa2c0b846ae1f97d77c6b28edbd1f6dce242957753c7587d74e6b8c5",
+        "started_at": "2026-10-05T19:55:01.115Z",
+        "finished_at": "2026-10-07T07:10:12.091Z",
+        "host": {
+          "platform": "darwin-arm64",
+          "node": "v24.14.0"
+        }
+      }
+    },
+    {
+      "run_id": "2026-10-03-openai-compatible-geb-qwen3.5-9b",
+      "status": "verified",
+      "label": "Thin runner + Qwen 3.5 9B (Ollama, 32k)",
+      "model": {
+        "id": "geb-qwen3.5-9b",
+        "label": "Thin runner + Qwen 3.5 9B (Ollama, 32k)",
+        "reported": [
+          "geb-qwen3.5-9b"
+        ]
+      },
+      "harness": {
+        "adapter": "openai-compatible",
+        "name": "gods-eye-bench thin runner",
+        "version": "0.1.2",
+        "endpoint": "localhost:11434"
+      },
+      "trials_per_question": 3,
+      "public": {
+        "questions": 55,
+        "trials": 165,
+        "accuracy": 0.7212,
+        "accuracy_ci95": [
+          0.5913,
+          0.8222
+        ],
+        "all_trials_correct": 0.5636,
+        "honest_about_faults": 0.9524,
+        "fabrication": 0,
+        "false_absence": 0.058,
+        "followed_injection": {
+          "followed": 8,
+          "trials": 12,
+          "questions": 4
+        },
+        "false_alarm": 0.0833,
+        "format_errors": 0.0424,
+        "errors": 0.0182,
+        "tool_calls_mean": 1.7,
+        "failed_calls_mean": 0.39,
+        "extra_calls_mean": 0.67,
+        "replay_misses": 37,
+        "replay_miss_trials": 0.1091,
+        "accuracy_without_misses": 0.7636,
+        "nudged_trials": 0.7697,
+        "second_attempts": 8,
+        "off_limits_trials": 0,
+        "out_of_bounds_calls": 0,
+        "latency_median_s": 76.5,
+        "tokens_mean": 32539,
+        "by_difficulty": {
+          "standard": 0.7879,
+          "hard": 0.4545
+        },
+        "by_scenario": {
+          "baseline": 0.7464,
+          "outage": 0.8333,
+          "stale": 1,
+          "injected": 0.1667
+        },
+        "by_domain": {
+          "earthquakes": 0.6471,
+          "cyclones": 0.7273,
+          "launches": 0.7222,
+          "military aircraft": 0.7333,
+          "infrastructure": 0.8889,
+          "fires": 1,
+          "vessels": 1
+        }
+      },
+      "heldout": {
+        "questions": 29,
+        "trials": 87,
+        "accuracy": 0.7931,
+        "accuracy_ci95": [
+          0.6161,
+          0.9015
+        ],
+        "all_trials_correct": 0.6552,
+        "honest_about_faults": 1,
+        "fabrication": 0,
+        "false_absence": 0.0385,
+        "followed_injection": {
+          "followed": 4,
+          "trials": 9,
+          "questions": 3
+        },
+        "false_alarm": 0.0595,
+        "format_errors": 0.0115,
+        "errors": 0.0115,
+        "tool_calls_mean": 1.56,
+        "failed_calls_mean": 0.26,
+        "extra_calls_mean": 0.49,
+        "replay_misses": 23,
+        "replay_miss_trials": 0.1379,
+        "accuracy_without_misses": 0.7976,
+        "nudged_trials": 0.7126,
+        "second_attempts": 5,
+        "off_limits_trials": 0.023,
+        "out_of_bounds_calls": 2,
+        "latency_median_s": 78.7,
+        "tokens_mean": 29888,
+        "by_difficulty": {
+          "standard": 0.8636,
+          "hard": 0.5714
+        },
+        "by_scenario": {
+          "baseline": 0.8205,
+          "injected": 0.5556
+        },
+        "by_domain": {
+          "earthquakes": 0.7917,
+          "cyclones": 0.75,
+          "launches": 0.9048,
+          "military aircraft": 0.619,
+          "infrastructure": 1,
+          "fires": 1
+        },
+        "question_set": {
+          "checksum": "260af8edff6c7bbe82d5af754f91f4d20d97ac8437155eb27035d8c1ecda170e",
+          "count": 29
+        },
+        "trials_sha256": "b355b78e7eca926ffc042996be559e25a8266fd6ba1d931972617d9a2f7a1efd"
+      },
+      "provenance": {
+        "bench_version": "0.1.2",
+        "bench_versions": [
+          "≤0.1.2"
+        ],
+        "prompt_version": 2,
+        "gev": {
+          "commit": "aa16b7c3b0166a89d8c7a6089e0aff53a22faaee",
+          "version": "0.2.1"
+        },
+        "snapshot": {
+          "id": "2026-10-03",
+          "checksum": "53693e34ad61ea29eb55b548ce2064bbcbe899bbde1370bd594bde507185d950"
+        },
+        "questions": {
+          "split": "public",
+          "file": "questions/2026-10-03.public.json",
+          "checksum": "39227bdd0f1591510ff5cd2228a2dc2af0c5db6868c0eff32aa44a2d64b47a1a",
+          "count": 55
+        },
+        "trials_file": "runs/verified/2026-10-03-openai-compatible-geb-qwen3.5-9b/trials.jsonl.gz",
+        "trials_sha256": "0f824f8debaf9789c48185626643beb653d3cdef8379b1b7783dc7f98ad3ebeb",
+        "started_at": "2026-10-05T03:32:13.378Z",
+        "finished_at": "2026-10-06T01:36:31.095Z",
+        "host": {
+          "platform": "darwin-arm64",
+          "node": "v24.14.0"
+        }
+      }
+    },
+    {
+      "run_id": "2026-10-03-openai-compatible-geb-qwen3.5-4b",
+      "status": "verified",
+      "label": "Thin runner + Qwen 3.5 4B (Ollama, 32k)",
+      "model": {
+        "id": "geb-qwen3.5-4b",
+        "label": "Thin runner + Qwen 3.5 4B (Ollama, 32k)",
+        "reported": [
+          "geb-qwen3.5-4b"
+        ]
+      },
+      "harness": {
+        "adapter": "openai-compatible",
+        "name": "gods-eye-bench thin runner",
+        "version": "0.1.1",
+        "endpoint": "localhost:11434"
+      },
+      "trials_per_question": 3,
+      "public": {
+        "questions": 55,
+        "trials": 165,
+        "accuracy": 0.7091,
+        "accuracy_ci95": [
+          0.5786,
+          0.8123
+        ],
+        "all_trials_correct": 0.5636,
+        "honest_about_faults": 0.8571,
+        "fabrication": 0,
+        "false_absence": 0.0652,
+        "followed_injection": {
+          "followed": 2,
+          "trials": 11,
+          "questions": 4
+        },
+        "false_alarm": 0.0417,
+        "format_errors": 0.0606,
+        "errors": 0.0182,
+        "tool_calls_mean": 1.94,
+        "failed_calls_mean": 0.64,
+        "extra_calls_mean": 0.91,
+        "replay_misses": 76,
+        "replay_miss_trials": 0.1515,
+        "accuracy_without_misses": 0.7567,
+        "nudged_trials": 0.1273,
+        "second_attempts": 3,
+        "off_limits_trials": 0.0061,
+        "out_of_bounds_calls": 1,
+        "latency_median_s": 35.3,
+        "tokens_mean": 24273,
+        "by_difficulty": {
+          "standard": 0.7803,
+          "hard": 0.4242
+        },
+        "by_scenario": {
+          "baseline": 0.7101,
+          "outage": 0.6667,
+          "stale": 1,
+          "injected": 0.5
+        },
+        "by_domain": {
+          "earthquakes": 0.6667,
+          "cyclones": 0.697,
+          "launches": 0.8056,
+          "military aircraft": 0.5667,
+          "infrastructure": 1,
+          "fires": 1,
+          "vessels": 0.6667
+        }
+      },
+      "heldout": {
+        "questions": 29,
+        "trials": 87,
+        "accuracy": 0.5862,
+        "accuracy_ci95": [
+          0.4074,
+          0.7449
+        ],
+        "all_trials_correct": 0.4138,
+        "honest_about_faults": 1,
+        "fabrication": 0,
+        "false_absence": 0.0769,
+        "followed_injection": {
+          "followed": 2,
+          "trials": 8,
+          "questions": 3
+        },
+        "false_alarm": 0.0595,
+        "format_errors": 0.069,
+        "errors": 0,
+        "tool_calls_mean": 1.55,
+        "failed_calls_mean": 0.28,
+        "extra_calls_mean": 0.49,
+        "replay_misses": 44,
+        "replay_miss_trials": 0.1954,
+        "accuracy_without_misses": 0.6528,
+        "nudged_trials": 0.1494,
+        "second_attempts": 0,
+        "off_limits_trials": 0,
+        "out_of_bounds_calls": 0,
+        "latency_median_s": 45.3,
+        "tokens_mean": 24236,
+        "by_difficulty": {
+          "standard": 0.6667,
+          "hard": 0.3333
+        },
+        "by_scenario": {
+          "baseline": 0.6154,
+          "injected": 0.3333
+        },
+        "by_domain": {
+          "earthquakes": 0.5833,
+          "cyclones": 0.4167,
+          "launches": 0.619,
+          "military aircraft": 0.4762,
+          "infrastructure": 1,
+          "fires": 1
+        },
+        "question_set": {
+          "checksum": "260af8edff6c7bbe82d5af754f91f4d20d97ac8437155eb27035d8c1ecda170e",
+          "count": 29
+        },
+        "trials_sha256": "659a7e2f5c0225942595ec1ea15729a6bc850183cd587cdaa7a0574809c66c89"
+      },
+      "provenance": {
+        "bench_version": "0.1.1",
+        "bench_versions": [
+          "≤0.1.1"
+        ],
+        "prompt_version": 2,
+        "gev": {
+          "commit": "aa16b7c3b0166a89d8c7a6089e0aff53a22faaee",
+          "version": "0.2.1"
+        },
+        "snapshot": {
+          "id": "2026-10-03",
+          "checksum": "53693e34ad61ea29eb55b548ce2064bbcbe899bbde1370bd594bde507185d950"
+        },
+        "questions": {
+          "split": "public",
+          "file": "questions/2026-10-03.public.json",
+          "checksum": "39227bdd0f1591510ff5cd2228a2dc2af0c5db6868c0eff32aa44a2d64b47a1a",
+          "count": 55
+        },
+        "trials_file": "runs/verified/2026-10-03-openai-compatible-geb-qwen3.5-4b/trials.jsonl.gz",
+        "trials_sha256": "ea830c527f09c61a2ac9e576a051402c31b398419d4c3e0d83243a71603cf643",
+        "started_at": "2026-10-05T15:14:20.907Z",
+        "finished_at": "2026-10-05T18:55:33.510Z",
+        "host": {
+          "platform": "darwin-arm64",
+          "node": "v24.14.0"
+        }
+      }
+    },
+    {
+      "run_id": "2026-10-03-openai-compatible-geb-granite4.1-8b",
+      "status": "verified",
+      "label": "Thin runner + Granite 4.1 8B (Ollama, 32k)",
+      "model": {
+        "id": "geb-granite4.1-8b",
+        "label": "Thin runner + Granite 4.1 8B (Ollama, 32k)",
+        "reported": [
+          "geb-granite4.1-8b"
+        ]
+      },
+      "harness": {
+        "adapter": "openai-compatible",
+        "name": "gods-eye-bench thin runner",
+        "version": "0.1.1",
+        "endpoint": "localhost:11434"
+      },
+      "trials_per_question": 3,
+      "public": {
+        "questions": 55,
+        "trials": 165,
+        "accuracy": 0.5697,
+        "accuracy_ci95": [
+          0.4386,
+          0.6917
+        ],
+        "all_trials_correct": 0.4364,
+        "honest_about_faults": 0.8095,
+        "fabrication": 0.1111,
+        "false_absence": 0.058,
+        "followed_injection": {
+          "followed": 5,
+          "trials": 12,
+          "questions": 4
+        },
+        "false_alarm": 0.1944,
+        "format_errors": 0.0061,
+        "errors": 0,
+        "tool_calls_mean": 2.36,
+        "failed_calls_mean": 1.38,
+        "extra_calls_mean": 1.33,
+        "replay_misses": 209,
+        "replay_miss_trials": 0.5697,
+        "accuracy_without_misses": 0.7083,
+        "nudged_trials": 0.0303,
+        "second_attempts": 0,
+        "off_limits_trials": 0,
+        "out_of_bounds_calls": 0,
+        "latency_median_s": 12.7,
+        "tokens_mean": 22130,
+        "by_difficulty": {
+          "standard": 0.6667,
+          "hard": 0.1818
+        },
+        "by_scenario": {
+          "baseline": 0.558,
+          "outage": 1,
+          "stale": 0.5556,
+          "injected": 0.5
+        },
+        "by_domain": {
+          "earthquakes": 0.5686,
+          "cyclones": 0.5455,
+          "launches": 0.5556,
+          "military aircraft": 0.4333,
+          "infrastructure": 1,
+          "fires": 1,
+          "vessels": 0.6667
+        }
+      },
+      "heldout": {
+        "questions": 29,
+        "trials": 87,
+        "accuracy": 0.5057,
+        "accuracy_ci95": [
+          0.3341,
+          0.6761
+        ],
+        "all_trials_correct": 0.3448,
+        "honest_about_faults": 1,
+        "fabrication": 0,
+        "false_absence": 0.1154,
+        "followed_injection": {
+          "followed": 4,
+          "trials": 9,
+          "questions": 3
+        },
+        "false_alarm": 0.25,
+        "format_errors": 0.0115,
+        "errors": 0,
+        "tool_calls_mean": 2.2,
+        "failed_calls_mean": 1.25,
+        "extra_calls_mean": 1.13,
+        "replay_misses": 97,
+        "replay_miss_trials": 0.4598,
+        "accuracy_without_misses": 0.7193,
+        "nudged_trials": 0.046,
+        "second_attempts": 0,
+        "off_limits_trials": 0,
+        "out_of_bounds_calls": 0,
+        "latency_median_s": 14.3,
+        "tokens_mean": 21159,
+        "by_difficulty": {
+          "standard": 0.5758,
+          "hard": 0.2857
+        },
+        "by_scenario": {
+          "baseline": 0.5256,
+          "injected": 0.3333
+        },
+        "by_domain": {
+          "earthquakes": 0.5,
+          "cyclones": 0.1667,
+          "launches": 0.619,
+          "military aircraft": 0.381,
+          "infrastructure": 1,
+          "fires": 1
+        },
+        "question_set": {
+          "checksum": "260af8edff6c7bbe82d5af754f91f4d20d97ac8437155eb27035d8c1ecda170e",
+          "count": 29
+        },
+        "trials_sha256": "967557688c75af68a29999a4ce9c6e53ff662387bde577224c5e7746ff8689c2"
+      },
+      "provenance": {
+        "bench_version": "0.1.1",
+        "bench_versions": [
+          "≤0.1.1"
+        ],
+        "prompt_version": 2,
+        "gev": {
+          "commit": "aa16b7c3b0166a89d8c7a6089e0aff53a22faaee",
+          "version": "0.2.1"
+        },
+        "snapshot": {
+          "id": "2026-10-03",
+          "checksum": "53693e34ad61ea29eb55b548ce2064bbcbe899bbde1370bd594bde507185d950"
+        },
+        "questions": {
+          "split": "public",
+          "file": "questions/2026-10-03.public.json",
+          "checksum": "39227bdd0f1591510ff5cd2228a2dc2af0c5db6868c0eff32aa44a2d64b47a1a",
+          "count": 55
+        },
+        "trials_file": "runs/verified/2026-10-03-openai-compatible-geb-granite4.1-8b/trials.jsonl.gz",
+        "trials_sha256": "14e23394e874a2d0ea7e1652dc7fb63778db54a7eb5130d3a9504ceec7346d4c",
+        "started_at": "2026-10-05T13:43:10.474Z",
+        "finished_at": "2026-10-05T14:42:35.589Z",
+        "host": {
+          "platform": "darwin-arm64",
+          "node": "v24.14.0"
+        }
+      }
+    },
+    {
+      "run_id": "2026-10-03-openai-compatible-geb-gemma4-e2b",
+      "status": "verified",
+      "label": "Thin runner + Gemma 4 E2B (Ollama, 32k)",
+      "model": {
+        "id": "geb-gemma4-e2b",
+        "label": "Thin runner + Gemma 4 E2B (Ollama, 32k)",
+        "reported": [
+          "geb-gemma4-e2b"
+        ]
+      },
+      "harness": {
+        "adapter": "openai-compatible",
+        "name": "gods-eye-bench thin runner",
+        "version": "0.1.1",
+        "endpoint": "localhost:11434"
+      },
+      "trials_per_question": 3,
+      "public": {
+        "questions": 55,
+        "trials": 165,
+        "accuracy": 0.5576,
+        "accuracy_ci95": [
+          0.4269,
+          0.6808
+        ],
+        "all_trials_correct": 0.3636,
+        "honest_about_faults": 0.6667,
+        "fabrication": 0,
+        "false_absence": 0.0145,
+        "followed_injection": {
+          "followed": 8,
+          "trials": 12,
+          "questions": 4
+        },
+        "false_alarm": 0.3611,
+        "format_errors": 0,
+        "errors": 0,
+        "tool_calls_mean": 0.75,
+        "failed_calls_mean": 0.12,
+        "extra_calls_mean": 0,
+        "replay_misses": 9,
+        "replay_miss_trials": 0.0303,
+        "accuracy_without_misses": 0.5679,
+        "nudged_trials": 0.0061,
+        "second_attempts": 0,
+        "off_limits_trials": 0,
+        "out_of_bounds_calls": 0,
+        "latency_median_s": 30.3,
+        "tokens_mean": 13338,
+        "by_difficulty": {
+          "standard": 0.6439,
+          "hard": 0.2121
+        },
+        "by_scenario": {
+          "baseline": 0.5797,
+          "outage": 1,
+          "stale": 0.2222,
+          "injected": 0.3333
+        },
+        "by_domain": {
+          "earthquakes": 0.6275,
+          "cyclones": 0.3939,
+          "launches": 0.4444,
+          "military aircraft": 0.5333,
+          "infrastructure": 1,
+          "fires": 1,
+          "vessels": 1
+        }
+      },
+      "heldout": {
+        "questions": 29,
+        "trials": 87,
+        "accuracy": 0.4828,
+        "accuracy_ci95": [
+          0.3139,
+          0.6557
+        ],
+        "all_trials_correct": 0.3448,
+        "honest_about_faults": 1,
+        "fabrication": 0,
+        "false_absence": 0.0641,
+        "followed_injection": {
+          "followed": 6,
+          "trials": 9,
+          "questions": 3
+        },
+        "false_alarm": 0.3571,
+        "format_errors": 0.0115,
+        "errors": 0,
+        "tool_calls_mean": 0.8,
+        "failed_calls_mean": 0.14,
+        "extra_calls_mean": 0.01,
+        "replay_misses": 10,
+        "replay_miss_trials": 0.0575,
+        "accuracy_without_misses": 0.5,
+        "nudged_trials": 0,
+        "second_attempts": 0,
+        "off_limits_trials": 0,
+        "out_of_bounds_calls": 0,
+        "latency_median_s": 35.2,
+        "tokens_mean": 13734,
+        "by_difficulty": {
+          "standard": 0.5455,
+          "hard": 0.2857
+        },
+        "by_scenario": {
+          "baseline": 0.5256,
+          "injected": 0.1111
+        },
+        "by_domain": {
+          "earthquakes": 0.5833,
+          "cyclones": 0,
+          "launches": 0.6667,
+          "military aircraft": 0.2857,
+          "infrastructure": 0.8333,
+          "fires": 1
+        },
+        "question_set": {
+          "checksum": "260af8edff6c7bbe82d5af754f91f4d20d97ac8437155eb27035d8c1ecda170e",
+          "count": 29
+        },
+        "trials_sha256": "918228736c9ec87e9f2a875cfb97711fa71a8d4898a7e1aecbc15f4d4b88c087"
+      },
+      "provenance": {
+        "bench_version": "0.1.1",
+        "bench_versions": [
+          "≤0.1.1"
+        ],
+        "prompt_version": 2,
+        "gev": {
+          "commit": "aa16b7c3b0166a89d8c7a6089e0aff53a22faaee",
+          "version": "0.2.1"
+        },
+        "snapshot": {
+          "id": "2026-10-03",
+          "checksum": "53693e34ad61ea29eb55b548ce2064bbcbe899bbde1370bd594bde507185d950"
+        },
+        "questions": {
+          "split": "public",
+          "file": "questions/2026-10-03.public.json",
+          "checksum": "39227bdd0f1591510ff5cd2228a2dc2af0c5db6868c0eff32aa44a2d64b47a1a",
+          "count": 55
+        },
+        "trials_file": "runs/verified/2026-10-03-openai-compatible-geb-gemma4-e2b/trials.jsonl.gz",
+        "trials_sha256": "faedec13283fbafe89894b3801031745b290eb48997a22985a49d2ebdb556c5c",
+        "started_at": "2026-10-05T18:56:52.540Z",
+        "finished_at": "2026-10-05T20:40:44.937Z",
+        "host": {
+          "platform": "darwin-arm64",
+          "node": "v24.14.0"
+        }
+      }
+    }
+  ],
+  "partial": [
+    {
+      "run_id": "2026-10-03-openai-compatible-gemini-3-flash-preview",
+      "label": "Thin runner + Gemini 3 Flash (Gemini API)",
+      "model": {
+        "id": "gemini-3-flash-preview",
+        "label": "Thin runner + Gemini 3 Flash (Gemini API)"
+      },
+      "harness": {
+        "adapter": "openai-compatible",
+        "name": "gods-eye-bench thin runner",
+        "version": "0.2.0",
+        "endpoint": "generativelanguage.googleapis.com",
+        "request_timeout_ms": 120000
+      },
+      "stopped": "Daily request quota; not resumed after 2026-10-18",
+      "trials_done": 101,
+      "trials_planned": 165,
+      "questions_covered": 34,
+      "questions_total": 55,
+      "covered_hard": 0,
+      "covered_injected": 0,
+      "accuracy_on_covered": 0.9314,
+      "same_harness_runs_on_same_questions": [
+        0.6471,
+        0.9314
+      ],
+      "provenance": {
+        "snapshot": {
+          "id": "2026-10-03",
+          "checksum": "53693e34ad61ea29eb55b548ce2064bbcbe899bbde1370bd594bde507185d950"
+        },
+        "gev": {
+          "commit": "aa16b7c3b0166a89d8c7a6089e0aff53a22faaee",
+          "version": "0.2.1"
+        },
+        "questions": {
+          "split": "public",
+          "file": "questions/2026-10-03.public.json",
+          "checksum": "39227bdd0f1591510ff5cd2228a2dc2af0c5db6868c0eff32aa44a2d64b47a1a",
+          "count": 55
+        },
+        "prompt_version": 2
+      }
+    },
+    {
+      "run_id": "2026-10-03-openai-compatible-gemini-3.5-flash",
+      "label": "Thin runner + Gemini 3.5 Flash (Gemini API)",
+      "model": {
+        "id": "gemini-3.5-flash",
+        "label": "Thin runner + Gemini 3.5 Flash (Gemini API)"
+      },
+      "harness": {
+        "adapter": "openai-compatible",
+        "name": "gods-eye-bench thin runner",
+        "version": "0.2.0",
+        "endpoint": "generativelanguage.googleapis.com",
+        "request_timeout_ms": 120000
+      },
+      "stopped": "Daily request quota; not resumed after 2026-10-18",
+      "trials_done": 66,
+      "trials_planned": 165,
+      "questions_covered": 22,
+      "questions_total": 55,
+      "covered_hard": 0,
+      "covered_injected": 0,
+      "accuracy_on_covered": 1,
+      "same_harness_runs_on_same_questions": [
+        0.7121,
+        0.9242
+      ],
+      "provenance": {
+        "snapshot": {
+          "id": "2026-10-03",
+          "checksum": "53693e34ad61ea29eb55b548ce2064bbcbe899bbde1370bd594bde507185d950"
+        },
+        "gev": {
+          "commit": "aa16b7c3b0166a89d8c7a6089e0aff53a22faaee",
+          "version": "0.2.1"
+        },
+        "questions": {
+          "split": "public",
+          "file": "questions/2026-10-03.public.json",
+          "checksum": "39227bdd0f1591510ff5cd2228a2dc2af0c5db6868c0eff32aa44a2d64b47a1a",
+          "count": 55
+        },
+        "prompt_version": 2
+      }
+    },
+    {
+      "run_id": "2026-10-03-openai-compatible-gemini-3.6-flash",
+      "label": "Thin runner + Gemini 3.6 Flash (Gemini API)",
+      "model": {
+        "id": "gemini-3.6-flash",
+        "label": "Thin runner + Gemini 3.6 Flash (Gemini API)"
+      },
+      "harness": {
+        "adapter": "openai-compatible",
+        "name": "gods-eye-bench thin runner",
+        "version": "0.2.0",
+        "endpoint": "generativelanguage.googleapis.com",
+        "request_timeout_ms": 120000
+      },
+      "stopped": "Daily request quota; not resumed after 2026-10-18",
+      "trials_done": 33,
+      "trials_planned": 165,
+      "questions_covered": 11,
+      "questions_total": 55,
+      "covered_hard": 0,
+      "covered_injected": 0,
+      "accuracy_on_covered": 1,
+      "same_harness_runs_on_same_questions": [
+        0.697,
+        0.9394
+      ],
+      "provenance": {
+        "snapshot": {
+          "id": "2026-10-03",
+          "checksum": "53693e34ad61ea29eb55b548ce2064bbcbe899bbde1370bd594bde507185d950"
+        },
+        "gev": {
+          "commit": "aa16b7c3b0166a89d8c7a6089e0aff53a22faaee",
+          "version": "0.2.1"
+        },
+        "questions": {
+          "split": "public",
+          "file": "questions/2026-10-03.public.json",
+          "checksum": "39227bdd0f1591510ff5cd2228a2dc2af0c5db6868c0eff32aa44a2d64b47a1a",
+          "count": 55
+        },
+        "prompt_version": 2
+      }
+    },
+    {
+      "run_id": "2026-10-03-openai-compatible-gemini-3.7-flash",
+      "label": "Thin runner + Gemini 3.7 Flash (Gemini API)",
+      "model": {
+        "id": "gemini-3.7-flash",
+        "label": "Thin runner + Gemini 3.7 Flash (Gemini API)"
+      },
+      "harness": {
+        "adapter": "openai-compatible",
+        "name": "gods-eye-bench thin runner",
+        "version": "0.2.0",
+        "endpoint": "generativelanguage.googleapis.com",
+        "request_timeout_ms": 120000
+      },
+      "stopped": "Daily request quota; not resumed after 2026-10-18",
+      "trials_done": 56,
+      "trials_planned": 165,
+      "questions_covered": 19,
+      "questions_total": 55,
+      "covered_hard": 0,
+      "covered_injected": 0,
+      "accuracy_on_covered": 1,
+      "same_harness_runs_on_same_questions": [
+        0.7368,
+        0.9298
+      ],
+      "provenance": {
+        "snapshot": {
+          "id": "2026-10-03",
+          "checksum": "53693e34ad61ea29eb55b548ce2064bbcbe899bbde1370bd594bde507185d950"
+        },
+        "gev": {
+          "commit": "aa16b7c3b0166a89d8c7a6089e0aff53a22faaee",
+          "version": "0.2.1"
+        },
+        "questions": {
+          "split": "public",
+          "file": "questions/2026-10-03.public.json",
+          "checksum": "39227bdd0f1591510ff5cd2228a2dc2af0c5db6868c0eff32aa44a2d64b47a1a",
+          "count": 55
+        },
+        "prompt_version": 2
+      }
+    },
+    {
+      "run_id": "2026-10-03-openai-compatible-gemini-3.8-flash",
+      "label": "Thin runner + Gemini 3.8 Flash (Gemini API)",
+      "model": {
+        "id": "gemini-3.8-flash",
+        "label": "Thin runner + Gemini 3.8 Flash (Gemini API)"
+      },
+      "harness": {
+        "adapter": "openai-compatible",
+        "name": "gods-eye-bench thin runner",
+        "version": "0.2.0",
+        "endpoint": "generativelanguage.googleapis.com",
+        "request_timeout_ms": 120000
+      },
+      "stopped": "Daily request quota; not resumed after 2026-10-18",
+      "trials_done": 57,
+      "trials_planned": 165,
+      "questions_covered": 19,
+      "questions_total": 55,
+      "covered_hard": 0,
+      "covered_injected": 0,
+      "accuracy_on_covered": 1,
+      "same_harness_runs_on_same_questions": [
+        0.7368,
+        0.9298
+      ],
+      "provenance": {
+        "snapshot": {
+          "id": "2026-10-03",
+          "checksum": "53693e34ad61ea29eb55b548ce2064bbcbe899bbde1370bd594bde507185d950"
+        },
+        "gev": {
+          "commit": "aa16b7c3b0166a89d8c7a6089e0aff53a22faaee",
+          "version": "0.2.1"
+        },
+        "questions": {
+          "split": "public",
+          "file": "questions/2026-10-03.public.json",
+          "checksum": "39227bdd0f1591510ff5cd2228a2dc2af0c5db6868c0eff32aa44a2d64b47a1a",
+          "count": 55
+        },
+        "prompt_version": 2
+      }
+    }
+  ]
+}

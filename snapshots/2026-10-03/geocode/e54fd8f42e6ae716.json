@@ -1,0 +1,8 @@
+{
+  "key": "GET app:/api/geocode?q=Los+Angeles",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json"
+  },
+  "body": "{\"status\":\"OK\",\"results\":[{\"geometry\":{\"location\":{\"lat\":34.0536909,\"lng\":-118.242766},\"bounds\":{\"southwest\":{\"lat\":33.659541,\"lng\":-118.6681798},\"northeast\":{\"lat\":34.337306,\"lng\":-118.1552983}},\"viewport\":{\"southwest\":{\"lat\":33.659541,\"lng\":-118.6681798},\"northeast\":{\"lat\":34.337306,\"lng\":-118.1552983}}},\"formatted_address\":\"Los Angeles, Los Angeles County, California, United States\",\"types\":[\"locality\",\"political\"],\"address_components\":[{\"long_name\":\"Los Angeles\",\"short_name\":\"Los Angeles\",\"types\":[\"locality\",\"political\"]}]}]}"
+}

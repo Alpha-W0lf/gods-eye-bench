@@ -1,0 +1,8 @@
+{
+  "key": "GET app:/api/geocode?q=Dallas",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json"
+  },
+  "body": "{\"status\":\"OK\",\"results\":[{\"geometry\":{\"location\":{\"lat\":32.7762719,\"lng\":-96.7968559},\"bounds\":{\"southwest\":{\"lat\":32.613216,\"lng\":-97.000482},\"northeast\":{\"lat\":33.0239366,\"lng\":-96.4636317}},\"viewport\":{\"southwest\":{\"lat\":32.613216,\"lng\":-97.000482},\"northeast\":{\"lat\":33.0239366,\"lng\":-96.4636317}}},\"formatted_address\":\"Dallas, Dallas County, Texas, United States\",\"types\":[\"locality\",\"political\"],\"address_components\":[{\"long_name\":\"Dallas\",\"short_name\":\"Dallas\",\"types\":[\"locality\",\"political\"]}]}]}"
+}

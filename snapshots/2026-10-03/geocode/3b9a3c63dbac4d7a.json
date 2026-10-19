@@ -1,0 +1,8 @@
+{
+  "key": "GET app:/api/geocode?q=Anchorage",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json"
+  },
+  "body": "{\"status\":\"OK\",\"results\":[{\"geometry\":{\"location\":{\"lat\":61.2163129,\"lng\":-149.894852},\"bounds\":{\"southwest\":{\"lat\":60.733007,\"lng\":-150.420615},\"northeast\":{\"lat\":61.483938,\"lng\":-148.462396}},\"viewport\":{\"southwest\":{\"lat\":60.733007,\"lng\":-150.420615},\"northeast\":{\"lat\":61.483938,\"lng\":-148.462396}}},\"formatted_address\":\"Anchorage, Alaska, United States\",\"types\":[\"locality\",\"political\"],\"address_components\":[{\"long_name\":\"Anchorage\",\"short_name\":\"Anchorage\",\"types\":[\"locality\",\"political\"]}]}]}"
+}

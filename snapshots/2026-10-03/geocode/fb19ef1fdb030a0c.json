@@ -1,0 +1,8 @@
+{
+  "key": "GET app:/api/geocode?q=Jakarta",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json"
+  },
+  "body": "{\"status\":\"OK\",\"results\":[{\"geometry\":{\"location\":{\"lat\":-6.1754049,\"lng\":106.827168},\"bounds\":{\"southwest\":{\"lat\":-6.3744575,\"lng\":106.3146732},\"northeast\":{\"lat\":-4.9993635,\"lng\":106.973975}},\"viewport\":{\"southwest\":{\"lat\":-6.3744575,\"lng\":106.3146732},\"northeast\":{\"lat\":-4.9993635,\"lng\":106.973975}}},\"formatted_address\":\"Special Capital Region of Jakarta, Indonesia\",\"types\":[\"locality\",\"political\"],\"address_components\":[{\"long_name\":\"Special Capital Region of Jakarta\",\"short_name\":\"Special Capital Region of Jakarta\",\"types\":[\"locality\",\"political\"]}]}]}"
+}

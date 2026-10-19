@@ -1,0 +1,266 @@
+{
+  "schema": 1,
+  "id": "2026-10-03",
+  "recorded_at": "2026-10-03T18:57:18.951Z",
+  "clock_ms": 1791053838951,
+  "gev": {
+    "commit": "aa16b7c3b0166a89d8c7a6089e0aff53a22faaee",
+    "version": "0.2.1"
+  },
+  "sources": [
+    {
+      "id": "adsblol",
+      "license": "ODbL 1.0",
+      "terms": "https://www.adsb.lol/docs/open-data/api/"
+    },
+    {
+      "id": "ais",
+      "license": "No data recorded: only God's Eye View's keyless error response",
+      "terms": "https://aisstream.io"
+    },
+    {
+      "id": "cyclones",
+      "license": "U.S. public domain",
+      "terms": "https://www.nhc.noaa.gov/disclaimer.shtml"
+    },
+    {
+      "id": "firms",
+      "license": "No data recorded: only God's Eye View's keyless error response",
+      "terms": "https://www.earthdata.nasa.gov/engage/open-data-services-software-policies/data-information-policy"
+    },
+    {
+      "id": "geocode",
+      "license": "ODbL 1.0",
+      "terms": "https://operations.osmfoundation.org/policies/nominatim/"
+    },
+    {
+      "id": "launches",
+      "license": "The Space Devs terms of use: free to use and share in any form",
+      "terms": "https://github.com/TheSpaceDevs/Tutorials/blob/main/faqs/faq_TSD.md"
+    },
+    {
+      "id": "usgs",
+      "license": "U.S. public domain",
+      "terms": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+    }
+  ],
+  "entries": [
+    {
+      "key": "GET app:/api/adsblol/mil",
+      "source": "adsblol",
+      "file": "adsblol/05edb6869b18c13b.json",
+      "status": 200,
+      "sha256": "dd1905dd253f160f74bf33c0d384141377cbcf39f4c05cd68d56fab31a654cb7"
+    },
+    {
+      "key": "GET app:/api/ais-live?maxRows=1000000",
+      "source": "ais",
+      "file": "ais/2618e39a70157b90.json",
+      "status": 503,
+      "sha256": "9a2a0d586454793b2eae72dfd5ebdac2cd315816a0053e9b2fb0e6f5a825532e"
+    },
+    {
+      "key": "GET app:/api/cyclones",
+      "source": "cyclones",
+      "file": "cyclones/081db62342f59f70.json",
+      "status": 200,
+      "sha256": "6eac7019dc3a7899a6b53d0668ed4ac48bb0aa3b52ad941f31ac6499f38a71f1"
+    },
+    {
+      "key": "GET app:/api/firms",
+      "source": "firms",
+      "file": "firms/fbae73187f64cb0d.json",
+      "status": 503,
+      "sha256": "22d50c1fa6771727e27a751e500b9337322d42260a295ded6c018801400569ed"
+    },
+    {
+      "key": "GET app:/api/geocode?q=Anchorage",
+      "source": "geocode",
+      "file": "geocode/3b9a3c63dbac4d7a.json",
+      "status": 200,
+      "sha256": "56d0c67e069863014311a9ac844e8ab7446dcc1138d2d698adbd68c7efb40ccd"
+    },
+    {
+      "key": "GET app:/api/geocode?q=Ashburn%2C+Virginia",
+      "source": "geocode",
+      "file": "geocode/f3f9550e49244901.json",
+      "status": 200,
+      "sha256": "0c07c459a5ef8d5c26c4f911b47ddbb027b3c7d34b05bf6fb8efef33dd8feb45"
+    },
+    {
+      "key": "GET app:/api/geocode?q=Athens",
+      "source": "geocode",
+      "file": "geocode/fa023db9222156a6.json",
+      "status": 200,
+      "sha256": "3cc6e79ea49a168449bcd0e8877cc4252df13b1805ab03e76cd11f865f958bf4"
+    },
+    {
+      "key": "GET app:/api/geocode?q=Dallas",
+      "source": "geocode",
+      "file": "geocode/0ca8d42374378f46.json",
+      "status": 200,
+      "sha256": "f4d97341f9dad5b356b08d4dfe98d2568f8c929a7a614cb502666376b9507c29"
+    },
+    {
+      "key": "GET app:/api/geocode?q=Frankfurt",
+      "source": "geocode",
+      "file": "geocode/d8df8fa59a4aa1f8.json",
+      "status": 200,
+      "sha256": "31d943286d60fa0f1b8404d60c91fc94db1ab4797acc0f82be46f7e12543f5c2"
+    },
+    {
+      "key": "GET app:/api/geocode?q=Hag%C3%A5t%C3%B1a%2C+Guam",
+      "source": "geocode",
+      "file": "geocode/7319c06e49676d66.json",
+      "status": 200,
+      "sha256": "60f9a0844d885378d7932f1e3ac1f541bcfd43079318155acfd59843c8ac3e23"
+    },
+    {
+      "key": "GET app:/api/geocode?q=Honolulu",
+      "source": "geocode",
+      "file": "geocode/27bebc67dcf19f04.json",
+      "status": 200,
+      "sha256": "cedd9874475dab898c07c76ce6a4586410f191f797f45aaef39deb99c1c485a1"
+    },
+    {
+      "key": "GET app:/api/geocode?q=Istanbul",
+      "source": "geocode",
+      "file": "geocode/1ec39319853bc35f.json",
+      "status": 200,
+      "sha256": "327e391015dccd4599c533938cc6c06879673cd92461db3ea2b0bee88bcc6619"
+    },
+    {
+      "key": "GET app:/api/geocode?q=Jakarta",
+      "source": "geocode",
+      "file": "geocode/fb19ef1fdb030a0c.json",
+      "status": 200,
+      "sha256": "86b9c81f5c70f0ad9095c4762ff0206b8304848c8d81aabd61ccd0103a544515"
+    },
+    {
+      "key": "GET app:/api/geocode?q=Kaiserslautern",
+      "source": "geocode",
+      "file": "geocode/7fff30196b132b49.json",
+      "status": 200,
+      "sha256": "6601757f2cf27066ef7930288b8cea473de03986b9e6aaaa7fb4e1cff51554b6"
+    },
+    {
+      "key": "GET app:/api/geocode?q=Lima",
+      "source": "geocode",
+      "file": "geocode/49ba32173625a940.json",
+      "status": 200,
+      "sha256": "6859acf14c5b066bdcd6b1facfe1316bc46d63c7c535edc47a8e72c884a3b84b"
+    },
+    {
+      "key": "GET app:/api/geocode?q=Los+Angeles",
+      "source": "geocode",
+      "file": "geocode/e54fd8f42e6ae716.json",
+      "status": 200,
+      "sha256": "6dcdd75146d835f2b71d1efd21bfe0f78d4f9cb58485e16e34bf4b804386f74c"
+    },
+    {
+      "key": "GET app:/api/geocode?q=Manila",
+      "source": "geocode",
+      "file": "geocode/e3dae50bf5ef4470.json",
+      "status": 200,
+      "sha256": "e2c87879962e16ebac06a9cc708c1d1e957fb2bccd56259aa60c91e6003237c2"
+    },
+    {
+      "key": "GET app:/api/geocode?q=Mexico+City",
+      "source": "geocode",
+      "file": "geocode/069ec3f420e5d2d4.json",
+      "status": 200,
+      "sha256": "74e9678a44abd1d87bc9d88772848a2a77140f9bc526b347f577d8d744486c2b"
+    },
+    {
+      "key": "GET app:/api/geocode?q=Miami",
+      "source": "geocode",
+      "file": "geocode/33637da7ce10f8dd.json",
+      "status": 200,
+      "sha256": "8366f4ef007c9710e41954d8b4f8ebea9a7320adb584db02d8d5a1940cb52e9c"
+    },
+    {
+      "key": "GET app:/api/geocode?q=Naha%2C+Okinawa",
+      "source": "geocode",
+      "file": "geocode/d026cfa0e46f1c6e.json",
+      "status": 200,
+      "sha256": "3d5778991502ca70a240713723b70cf6d29789d76c494a54c5d9a67fa2f45bd0"
+    },
+    {
+      "key": "GET app:/api/geocode?q=Norfolk%2C+Virginia",
+      "source": "geocode",
+      "file": "geocode/6c41f7b203f04164.json",
+      "status": 200,
+      "sha256": "3f2357abce73a2da580b5d9b5e1ac239be716e61ef4c43a5ec60838929bb68e6"
+    },
+    {
+      "key": "GET app:/api/geocode?q=Reykjavik",
+      "source": "geocode",
+      "file": "geocode/27665688853674f0.json",
+      "status": 200,
+      "sha256": "c12bd77b5b75d53096976fdb6b30165f77b5af3f70f5f2cf6eab526bab4c84f9"
+    },
+    {
+      "key": "GET app:/api/geocode?q=San+Diego",
+      "source": "geocode",
+      "file": "geocode/14a8ebef16c7e911.json",
+      "status": 200,
+      "sha256": "0e501c6def5aa9050fec8c0c3fea1a117fda42ba4bd53b5f07a2f9b076ab7655"
+    },
+    {
+      "key": "GET app:/api/geocode?q=Santiago%2C+Chile",
+      "source": "geocode",
+      "file": "geocode/d9991a922abf8e74.json",
+      "status": 200,
+      "sha256": "fe5fb23ecc09ddd8a91a344390adc3b26193b3738864a6cfde79420ea8cf16e3"
+    },
+    {
+      "key": "GET app:/api/geocode?q=Seattle",
+      "source": "geocode",
+      "file": "geocode/b0a833ae3cc158eb.json",
+      "status": 200,
+      "sha256": "0aadccf088fd03ccc364336ced9474c3ef3de3bbb34ffbcb1944a91d889b1942"
+    },
+    {
+      "key": "GET app:/api/geocode?q=Singapore",
+      "source": "geocode",
+      "file": "geocode/1904023c51198c48.json",
+      "status": 200,
+      "sha256": "8cc05266ba3c1b1752fc449a1abebd5a8edd503cfcad86a62fd1ef8cb7bb2c58"
+    },
+    {
+      "key": "GET app:/api/geocode?q=Tokyo",
+      "source": "geocode",
+      "file": "geocode/4081995106508153.json",
+      "status": 200,
+      "sha256": "a86e795aa9928fb1c5713dbd194f767c161553f4e8173bb3fa0efdaeb94ebe2f"
+    },
+    {
+      "key": "GET app:/api/geocode?q=Washington%2C+D.C.",
+      "source": "geocode",
+      "file": "geocode/b2b089eb309a19fd.json",
+      "status": 200,
+      "sha256": "cff90485f6ccaa1b254c0835ebb7032146603951558ca548af3fed7c436e96f1"
+    },
+    {
+      "key": "GET app:/api/geocode?q=Wellington",
+      "source": "geocode",
+      "file": "geocode/f88879699b442568.json",
+      "status": 200,
+      "sha256": "a3ef6490443a50b8d4dd27398d9eb01142c5266b7d76a46af9361d2ecb42fa45"
+    },
+    {
+      "key": "GET app:/api/launches",
+      "source": "launches",
+      "file": "launches/9e23f10475f514d0.json",
+      "status": 200,
+      "sha256": "88f6dd1291a6cc6fab750e8a53fa04c39cca85451c9cc64faa4bca283e2e1f75"
+    },
+    {
+      "key": "GET https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson",
+      "source": "usgs",
+      "file": "usgs/287ee14efb35e65d.json",
+      "status": 200,
+      "sha256": "d48e10ec0cd9afb10ab4a5c5b8230dca56f80737dbeb3cc6478c9a34b2ce471f"
+    }
+  ]
+}

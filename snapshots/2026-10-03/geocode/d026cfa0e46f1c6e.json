@@ -1,0 +1,8 @@
+{
+  "key": "GET app:/api/geocode?q=Naha%2C+Okinawa",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json"
+  },
+  "body": "{\"status\":\"OK\",\"results\":[{\"geometry\":{\"location\":{\"lat\":26.2122345,\"lng\":127.6791452},\"bounds\":{\"southwest\":{\"lat\":26.176419,\"lng\":127.560305},\"northeast\":{\"lat\":26.2552228,\"lng\":127.738662}},\"viewport\":{\"southwest\":{\"lat\":26.176419,\"lng\":127.560305},\"northeast\":{\"lat\":26.2552228,\"lng\":127.738662}}},\"formatted_address\":\"Naha, Okinawa Prefecture, 900-8585, Japan\",\"types\":[\"locality\",\"political\"],\"address_components\":[{\"long_name\":\"Naha\",\"short_name\":\"Naha\",\"types\":[\"locality\",\"political\"]}]}]}"
+}

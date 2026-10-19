@@ -1,0 +1,68 @@
+{
+  "checked": "2026-10-03",
+  "sources": [
+    {
+      "id": "usgs",
+      "name": "USGS Earthquake Hazards Program",
+      "prefixes": ["https://earthquake.usgs.gov/"],
+      "record": "all",
+      "license": "U.S. public domain",
+      "terms": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+      "credit": "Data courtesy of the U.S. Geological Survey."
+    },
+    {
+      "id": "cyclones",
+      "name": "NOAA National Hurricane Center and Central Pacific Hurricane Center, as served by God's Eye View",
+      "prefixes": ["app:/api/cyclones"],
+      "record": "all",
+      "license": "U.S. public domain",
+      "terms": "https://www.nhc.noaa.gov/disclaimer.shtml",
+      "credit": "NOAA/NWS National Hurricane Center and Central Pacific Hurricane Center. This recording is God's Eye View's normalised copy, kept for benchmarking; it is not official NOAA material and must not be used for decisions."
+    },
+    {
+      "id": "launches",
+      "name": "Launch Library 2 by The Space Devs, as served by God's Eye View",
+      "prefixes": ["app:/api/launches"],
+      "record": "all",
+      "license": "The Space Devs terms of use: free to use and share in any form",
+      "terms": "https://github.com/TheSpaceDevs/Tutorials/blob/main/faqs/faq_TSD.md",
+      "credit": "Launch Library 2, The Space Devs (thespacedevs.com). Shared here as part of a benchmark, with questions and scoring built on it."
+    },
+    {
+      "id": "adsblol",
+      "name": "adsb.lol military aircraft, as served by God's Eye View",
+      "prefixes": ["app:/api/adsblol/mil"],
+      "record": "all",
+      "license": "ODbL 1.0",
+      "terms": "https://www.adsb.lol/docs/open-data/api/",
+      "credit": "adsb.lol contributors. This data is made available under the Open Database License (ODbL 1.0): https://opendatacommons.org/licenses/odbl/1-0/"
+    },
+    {
+      "id": "geocode",
+      "name": "OpenStreetMap Nominatim place search, as served by God's Eye View",
+      "prefixes": ["app:/api/geocode"],
+      "record": "all",
+      "license": "ODbL 1.0",
+      "terms": "https://operations.osmfoundation.org/policies/nominatim/",
+      "credit": "© OpenStreetMap contributors. This data is made available under the Open Database License (ODbL 1.0): https://www.openstreetmap.org/copyright"
+    },
+    {
+      "id": "firms",
+      "name": "NASA FIRMS active fires (keyless error response only)",
+      "prefixes": ["app:/api/firms"],
+      "record": "errors",
+      "license": "No data recorded: only God's Eye View's keyless error response",
+      "terms": "https://www.earthdata.nasa.gov/engage/open-data-services-software-policies/data-information-policy",
+      "credit": "No NASA data is stored here."
+    },
+    {
+      "id": "ais",
+      "name": "AISStream vessels (keyless error response only)",
+      "prefixes": ["app:/api/ais-live"],
+      "record": "errors",
+      "license": "No data recorded: only God's Eye View's keyless error response",
+      "terms": "https://aisstream.io",
+      "credit": "No vessel data is stored here."
+    }
+  ]
+}

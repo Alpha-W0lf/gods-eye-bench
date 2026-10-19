@@ -1,0 +1,17 @@
+node_modules/
+# The pinned God's Eye View checkout that `geb setup` creates.
+.gev/
+# Held-out questions and their logs never leave this machine (ADR 0007).
+questions/*.heldout.json
+runs/**/heldout/
+.env
+.env.*
+*.log
+.DS_Store
+# Local-only recordings of sources that may not be redistributed (ADR 0006).
+snapshots/*/local/
+# Trial logs of a run still in progress, and a log write cut short by a crash.
+runs/**/trials.partial.jsonl
+runs/**/*.tmp
+# Local-only work, such as superseded partial logs kept rather than deleted.
+.local/

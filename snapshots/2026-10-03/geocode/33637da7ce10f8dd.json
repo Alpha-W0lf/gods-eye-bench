@@ -1,0 +1,8 @@
+{
+  "key": "GET app:/api/geocode?q=Miami",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json"
+  },
+  "body": "{\"status\":\"OK\",\"results\":[{\"geometry\":{\"location\":{\"lat\":25.7741566,\"lng\":-80.1935973},\"bounds\":{\"southwest\":{\"lat\":25.7090517,\"lng\":-80.31976},\"northeast\":{\"lat\":25.8557827,\"lng\":-80.139157}},\"viewport\":{\"southwest\":{\"lat\":25.7090517,\"lng\":-80.31976},\"northeast\":{\"lat\":25.8557827,\"lng\":-80.139157}}},\"formatted_address\":\"Miami, Miami-Dade County, Florida, United States\",\"types\":[\"locality\",\"political\"],\"address_components\":[{\"long_name\":\"Miami\",\"short_name\":\"Miami\",\"types\":[\"locality\",\"political\"]}]}]}"
+}

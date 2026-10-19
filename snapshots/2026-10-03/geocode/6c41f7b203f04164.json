@@ -1,0 +1,8 @@
+{
+  "key": "GET app:/api/geocode?q=Norfolk%2C+Virginia",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json"
+  },
+  "body": "{\"status\":\"OK\",\"results\":[{\"geometry\":{\"location\":{\"lat\":36.8493695,\"lng\":-76.2899539},\"bounds\":{\"southwest\":{\"lat\":36.8207991,\"lng\":-76.3448722},\"northeast\":{\"lat\":36.9697231,\"lng\":-76.1767248}},\"viewport\":{\"southwest\":{\"lat\":36.8207991,\"lng\":-76.3448722},\"northeast\":{\"lat\":36.9697231,\"lng\":-76.1767248}}},\"formatted_address\":\"Norfolk, Virginia, United States\",\"types\":[\"locality\",\"political\"],\"address_components\":[{\"long_name\":\"Norfolk\",\"short_name\":\"Norfolk\",\"types\":[\"locality\",\"political\"]}]}]}"
+}

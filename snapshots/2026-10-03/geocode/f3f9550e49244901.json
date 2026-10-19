@@ -1,0 +1,8 @@
+{
+  "key": "GET app:/api/geocode?q=Ashburn%2C+Virginia",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json"
+  },
+  "body": "{\"status\":\"OK\",\"results\":[{\"geometry\":{\"location\":{\"lat\":39.029784,\"lng\":-77.4744148},\"bounds\":{\"southwest\":{\"lat\":38.988151,\"lng\":-77.52292},\"northeast\":{\"lat\":39.071446,\"lng\":-77.43125}},\"viewport\":{\"southwest\":{\"lat\":38.988151,\"lng\":-77.52292},\"northeast\":{\"lat\":39.071446,\"lng\":-77.43125}}},\"formatted_address\":\"Ashburn, Loudoun County, Virginia, United States\",\"types\":[\"point_of_interest\",\"establishment\"],\"address_components\":[{\"long_name\":\"Ashburn\",\"short_name\":\"Ashburn\",\"types\":[\"point_of_interest\",\"establishment\"]}]}]}"
+}

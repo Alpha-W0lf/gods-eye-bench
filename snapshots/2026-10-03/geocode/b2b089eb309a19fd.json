@@ -1,0 +1,8 @@
+{
+  "key": "GET app:/api/geocode?q=Washington%2C+D.C.",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json"
+  },
+  "body": "{\"status\":\"OK\",\"results\":[{\"geometry\":{\"location\":{\"lat\":38.8950982,\"lng\":-77.0363849},\"bounds\":{\"southwest\":{\"lat\":38.7916303,\"lng\":-77.1197949},\"northeast\":{\"lat\":38.995968,\"lng\":-76.909366}},\"viewport\":{\"southwest\":{\"lat\":38.7916303,\"lng\":-77.1197949},\"northeast\":{\"lat\":38.995968,\"lng\":-76.909366}}},\"formatted_address\":\"Washington, District of Columbia, United States\",\"types\":[\"locality\",\"political\"],\"address_components\":[{\"long_name\":\"Washington\",\"short_name\":\"Washington\",\"types\":[\"locality\",\"political\"]}]}]}"
+}

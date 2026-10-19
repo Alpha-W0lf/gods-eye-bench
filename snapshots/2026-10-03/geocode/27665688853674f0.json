@@ -1,0 +1,8 @@
+{
+  "key": "GET app:/api/geocode?q=Reykjavik",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json"
+  },
+  "body": "{\"status\":\"OK\",\"results\":[{\"geometry\":{\"location\":{\"lat\":64.145981,\"lng\":-21.9422367},\"bounds\":{\"southwest\":{\"lat\":64.0404021,\"lng\":-21.9838299},\"northeast\":{\"lat\":64.3153711,\"lng\":-21.4019991}},\"viewport\":{\"southwest\":{\"lat\":64.0404021,\"lng\":-21.9838299},\"northeast\":{\"lat\":64.3153711,\"lng\":-21.4019991}}},\"formatted_address\":\"Reykjavik, Capital Region, Iceland\",\"types\":[\"locality\",\"political\"],\"address_components\":[{\"long_name\":\"Reykjavik\",\"short_name\":\"Reykjavik\",\"types\":[\"locality\",\"political\"]}]}]}"
+}

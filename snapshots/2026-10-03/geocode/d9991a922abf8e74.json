@@ -1,0 +1,8 @@
+{
+  "key": "GET app:/api/geocode?q=Santiago%2C+Chile",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json"
+  },
+  "body": "{\"status\":\"OK\",\"results\":[{\"geometry\":{\"location\":{\"lat\":-33.4376995,\"lng\":-70.6510671},\"bounds\":{\"southwest\":{\"lat\":-33.5976995,\"lng\":-70.8110671},\"northeast\":{\"lat\":-33.2776995,\"lng\":-70.4910671}},\"viewport\":{\"southwest\":{\"lat\":-33.5976995,\"lng\":-70.8110671},\"northeast\":{\"lat\":-33.2776995,\"lng\":-70.4910671}}},\"formatted_address\":\"Santiago, Provincia de Santiago, Santiago Metropolitan Region, 8320000, Chile\",\"types\":[\"locality\",\"political\"],\"address_components\":[{\"long_name\":\"Santiago\",\"short_name\":\"Santiago\",\"types\":[\"locality\",\"political\"]}]}]}"
+}

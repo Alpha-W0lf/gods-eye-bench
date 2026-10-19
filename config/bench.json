@@ -1,0 +1,11 @@
+{
+  "gev": {
+    "repository": "https://github.com/bilawalsidhu/gods-eye-view.git",
+    "commit": "aa16b7c3b0166a89d8c7a6089e0aff53a22faaee",
+    "version": "0.2.1"
+  },
+  "snapshot": "2026-10-03",
+  "trials": 3,
+  "trialTimeoutMs": 300000,
+  "concurrency": 3
+}

@@ -1,0 +1,8 @@
+{
+  "key": "GET app:/api/ais-live?maxRows=1000000",
+  "status": 503,
+  "headers": {
+    "content-type": "application/json; charset=utf-8"
+  },
+  "body": "{\"rows\":[],\"source\":\"AISStream\",\"status\":\"missing-key\",\"error\":\"AISSTREAM_API_KEY is not set\",\"refreshing\":true,\"newestPositionAt\":null,\"lastMessageAt\":null,\"silentForMs\":null,\"reconnectAttempt\":0,\"nextAttemptAt\":null,\"staleAfterMs\":120000,\"watchdog\":\"armed\"}"
+}

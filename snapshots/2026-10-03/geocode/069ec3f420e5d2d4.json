@@ -1,0 +1,8 @@
+{
+  "key": "GET app:/api/geocode?q=Mexico+City",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json"
+  },
+  "body": "{\"status\":\"OK\",\"results\":[{\"geometry\":{\"location\":{\"lat\":19.3207722,\"lng\":-99.1514678},\"bounds\":{\"southwest\":{\"lat\":19.0487187,\"lng\":-99.3649242},\"northeast\":{\"lat\":19.5927573,\"lng\":-98.9403028}},\"viewport\":{\"southwest\":{\"lat\":19.0487187,\"lng\":-99.3649242},\"northeast\":{\"lat\":19.5927573,\"lng\":-98.9403028}}},\"formatted_address\":\"Mexico City, Mexico\",\"types\":[\"administrative_area_level_1\",\"political\"],\"address_components\":[{\"long_name\":\"Mexico City\",\"short_name\":\"Mexico City\",\"types\":[\"administrative_area_level_1\",\"political\"]}]}]}"
+}

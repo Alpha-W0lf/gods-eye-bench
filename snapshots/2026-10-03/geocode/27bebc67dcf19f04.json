@@ -1,0 +1,8 @@
+{
+  "key": "GET app:/api/geocode?q=Honolulu",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json"
+  },
+  "body": "{\"status\":\"OK\",\"results\":[{\"geometry\":{\"location\":{\"lat\":21.304547,\"lng\":-157.855676},\"bounds\":{\"southwest\":{\"lat\":21.2548159,\"lng\":-157.9503569},\"northeast\":{\"lat\":21.4021936,\"lng\":-157.6486277}},\"viewport\":{\"southwest\":{\"lat\":21.2548159,\"lng\":-157.9503569},\"northeast\":{\"lat\":21.4021936,\"lng\":-157.6486277}}},\"formatted_address\":\"Honolulu, Honolulu County, Hawaii, United States\",\"types\":[\"locality\",\"political\"],\"address_components\":[{\"long_name\":\"Honolulu\",\"short_name\":\"Honolulu\",\"types\":[\"locality\",\"political\"]}]}]}"
+}

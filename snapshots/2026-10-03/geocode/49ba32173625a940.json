@@ -1,0 +1,8 @@
+{
+  "key": "GET app:/api/geocode?q=Lima",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json"
+  },
+  "body": "{\"status\":\"OK\",\"results\":[{\"geometry\":{\"location\":{\"lat\":-12.0459808,\"lng\":-77.0305912},\"bounds\":{\"southwest\":{\"lat\":-12.2059808,\"lng\":-77.1905912},\"northeast\":{\"lat\":-11.8859808,\"lng\":-76.8705912}},\"viewport\":{\"southwest\":{\"lat\":-12.2059808,\"lng\":-77.1905912},\"northeast\":{\"lat\":-11.8859808,\"lng\":-76.8705912}}},\"formatted_address\":\"Lima, Province of Lima, Lima Metropolitan Area, Lima, 15001, Peru\",\"types\":[\"locality\",\"political\"],\"address_components\":[{\"long_name\":\"Lima\",\"short_name\":\"Lima\",\"types\":[\"locality\",\"political\"]}]}]}"
+}
