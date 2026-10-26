@@ -203,3 +203,16 @@ rescanned. What changed:
 - The format check covers `src/questions/` (an unanchored ignore rule had
   skipped it); nine unused template lists are gone; the details table says
   "tokens", not "cost"; setup says `nvm install`.
+
+## TypeScript, first step (2026-10-26)
+
+`src/server.ts` runs under Node 24's type stripping. A fresh review passed
+it, and its notes changed this:
+
+- The CHANGELOG says lint reads `.ts` files only while they hold no type
+  syntax; the TypeScript parser comes with the first types.
+- The rename commit (59d54c4) fails the tests on its own, since `run.js`
+  still named the old path until the next commit. Git tracks the combined
+  change as a rename, so later steps keep the rename and the fixes in one
+  commit.
+- No published number moved.

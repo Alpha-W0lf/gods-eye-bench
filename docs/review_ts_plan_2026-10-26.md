@@ -25,9 +25,9 @@
 **Node type stripping.**
 
 - Node on PATH is 22.17.0. `.nvmrc` pins 24.14.0 (per the plan, not installed), and `engines` in package.json requires 24.14 or newer.
-- Whether 22.17 or 24.14 strips types without a flag is Unverified.
+- Result (2026-10-26, first step): 24.14.0 loads `src/server.ts` with no flag and no warning; 22.17 fails (unknown extension), and with `--experimental-strip-types` prints an `ExperimentalWarning`. A test in `src/server.test.mjs` requires an empty stderr.
 - Run all baselines on the pinned 24.14.0, not the default 22.
-- Whether `run.js` captures a spawned server's stderr into logs is Unknown. If it does, an `ExperimentalWarning` could land in evidence files.
+- Result: `run.js` does not capture the server's stderr (`connectMcp` ignores it); Claude Code and Cursor spawn it themselves and may surface it, which the empty-stderr test covers.
 
 **Spawn and import paths.** The plan names `src/run.js:86`, `src/server.test.mjs:16`, `src/gev.js:66` and `src/report.js:134`. None of those source files were given, so the line numbers are Unverified.
 
