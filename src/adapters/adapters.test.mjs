@@ -246,6 +246,13 @@ test('rate-limit waits move the trial deadline and are not counted as time', asy
       response.end('[{"error":{"code":500,"status":"INTERNAL"}}]');
       return;
     }
+    if (count === 3) {
+      // Anthropic's API answers 529 when it is overloaded.
+      response.statusCode = 529;
+      response.setHeader('retry-after', '1');
+      response.end('{"type":"error","error":{"type":"overloaded_error"}}');
+      return;
+    }
     response.end(
       JSON.stringify({
         choices: [
@@ -274,11 +281,11 @@ test('rate-limit waits move the trial deadline and are not counted as time', asy
         tracePath: path.join(dir, 't.jsonl'),
       }),
     });
-    assert.deepEqual(extended, [1000, 1000]);
-    assert.equal(outcome.usage.rate_limit_wait_ms, 2000);
+    assert.deepEqual(extended, [1000, 1000, 1000]);
+    assert.equal(outcome.usage.rate_limit_wait_ms, 3000);
     // The agent's time is the wall time less the waits, whatever the load.
     const wall = performance.now() - started;
-    assert.ok(outcome.durationMs <= wall - 2000 + 50);
+    assert.ok(outcome.durationMs <= wall - 3000 + 50);
   } finally {
     server.close();
     rmSync(dir, { recursive: true, force: true });

@@ -228,3 +228,19 @@ CI. A fresh review passed it; its notes changed this:
   `Boolean(result)`; they differ only for a falsy non-object result, which
   JSON-RPC does not send.
 - No published number moved.
+
+## Claude models through the thin runner (2026-10-26)
+
+Four Anthropic API entries let the thin runner run the Claude models
+already run in Claude Code (plan v0.3 item 1), and 529 ("overloaded") is
+retried. A fresh review passed it; its notes changed this:
+
+- The entries set the 2-minute provider-stall limit, as the Gemini API ones
+  do, so an endpoint that holds a request open is not scored as a model
+  timeout.
+- The plan says the entries are configured but not yet tested against the
+  endpoint, and gives an estimated cost per run, since these are the first
+  entries billed per token.
+- The key reaches only Anthropic's endpoint: `cleanEnv()` keeps it from
+  Claude Code and every other child process.
+- No published number moved.

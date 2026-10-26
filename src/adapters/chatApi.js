@@ -12,8 +12,11 @@ import { trialError } from '../trials.js';
 /** Tries per request before a rate limit or outage becomes a harness error. */
 export const MAX_REQUEST_TRIES = 6;
 
-/** Rate limits and transient server faults, retried with backoff. */
-export const RETRIED_STATUSES = [429, 500, 502, 503, 504];
+/**
+ * Rate limits and transient server faults, retried with backoff. 529 is
+ * Anthropic's "overloaded".
+ */
+export const RETRIED_STATUSES = [429, 500, 502, 503, 504, 529];
 
 /** The chat API's base URL for an entry, without a trailing slash. */
 export function baseUrl(endpoint) {
