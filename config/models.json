@@ -183,6 +183,38 @@
       "requestTimeoutMs": 120000
     },
     {
+      "adapter": "openai-compatible",
+      "model": "claude-fable-5-1",
+      "label": "Thin runner + Claude Fable 5.1 (Anthropic API)",
+      "endpoint": "https://api.anthropic.com/v1",
+      "apiKeyEnv": "ANTHROPIC_API_KEY",
+      "concurrency": 3
+    },
+    {
+      "adapter": "openai-compatible",
+      "model": "claude-opus-5-5",
+      "label": "Thin runner + Claude Opus 5.5 (Anthropic API)",
+      "endpoint": "https://api.anthropic.com/v1",
+      "apiKeyEnv": "ANTHROPIC_API_KEY",
+      "concurrency": 3
+    },
+    {
+      "adapter": "openai-compatible",
+      "model": "claude-sonnet-5-5",
+      "label": "Thin runner + Claude Sonnet 5.5 (Anthropic API)",
+      "endpoint": "https://api.anthropic.com/v1",
+      "apiKeyEnv": "ANTHROPIC_API_KEY",
+      "concurrency": 3
+    },
+    {
+      "adapter": "openai-compatible",
+      "model": "claude-haiku-4-5",
+      "label": "Thin runner + Claude Haiku 4.5 (Anthropic API)",
+      "endpoint": "https://api.anthropic.com/v1",
+      "apiKeyEnv": "ANTHROPIC_API_KEY",
+      "concurrency": 3
+    },
+    {
       "adapter": "reference",
       "model": "reference",
       "label": "Reference agent (scripted, no model)",

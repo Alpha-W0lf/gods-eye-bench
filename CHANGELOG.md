@@ -8,6 +8,11 @@ From a public-release audit; details in `docs/reviews.md`.
   to TypeScript. Node 24 runs it with no flag or warning (tested), and
   `npm run check` and CI type-check it strictly (`npm run typecheck`, TypeScript
   6.0.3) and lint it with typescript-eslint. No published number moved.
+- **Added: Claude models through the thin runner,** over Anthropic's
+  OpenAI-compatible endpoint, so the same model can be compared in Claude
+  Code and in a plain tool loop. The thin runner now retries Anthropic's
+  "overloaded" reply (HTTP 529) like other server faults (tested). Not run
+  yet; no published number moved.
 - **Changed: `geb record` spaces its calls 1.1 s apart.** God's Eye View
   already spaces its Nominatim requests; the recorder now does the same for
   every call, as a second safeguard (tested).

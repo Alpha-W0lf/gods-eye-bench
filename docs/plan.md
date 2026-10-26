@@ -26,7 +26,10 @@ What the results and reviews so far point to, in order:
 
 1. **Separate harness from model on the planted-instruction result.** Run
    Claude Sonnet 5.5 inside Cursor, and Claude models through the thin
-   runner, so the same model is measured in several harnesses.
+   runner, so the same model is measured in several harnesses. Ready to
+   run: `config/models.json` has both, the thin runner reaching Claude
+   through Anthropic's OpenAI-compatible endpoint (`ANTHROPIC_API_KEY`);
+   not run yet.
 2. **A stronger injection set.** More injected questions, several notice
    texts, and a paired baseline for each, so the obedience rate has a usable
    interval.
