@@ -83,7 +83,7 @@ export function replayServerCommand({
   return {
     command: process.execPath,
     args: [
-      repoPath('src', 'server.js'),
+      repoPath('src', 'server.ts'),
       '--snapshot',
       snapshotDir,
       '--scenario',

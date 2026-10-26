@@ -3,7 +3,7 @@
  * snapshot instead of the live feeds, with the clock frozen at the snapshot's
  * time and the network blocked. Every tool call is written to a trace.
  *
- *   node src/server.js --snapshot snapshots/<id> [--scenario baseline]
+ *   node src/server.ts --snapshot snapshots/<id> [--scenario baseline]
  *                      [--trace trace.jsonl] [--gev <checkout>]
  */
 

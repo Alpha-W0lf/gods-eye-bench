@@ -39,7 +39,7 @@ code can check, and keep every raw log. Decisions and their alternatives are in
 | `config/models.json`  | The model matrix: adapter, model id, display label, concurrency and time limits per entry, plus endpoint and key variable for the thin runner                                |
 | `src/gev.js`          | Finds the pinned God's Eye View checkout and imports its modules                                                                                                             |
 | `src/snapshot/`       | Request keys, the snapshot store and checksums, the recording fetch, the replay fetch, scenarios and the frozen clock                                                        |
-| `src/server.js`       | The replay MCP server: God's Eye View's `createLocalMcpServer` over the replay fetch, served over stdio by its `serveStdio`, with a trace of every tool call                 |
+| `src/server.ts`       | The replay MCP server: God's Eye View's `createLocalMcpServer` over the replay fetch, served over stdio by its `serveStdio`, with a trace of every tool call                 |
 | `src/world/`          | Independent parsers that turn recorded responses into plain records for ground truth                                                                                         |
 | `src/questions/`      | Question templates per domain, the seeded generator, and the reference tool-call plan for each question                                                                      |
 | `src/prompt.js`       | The one task prompt every harness receives, and its version                                                                                                                  |
