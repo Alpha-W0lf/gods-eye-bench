@@ -11,8 +11,8 @@ From a public-release audit; details in `docs/reviews.md`.
 - **Added: Claude models through the thin runner,** over Anthropic's
   OpenAI-compatible endpoint, so the same model can be compared in Claude
   Code and in a plain tool loop. The thin runner now retries Anthropic's
-  "overloaded" reply (HTTP 529) like other server faults (tested). Not run
-  yet; no published number moved.
+  "overloaded" reply (HTTP 529) like other server faults (tested). No
+  published number moved.
 - **Changed: `geb record` spaces its calls 1.1 s apart.** God's Eye View
   already spaces its Nominatim requests; the recorder now does the same for
   every call, as a second safeguard (tested).

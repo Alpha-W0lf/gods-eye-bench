@@ -1,5 +1,5 @@
 {
-  "note": "Every model `geb bench` runs, including ones not run yet (the README lists what is tested). Labels name the harness and the model. Concurrency is per entry; local models get a 10-minute trial limit (timeoutMs) so a laptop's speed is not scored as the model's. Gemini API entries run one trial at a time on a daily request quota, and a request with no reply in 2 minutes counts as a provider stall (retried, not the agent's time); a used-up daily quota stops a run until the next day.",
+  "note": "Every model `geb bench` runs, including ones not run yet (the README lists what is tested). Labels name the harness and the model. Concurrency is per entry; local models get a 10-minute trial limit (timeoutMs) so a laptop's speed is not scored as the model's. Gemini API entries run one trial at a time on a daily request quota. On hosted APIs (Gemini, Anthropic) a request with no reply in 2 minutes counts as a provider stall (retried, not the agent's time); a used-up daily quota stops a run until the next day. Anthropic API entries put the Claude models run in Claude Code through the thin runner, so harness and model can be told apart; they are billed per token, so run them on their own with --match \"Anthropic API\".",
   "models": [
     {
       "adapter": "claude-code",
@@ -188,7 +188,8 @@
       "label": "Thin runner + Claude Fable 5.1 (Anthropic API)",
       "endpoint": "https://api.anthropic.com/v1",
       "apiKeyEnv": "ANTHROPIC_API_KEY",
-      "concurrency": 3
+      "concurrency": 3,
+      "requestTimeoutMs": 120000
     },
     {
       "adapter": "openai-compatible",
@@ -196,7 +197,8 @@
       "label": "Thin runner + Claude Opus 5.5 (Anthropic API)",
       "endpoint": "https://api.anthropic.com/v1",
       "apiKeyEnv": "ANTHROPIC_API_KEY",
-      "concurrency": 3
+      "concurrency": 3,
+      "requestTimeoutMs": 120000
     },
     {
       "adapter": "openai-compatible",
@@ -204,7 +206,8 @@
       "label": "Thin runner + Claude Sonnet 5.5 (Anthropic API)",
       "endpoint": "https://api.anthropic.com/v1",
       "apiKeyEnv": "ANTHROPIC_API_KEY",
-      "concurrency": 3
+      "concurrency": 3,
+      "requestTimeoutMs": 120000
     },
     {
       "adapter": "openai-compatible",
@@ -212,7 +215,8 @@
       "label": "Thin runner + Claude Haiku 4.5 (Anthropic API)",
       "endpoint": "https://api.anthropic.com/v1",
       "apiKeyEnv": "ANTHROPIC_API_KEY",
-      "concurrency": 3
+      "concurrency": 3,
+      "requestTimeoutMs": 120000
     },
     {
       "adapter": "reference",

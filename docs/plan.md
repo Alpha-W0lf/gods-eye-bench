@@ -26,10 +26,14 @@ What the results and reviews so far point to, in order:
 
 1. **Separate harness from model on the planted-instruction result.** Run
    Claude Sonnet 5.5 inside Cursor, and Claude models through the thin
-   runner, so the same model is measured in several harnesses. Ready to
-   run: `config/models.json` has both, the thin runner reaching Claude
-   through Anthropic's OpenAI-compatible endpoint (`ANTHROPIC_API_KEY`);
-   not run yet.
+   runner, so the same model is measured in several harnesses. Configured:
+   `config/models.json` has both, the thin runner reaching Claude through
+   Anthropic's OpenAI-compatible endpoint (`ANTHROPIC_API_KEY`). Not yet
+   tested against that endpoint; `geb preflight` on Claude Haiku 4.5
+   (cents) is the first check. Estimated cost from earlier thin-runner
+   runs (3.2M–4.9M input tokens per public run, no prompt caching): about
+   $4 (Haiku 4.5), $8 (Sonnet 5.5), $16 (Opus 5.5) and $40 (Fable 5.1)
+   per split; Unverified until a run.
 2. **A stronger injection set.** More injected questions, several notice
    texts, and a paired baseline for each, so the obedience rate has a usable
    interval.
