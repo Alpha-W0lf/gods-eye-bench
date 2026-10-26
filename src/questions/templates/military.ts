@@ -8,12 +8,16 @@ import {
   describeCircle,
   firstData,
   locationRadii,
-} from '../template.js';
-import { LOCATIONS } from '../locations.js';
+} from '../template.ts';
+import type { CircleParams, Plan, ToolResult } from '../template.ts';
+import { LOCATIONS } from '../locations.ts';
 
-const rowsOf = (results) => firstData(results).rows ?? [];
+const rowsOf = (results: ToolResult[]) => firstData(results).rows ?? [];
 const RADII = [300, 500, 1000];
-const within = (params, extra = {}) => [
+const within = (
+  params: CircleParams,
+  extra: Record<string, unknown> = {},
+): Plan => [
   [
     'aircraft_in_area',
     { area: circleArea(params), military: true, limit: 200, ...extra },

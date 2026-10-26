@@ -4,17 +4,17 @@ import { test } from 'node:test';
 import { gevDir } from '../gev.js';
 import { questionsPath, snapshotDir } from '../paths.js';
 import { buildPrompt } from '../prompt.js';
-import { stableJson, loadSnapshot } from '../snapshot/store.js';
+import { stableJson, loadSnapshot } from '../snapshot/store.ts';
 import { readInfrastructure } from '../world/infrastructure.js';
-import { QUESTION_PLAN } from './catalog.js';
-import { instanceTruth, questionFile, selectQuestions } from './generate.js';
-import { seededRandom, shuffled } from './rng.js';
-import * as absent from './templates/absent.js';
-import * as cy from './templates/cyclones.js';
-import * as hard from './templates/hard.js';
-import * as eq from './templates/earthquakes.js';
-import * as launch from './templates/launches.js';
-import * as mil from './templates/military.js';
+import { QUESTION_PLAN } from './catalog.ts';
+import { instanceTruth, questionFile, selectQuestions } from './generate.ts';
+import { seededRandom, shuffled } from './rng.ts';
+import * as absent from './templates/absent.ts';
+import * as cy from './templates/cyclones.ts';
+import * as hard from './templates/hard.ts';
+import * as eq from './templates/earthquakes.ts';
+import * as launch from './templates/launches.ts';
+import * as mil from './templates/military.ts';
 
 const event = (id, magnitude, lat, lon, depthKm = 10) => ({
   id,

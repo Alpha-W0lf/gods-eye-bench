@@ -3,7 +3,7 @@
 import { createHash } from 'node:crypto';
 
 /** A seeded generator of floats in [0, 1) (mulberry32 over a hashed seed). */
-export function seededRandom(seed) {
+export function seededRandom(seed: unknown): () => number {
   let state = createHash('sha256')
     .update(String(seed))
     .digest()
@@ -18,7 +18,7 @@ export function seededRandom(seed) {
 }
 
 /** A copy of `items` in a seeded random order (Fisher–Yates). */
-export function shuffled(items, random) {
+export function shuffled<T>(items: readonly T[], random: () => number): T[] {
   const copy = [...items];
   for (let index = copy.length - 1; index > 0; index -= 1) {
     const other = Math.floor(random() * (index + 1));

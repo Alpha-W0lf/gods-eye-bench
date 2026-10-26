@@ -6,8 +6,8 @@
 
 import { performance } from 'node:perf_hooks';
 import { connectMcp } from '../mcpClient.js';
-import { TEMPLATES } from '../questions/catalog.js';
-import { toolStatus } from '../questions/template.js';
+import { TEMPLATES } from '../questions/catalog.ts';
+import { toolStatus } from '../questions/template.ts';
 import { BENCH_VERSION } from '../config.js';
 
 export default {

@@ -6,7 +6,7 @@ import {
   describeCircle,
   firstData,
   locationRadii,
-} from '../template.js';
+} from '../template.ts';
 
 export const fires = defineTemplate({
   id: 'fires-count-within',

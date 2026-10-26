@@ -13,7 +13,7 @@ import { test } from 'node:test';
 import { exportPartial } from './partial.js';
 import { questionsPath } from './paths.js';
 import { readTrials } from './runfiles.js';
-import { sha256 } from './snapshot/key.js';
+import { sha256 } from './snapshot/key.ts';
 
 test('a partial export keeps final failures and drops pending trials', () => {
   const dir = mkdtempSync(path.join(tmpdir(), 'geb-partial-'));

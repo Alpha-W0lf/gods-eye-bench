@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { requestKey, sha256 } from './key.js';
+import { requestKey, sha256 } from './key.ts';
 
 test('requestKey writes the app origin as app: and sorts the query', () => {
   assert.equal(

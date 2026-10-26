@@ -7,7 +7,7 @@ import {
   describeCircle,
   firstData,
   locationRadii,
-} from '../template.js';
+} from '../template.ts';
 
 export const countWithin = defineTemplate({
   id: 'infra-count-within',
@@ -15,7 +15,7 @@ export const countWithin = defineTemplate({
   feed: 'infrastructure',
   answer: { type: 'integer' },
   params: () =>
-    ['datacenters', 'dams'].flatMap((kind) =>
+    (['datacenters', 'dams'] as const).flatMap((kind) =>
       locationRadii([25, 50, 100]).map((params) => ({ kind, ...params })),
     ),
   prompt: (params) =>

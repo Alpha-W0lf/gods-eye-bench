@@ -3,8 +3,9 @@
  * and never touches the network.
  */
 
-import { requestKey } from './key.js';
-import { applyScenario, scenarioRules } from './scenarios.js';
+import { requestKey } from './key.ts';
+import { applyScenario, scenarioRules } from './scenarios.ts';
+import type { StoredResponse } from './store.ts';
 
 /** The body a request the snapshot lacks receives, with status 404. */
 export const MISS_BODY = JSON.stringify({ error: 'not_in_snapshot' });
@@ -16,8 +17,12 @@ export const MISS_BODY = JSON.stringify({ error: 'not_in_snapshot' });
 export function createReplayFetch({
   responses,
   scenario = 'baseline',
-  onMiss = (_key) => {},
-}) {
+  onMiss = () => {},
+}: {
+  responses: Map<string, StoredResponse>;
+  scenario?: string;
+  onMiss?: (key: string) => void;
+}): typeof fetch {
   const rules = scenarioRules(scenario);
   return async (input, init = {}) => {
     init.signal?.throwIfAborted();
@@ -42,7 +47,7 @@ export function createReplayFetch({
 export function blockNetwork() {
   globalThis.fetch = async (input) => {
     throw new Error(
-      `Network access is blocked during replay: ${String(input?.url ?? input)}`,
+      `Network access is blocked during replay: ${String(input instanceof Request ? input.url : input)}`,
     );
   };
 }

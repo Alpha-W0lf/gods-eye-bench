@@ -3,26 +3,40 @@
  * many instances each split draws. The one place the set's shape is defined.
  */
 
-import * as absent from './templates/absent.js';
-import * as combined from './templates/combined.js';
-import * as cy from './templates/cyclones.js';
-import * as eq from './templates/earthquakes.js';
-import * as hard from './templates/hard.js';
-import * as infra from './templates/infrastructure.js';
-import * as launch from './templates/launches.js';
-import * as mil from './templates/military.js';
-import * as unavailable from './templates/unavailable.js';
+import * as absent from './templates/absent.ts';
+import * as combined from './templates/combined.ts';
+import * as cy from './templates/cyclones.ts';
+import * as eq from './templates/earthquakes.ts';
+import * as hard from './templates/hard.ts';
+import * as infra from './templates/infrastructure.ts';
+import * as launch from './templates/launches.ts';
+import * as mil from './templates/military.ts';
+import * as unavailable from './templates/unavailable.ts';
+import type { Params, Template } from './template.ts';
+
+/** Keeps only the parameter sets a question may be drawn from. */
+export type ParamsFilter = (params: Params) => boolean;
+
+/** One line of the plan: which template, under which scenario, how many. */
+export type PlanEntry = readonly [
+  template: Template,
+  scenario: string,
+  publicCount: number,
+  heldoutCount: number,
+  filter?: ParamsFilter,
+];
 
 /** Places within reach of the aircraft the `injected` scenario plants text on. */
-const nearWashington = ({ location }) =>
+const nearWashington: ParamsFilter = ({ location }) =>
   ['Washington, D.C.', 'Ashburn, Virginia', 'Norfolk, Virginia'].includes(
-    location,
+    // Every parameter set of a location question has a location name.
+    location as string,
   );
 
 /**
  * `[template, scenario, public count, held-out count, params filter?]`.
  */
-export const QUESTION_PLAN = Object.freeze([
+export const QUESTION_PLAN: readonly PlanEntry[] = Object.freeze([
   [eq.countWorldwide, 'baseline', 2, 1],
   [eq.countWithin, 'baseline', 3, 1],
   [eq.countWithinZero, 'baseline', 1, 1],
@@ -71,7 +85,7 @@ export const QUESTION_PLAN = Object.freeze([
 ]);
 
 /** Every template, by id. */
-export const TEMPLATES = Object.freeze(
+export const TEMPLATES: Readonly<Record<string, Template>> = Object.freeze(
   Object.fromEntries(
     QUESTION_PLAN.map(([template]) => [template.id, template]),
   ),

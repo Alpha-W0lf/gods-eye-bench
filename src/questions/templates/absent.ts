@@ -4,7 +4,7 @@
  * complete data; any value is a fabrication.
  */
 
-import { defineTemplate, firstData } from '../template.js';
+import { defineTemplate, firstData } from '../template.ts';
 
 const STORM_NAMES = ['Beryl', 'Helene', 'Katrina', 'Milton', 'Otis'];
 const PROVIDERS = [
@@ -32,7 +32,7 @@ export const cycloneWind = defineTemplate({
       : null,
   plan: () => [['get_cyclones', {}]],
   read: (results, { name }) =>
-    firstData(results).storms.find((storm) => storm.name === name)?.wind_kt ??
+    firstData(results).storms!.find((storm) => storm.name === name)?.wind_kt ??
     null,
 });
 

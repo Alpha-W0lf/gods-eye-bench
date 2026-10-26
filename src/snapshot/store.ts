@@ -12,9 +12,51 @@
 
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
-import { sha256 } from './key.js';
+import { sha256 } from './key.ts';
+import type { Source } from './sources.ts';
 
 export const SNAPSHOT_SCHEMA = 1;
+
+/** A response as the recorder keeps it, before it is written. */
+export interface RecordedResponse {
+  key: string;
+  source: Source;
+  status: number;
+  headers: Record<string, string>;
+  body: string;
+}
+
+/** A response as a loaded snapshot holds it; `source` is the source's id. */
+export interface StoredResponse {
+  status: number;
+  headers: Record<string, string>;
+  body: string;
+  source: string;
+}
+
+export interface ManifestEntry {
+  key: string;
+  source: string;
+  file: string;
+  status: number;
+  sha256: string;
+}
+
+export interface Manifest {
+  schema: number;
+  id: string;
+  recorded_at: string;
+  clock_ms: number;
+  gev: { commit: string; version: string };
+  sources: { id: string; license: string; terms: string }[];
+  entries: ManifestEntry[];
+}
+
+export interface Snapshot {
+  manifest: Manifest;
+  checksum: string;
+  responses: Map<string, StoredResponse>;
+}
 
 /** Standard headers God's Eye View's sources read. */
 const KEPT_HEADERS = new Set([
@@ -29,8 +71,8 @@ const KEPT_HEADERS = new Set([
  * `x-` header, which carries the servers' cache and freshness signals
  * (`x-gev-cache`, `x-ads-b-cache`, `x-tle-cache` and others).
  */
-export function keptHeaders(headers) {
-  const kept = {};
+export function keptHeaders(headers: Headers): Record<string, string> {
+  const kept: Record<string, string> = {};
   for (const [name, value] of headers) {
     const lower = name.toLowerCase();
     if (KEPT_HEADERS.has(lower) || lower.startsWith('x-')) kept[lower] = value;
@@ -39,11 +81,11 @@ export function keptHeaders(headers) {
 }
 
 /** JSON with two-space indent and a final newline, as every file here uses. */
-export function stableJson(value) {
+export function stableJson(value: unknown): string {
   return `${JSON.stringify(value, null, 2)}\n`;
 }
 
-function noticeFor(source) {
+function noticeFor(source: Source): string {
   return [
     `# ${source.name}`,
     '',
@@ -64,9 +106,22 @@ function noticeFor(source) {
  * with `source` a config/sources.json entry and `body` a string. Returns the
  * manifest.
  */
-export function writeSnapshot(dir, { id, clockMs, gev, responses }) {
-  const entries = [];
-  const used = new Map();
+export function writeSnapshot(
+  dir: string,
+  {
+    id,
+    clockMs,
+    gev,
+    responses,
+  }: {
+    id: string;
+    clockMs: number;
+    gev: Manifest['gev'];
+    responses: readonly RecordedResponse[];
+  },
+): Manifest {
+  const entries: ManifestEntry[] = [];
+  const used = new Map<string, Source>();
   for (const response of [...responses].sort((a, b) =>
     a.key.localeCompare(b.key),
   )) {
@@ -91,7 +146,7 @@ export function writeSnapshot(dir, { id, clockMs, gev, responses }) {
   }
   for (const source of used.values())
     writeFileSync(path.join(dir, source.id, 'NOTICE.md'), noticeFor(source));
-  const manifest = {
+  const manifest: Manifest = {
     schema: SNAPSHOT_SCHEMA,
     id,
     recorded_at: new Date(clockMs).toISOString(),
@@ -111,7 +166,7 @@ export function writeSnapshot(dir, { id, clockMs, gev, responses }) {
 }
 
 /** The snapshot's checksum: the SHA-256 of its manifest file. */
-export function snapshotChecksum(dir) {
+export function snapshotChecksum(dir: string): string {
   return sha256(readFileSync(path.join(dir, 'manifest.json')));
 }
 
@@ -120,20 +175,20 @@ export function snapshotChecksum(dir) {
  * `{ manifest, checksum, responses }`, where `responses` maps each key to
  * `{ status, headers, body, source }`.
  */
-export function loadSnapshot(dir) {
-  const manifest = JSON.parse(
+export function loadSnapshot(dir: string): Snapshot {
+  const manifest: Manifest = JSON.parse(
     readFileSync(path.join(dir, 'manifest.json'), 'utf8'),
   );
   if (manifest.schema !== SNAPSHOT_SCHEMA)
     throw new Error(`Unsupported snapshot schema ${manifest.schema} in ${dir}`);
-  const responses = new Map();
+  const responses = new Map<string, StoredResponse>();
   for (const entry of manifest.entries) {
     const content = readFileSync(path.join(dir, entry.file));
     if (sha256(content) !== entry.sha256)
       throw new Error(
         `Snapshot file ${entry.file} does not match its checksum`,
       );
-    const stored = JSON.parse(content);
+    const stored = JSON.parse(content.toString('utf8'));
     if (stored.key !== entry.key)
       throw new Error(`Snapshot file ${entry.file} holds another key`);
     responses.set(entry.key, {

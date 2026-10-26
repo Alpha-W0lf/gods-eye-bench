@@ -11,18 +11,28 @@ import {
   describeCircle,
   firstData,
   locationRadii,
-} from '../template.js';
-import { LOCATIONS } from '../locations.js';
+} from '../template.ts';
+import type {
+  FeedName,
+  SingleFeedTemplate,
+  ToolResult,
+  Params,
+  Value,
+} from '../template.ts';
+import { LOCATIONS } from '../locations.ts';
 
 const FEET_TO_M = 0.3048;
 const KNOT_TO_KMH = 1.852;
 const HOUR_MS = 3600 * 1000;
-const rowsOf = (results) => firstData(results).rows ?? [];
+const rowsOf = (results: ToolResult[]) => firstData(results).rows ?? [];
 const WORLD = { bbox: [-180, -90, 180, 90] };
-const hard = (template) => defineTemplate({ difficulty: 'hard', ...template });
+const hard = <K extends FeedName, P extends Params, V extends Value>(
+  template: SingleFeedTemplate<K, P, V>,
+) => defineTemplate({ difficulty: 'hard', ...template });
 
 /** "2026-10-03T06:00:00Z" style labels for a window's ends. */
-const isoMinute = (ms) => new Date(ms).toISOString().replace(':00.000Z', 'Z');
+const isoMinute = (ms: number) =>
+  new Date(ms).toISOString().replace(':00.000Z', 'Z');
 
 export const aircraftAbove = hard({
   id: 'mil-above-altitude',
@@ -37,9 +47,11 @@ export const aircraftAbove = hard({
     const known = aircraft.filter(
       (plane) => plane.altitudeFt != null && !plane.onGround,
     );
-    if (known.some((plane) => Math.abs(plane.altitudeFt - feet) <= 50))
+    if (known.some((plane) => Math.abs(plane.altitudeFt! - feet) <= 50))
       return undefined;
-    return known.filter((plane) => plane.altitudeFt > feet).length || undefined;
+    return (
+      known.filter((plane) => plane.altitudeFt! > feet).length || undefined
+    );
   },
   plan: ({ feet }) => [
     [
@@ -65,7 +77,7 @@ export const cycloneDistance = hard({
       ['Honolulu', 'Mexico City', 'Los Angeles', 'San Diego'].map((place) => {
         const { lat, lon } = LOCATIONS.find(
           (location) => location.name === place,
-        );
+        )!;
         return { name, location: place, lat, lon };
       }),
     ),
@@ -79,7 +91,7 @@ export const cycloneDistance = hard({
   },
   plan: () => [['get_cyclones', {}]],
   read: (results, { name, lat, lon }) => {
-    const storm = firstData(results).storms.find((item) => item.name === name);
+    const storm = firstData(results).storms!.find((item) => item.name === name);
     return Math.round(distanceKm(storm, { lat, lon }));
   },
 });
@@ -101,8 +113,8 @@ export const cycloneWindKmh = hard({
   read: (results, { name }) =>
     Number(
       (
-        firstData(results).storms.find((item) => item.name === name).wind_kt *
-        KNOT_TO_KMH
+        firstData(results).storms!.find((item) => item.name === name)!
+          .wind_kt! * KNOT_TO_KMH
       ).toFixed(1),
     ),
 });
@@ -125,7 +137,7 @@ export const launchGap = hard({
   value: ({ launches }, { provider }) => {
     const times = launches
       .filter((launch) => launch.provider === provider && launch.net)
-      .map((launch) => Date.parse(launch.net))
+      .map((launch) => Date.parse(launch.net!))
       .sort((a, b) => b - a);
     return times.length < 2
       ? undefined
@@ -223,7 +235,7 @@ export const countInWindow = hard({
     `How many earthquakes of magnitude 2.5 or greater occurred worldwide from ${from} up to (not including) ${to}?`,
   value: ({ events }, { from, to }) => {
     const [start, end] = [Date.parse(from), Date.parse(to)];
-    const near = (time) =>
+    const near = (time: number) =>
       Math.abs(time - start) < 60000 || Math.abs(time - end) < 60000;
     if (events.some((event) => near(event.time))) return undefined;
     return (

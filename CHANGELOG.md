@@ -4,10 +4,12 @@
 
 From a public-release audit; details in `docs/reviews.md`.
 
-- **Changed: the replay server is `src/server.ts`,** the first module moved
-  to TypeScript. Node 24 runs it with no flag or warning (tested), and
-  `npm run check` and CI type-check it strictly (`npm run typecheck`, TypeScript
-  6.0.3) and lint it with typescript-eslint. No published number moved.
+- **Changed: the replay server (`src/server.ts`), the snapshot modules
+  (`src/snapshot/`), the question modules (`src/questions/`) and the scoring
+  modules (`src/score/`) are TypeScript.** Node 24 runs them with no flag or
+  warning (tested), and `npm run check` and CI type-check every `.ts` file
+  strictly (`npm run typecheck`, TypeScript 6.0.3) and lint it with
+  typescript-eslint. No published number moved.
 - **Added: Claude models through the thin runner,** over Anthropic's
   OpenAI-compatible endpoint, so the same model can be compared in Claude
   Code and in a plain tool loop. The thin runner now retries Anthropic's

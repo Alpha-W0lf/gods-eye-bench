@@ -12,10 +12,10 @@ import { performance } from 'node:perf_hooks';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { assertPinnedCheckout, gevDir, importGev } from './gev.js';
-import { freezeClock } from './snapshot/clock.js';
-import { APP_BASE } from './snapshot/key.js';
-import { blockNetwork, createReplayFetch } from './snapshot/replay.js';
-import { loadSnapshot } from './snapshot/store.js';
+import { freezeClock } from './snapshot/clock.ts';
+import { APP_BASE } from './snapshot/key.ts';
+import { blockNetwork, createReplayFetch } from './snapshot/replay.ts';
+import { loadSnapshot } from './snapshot/store.ts';
 
 export interface ServerOptions {
   snapshot: string;

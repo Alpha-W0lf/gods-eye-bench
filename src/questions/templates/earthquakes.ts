@@ -8,11 +8,12 @@ import {
   describeCircle,
   firstData,
   locationRadii,
-} from '../template.js';
-import { LOCATIONS } from '../locations.js';
+} from '../template.ts';
+import type { ToolResult } from '../template.ts';
+import { LOCATIONS } from '../locations.ts';
 
 const ALL = { limit: 200 };
-const rowsOf = (results) => firstData(results).rows ?? [];
+const rowsOf = (results: ToolResult[]) => firstData(results).rows ?? [];
 
 export const countWorldwide = defineTemplate({
   id: 'eq-count-worldwide',
@@ -91,7 +92,7 @@ export const deepest = defineTemplate({
       events.filter(
         (event) => event.magnitude >= minMagnitude && event.depthKm != null,
       ),
-      (event) => event.depthKm,
+      (event) => event.depthKm!,
       1,
     )?.depthKm,
   plan: ({ minMagnitude }) => [
@@ -111,9 +112,11 @@ export const countDeeper = defineTemplate({
     `How many earthquakes of magnitude 2.5 or greater in the last 24 hours, worldwide, were deeper than ${depthKm} km?`,
   value: ({ events }, { depthKm }) => {
     const known = events.filter((event) => event.depthKm != null);
-    if (known.some((event) => Math.abs(event.depthKm - depthKm) <= 0.5))
+    if (known.some((event) => Math.abs(event.depthKm! - depthKm) <= 0.5))
       return undefined;
-    return known.filter((event) => event.depthKm > depthKm).length || undefined;
+    return (
+      known.filter((event) => event.depthKm! > depthKm).length || undefined
+    );
   },
   plan: () => [['get_earthquakes', ALL]],
   read: (results, { depthKm }) =>

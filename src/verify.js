@@ -10,7 +10,7 @@ import { BENCH, repoPath } from './config.js';
 import { snapshotDir } from './paths.js';
 import { buildPrompt, PROMPT_VERSION } from './prompt.js';
 import { listRuns, readTrials, runQuestions } from './results.js';
-import { loadSnapshot } from './snapshot/store.js';
+import { loadSnapshot } from './snapshot/store.ts';
 import { isFinal, MAX_ATTEMPTS, scoreable } from './trials.js';
 import { FINAL_LOG, RUN_RECORD } from './runfiles.js';
 

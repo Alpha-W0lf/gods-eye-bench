@@ -10,9 +10,9 @@ import path from 'node:path';
 import { repoPath } from './config.js';
 import { partialResults } from './partial.js';
 import { FINAL_LOG, readTrials, RUN_RECORD, runQuestions } from './runfiles.js';
-import { aggregateTrials } from './score/aggregate.js';
-import { sha256 } from './snapshot/key.js';
-import { stableJson } from './snapshot/store.js';
+import { aggregateTrials } from './score/aggregate.ts';
+import { sha256 } from './snapshot/key.ts';
+import { stableJson } from './snapshot/store.ts';
 
 /** 2: per-run bench versions, held-out question set, new measures. */
 export const RESULTS_SCHEMA = 2;

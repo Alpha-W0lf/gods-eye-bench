@@ -5,29 +5,78 @@
  * draw never repeats a public question.
  */
 
-import { sha256 } from '../snapshot/key.js';
+import { sha256 } from '../snapshot/key.ts';
 import { buildWorld } from '../world/index.js';
-import { QUESTION_PLAN } from './catalog.js';
-import { seededRandom, shuffled } from './rng.js';
+import { QUESTION_PLAN } from './catalog.ts';
+import type { ParamsFilter } from './catalog.ts';
+import { seededRandom, shuffled } from './rng.ts';
+import type { Snapshot } from '../snapshot/store.ts';
+import type {
+  AnswerSpec,
+  FeedName,
+  FeedStatus,
+  Infrastructure,
+  Params,
+  Plan,
+  Template,
+  Value,
+  World,
+} from './template.ts';
 
 export const QUESTIONS_SCHEMA = 1;
 export const PUBLIC_SEED = 'public';
 
+/** What the tools should answer, and the extra strings that count as right. */
+export interface Truth {
+  status: FeedStatus;
+  value: Value;
+  accept: string[];
+}
+
+/** A plan as a question file stores it. */
+export type StoredPlan = [
+  string,
+  Record<string, unknown> | { from_earlier_results: true },
+][];
+
+/** One question as the question file holds it. */
+export interface Question {
+  id: string;
+  template: string;
+  domain: string;
+  difficulty: 'standard' | 'hard';
+  scenario: string;
+  params: Params;
+  prompt: string;
+  answer: AnswerSpec;
+  truth: Truth;
+  reference: StoredPlan;
+}
+
 /** A stable id for one template, scenario and parameter set. */
-export function questionId(template, scenario, params) {
+export function questionId(
+  template: Pick<Template, 'id'>,
+  scenario: string,
+  params: Params,
+): string {
   const suffix = scenario === 'baseline' ? '' : `-${scenario}`;
   return `${template.id}${suffix}-${sha256(JSON.stringify(params)).slice(0, 8)}`;
 }
 
 /** The truth for one instance, or null when the instance must be skipped. */
-export function instanceTruth(template, world, params) {
-  const keys = template.feeds ?? [template.feed];
+export function instanceTruth(
+  template: Template,
+  world: World,
+  params: Params,
+): Truth | null {
+  // defineTemplate guarantees exactly one of feed and feeds.
+  const keys = template.feeds ?? [template.feed as FeedName];
   const statuses = keys.map((key) => world[key].status ?? 'complete');
   if (statuses.includes('unavailable'))
     return { status: 'unavailable', value: null, accept: [] };
   const feed = template.feeds
     ? Object.fromEntries(keys.map((key) => [key, world[key]]))
-    : world[template.feed];
+    : world[template.feed as FeedName];
   const value = template.value(feed, params);
   if (value === undefined) return null;
   const accept = template.accept ? template.accept(value, feed, params) : [];
@@ -39,7 +88,7 @@ export function instanceTruth(template, world, params) {
 }
 
 /** A plan as the question file stores it: steps that depend on earlier results are marked. */
-export function storedPlan(plan) {
+export function storedPlan(plan: Plan): StoredPlan {
   return plan.map(([name, args]) => [
     name,
     typeof args === 'function' ? { from_earlier_results: true } : args,
@@ -50,9 +99,14 @@ export function storedPlan(plan) {
  * Every valid instance of a template under a scenario, in a stable order,
  * optionally only parameter sets that pass `filter`.
  */
-export function candidates(template, scenario, worlds, filter = () => true) {
+export function candidates(
+  template: Template,
+  scenario: string,
+  worlds: Record<string, World>,
+  filter: ParamsFilter = () => true,
+): Question[] {
   const world = worlds[scenario];
-  return template
+  const instances = template
     .params(worlds.baseline)
     .filter(filter)
     .map((params) => {
@@ -71,9 +125,11 @@ export function candidates(template, scenario, worlds, filter = () => true) {
           reference: storedPlan(template.plan(params)),
         }
       );
-    })
-    .filter(Boolean)
-    .sort((a, b) => a.id.localeCompare(b.id));
+    });
+  // Skipped instances are null.
+  return (instances.filter(Boolean) as Question[]).sort((a, b) =>
+    a.id.localeCompare(b.id),
+  );
 }
 
 /**
@@ -81,21 +137,25 @@ export function candidates(template, scenario, worlds, filter = () => true) {
  * Throws when a template has too few valid instances for its counts.
  */
 export function selectQuestions(
-  snapshot,
-  infrastructure,
-  { heldoutSeed = null } = {},
+  snapshot: Snapshot,
+  infrastructure: Infrastructure,
+  { heldoutSeed = null }: { heldoutSeed?: string | null } = {},
 ) {
   const scenarios = new Set([
     'baseline',
     ...QUESTION_PLAN.map(([, scenario]) => scenario),
   ]);
+  // src/world is JavaScript; World writes down the shapes its parsers build.
   const worlds = Object.fromEntries(
     [...scenarios].map((scenario) => [
       scenario,
       buildWorld(snapshot, scenario, infrastructure),
     ]),
-  );
-  const result = { public: [], heldout: [] };
+  ) as Record<string, World>;
+  const result: { public: Question[]; heldout: Question[] } = {
+    public: [],
+    heldout: [],
+  };
   for (const [
     template,
     scenario,
@@ -104,7 +164,7 @@ export function selectQuestions(
     filter,
   ] of QUESTION_PLAN) {
     const pool = candidates(template, scenario, worlds, filter);
-    const draw = (seed) =>
+    const draw = (seed: string) =>
       shuffled(pool, seededRandom(`${seed}:${template.id}:${scenario}`));
     const chosen = draw(PUBLIC_SEED).slice(0, publicCount);
     if (chosen.length < publicCount)
@@ -128,7 +188,11 @@ export function selectQuestions(
 }
 
 /** The question file for one split. */
-export function questionFile(snapshot, split, questions) {
+export function questionFile(
+  snapshot: Snapshot,
+  split: string,
+  questions: Question[],
+) {
   return {
     schema: QUESTIONS_SCHEMA,
     split,

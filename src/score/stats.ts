@@ -1,14 +1,14 @@
 /** Summary statistics with honest uncertainty (ADR 0005). */
 
 /** Arithmetic mean, or null for no values. */
-export function mean(values) {
+export function mean(values: number[]): number | null {
   return values.length
     ? values.reduce((sum, value) => sum + value, 0) / values.length
     : null;
 }
 
 /** Median, or null for no values. */
-export function median(values) {
+export function median(values: number[]): number | null {
   if (!values.length) return null;
   const sorted = [...values].sort((a, b) => a - b);
   const middle = Math.floor(sorted.length / 2);
@@ -25,7 +25,11 @@ export function median(values) {
  * understated; the interval is monotone in p and never collapses to a point:
  * 55 of 55 gives 93.5% to 100%.
  */
-export function wilsonInterval(p, n, z = 1.959964) {
+export function wilsonInterval(
+  p: number,
+  n: number,
+  z = 1.959964,
+): [number, number] | null {
   if (!n) return null;
   const scale = 1 + (z * z) / n;
   const centre = (p + (z * z) / (2 * n)) / scale;
@@ -38,7 +42,10 @@ export function wilsonInterval(p, n, z = 1.959964) {
  * Round to `digits` decimals, keeping null. Four, so that a share shown as a
  * whole percent is not rounded twice (5 of 11 is 45%, not 0.455 then 46%).
  */
-export function round(value, digits = 4) {
+export function round(
+  value: number | null | undefined,
+  digits = 4,
+): number | null {
   return value === null || value === undefined
     ? null
     : Number(value.toFixed(digits));

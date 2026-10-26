@@ -6,9 +6,10 @@ import {
   clearMaximum,
   defineTemplate,
   firstData,
-} from '../template.js';
+} from '../template.ts';
+import type { Earthquake } from '../template.ts';
 
-const strongestQuake = (events) =>
+const strongestQuake = (events: Earthquake[]) =>
   clearMaximum(events, (event) => event.magnitude);
 
 export const aftershocks = defineTemplate({
@@ -31,7 +32,7 @@ export const aftershocks = defineTemplate({
     [
       'get_earthquakes',
       (results) => {
-        const [top] = firstData(results).rows;
+        const [top] = firstData(results).rows!;
         return {
           area: circleArea({ lat: top.lat, lon: top.lon, radiusKm }),
           limit: 200,
@@ -39,7 +40,7 @@ export const aftershocks = defineTemplate({
       },
     ],
   ],
-  read: (results) => results[1].structuredContent.total - 1,
+  read: (results) => results[1].structuredContent!.total! - 1,
 });
 
 export const aircraftNearCyclone = defineTemplate({
@@ -64,9 +65,9 @@ export const aircraftNearCyclone = defineTemplate({
     [
       'aircraft_in_area',
       (results) => {
-        const storm = firstData(results).storms.find(
+        const storm = firstData(results).storms!.find(
           (item) => item.name === name,
-        );
+        )!;
         return {
           area: circleArea({ lat: storm.lat, lon: storm.lon, radiusKm }),
           military: true,
@@ -75,5 +76,5 @@ export const aircraftNearCyclone = defineTemplate({
       },
     ],
   ],
-  read: (results) => results[1].structuredContent.total,
+  read: (results) => results[1].structuredContent!.total,
 });
