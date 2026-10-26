@@ -5,7 +5,7 @@ export default [
   { ignores: ['.gev/', 'node_modules/', 'runs/', 'snapshots/', 'results/'] },
   js.configs.recommended,
   {
-    files: ['**/*.js', '**/*.mjs'],
+    files: ['**/*.js', '**/*.mjs', '**/*.ts'],
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',

@@ -13,6 +13,7 @@
 **Counts match.** I counted bench_files.txt: 54 `.js`, 17 `.mjs`, 71 files. I did not re-add the 8,663 total. The plan says all checks ran on `main`, yet the checkout was on `readme-gif-timing`. Which tree the counts came from is Unverified.
 
 **Contradiction in the plan: "each commit has `npm run check` green".**
+
 - Step 1 adds `tsc` to `check`, but step 2 renames untyped files under `strict`.
 - Unless every file is annotated, `tsc` would fail between the rename and step 3 (Unverified; I haven't seen the code).
 - Fix: add `typecheck` to `check` only at the end, or grow `tsconfig` `include` module by module.
@@ -22,10 +23,11 @@
 **CI.** CI in bench_ci.txt runs lint, format and test as separate steps, not `npm run check`. Adding `typecheck` to `check` alone changes nothing in CI. The plan does say to edit ci.yml, so it just has to be done.
 
 **Node type stripping.**
+
 - Node on PATH is 22.17.0. `.nvmrc` pins 24.14.0 (per the plan, not installed), and `engines` in package.json requires 24.14 or newer.
-- Whether 22.17 or 24.14 strips types without a flag is Unverified.
+- Result (2026-10-26, first step): 24.14.0 loads `src/server.ts` with no flag and no warning; 22.17 fails (unknown extension), and with `--experimental-strip-types` prints an `ExperimentalWarning`. A test in `src/server.test.mjs` requires an empty stderr.
 - Run all baselines on the pinned 24.14.0, not the default 22.
-- Whether `run.js` captures a spawned server's stderr into logs is Unknown. If it does, an `ExperimentalWarning` could land in evidence files.
+- Result: `run.js` does not capture the server's stderr (`connectMcp` ignores it); Claude Code and Cursor spawn it themselves and may surface it, which the empty-stderr test covers.
 
 **Spawn and import paths.** The plan names `src/run.js:86`, `src/server.test.mjs:16`, `src/gev.js:66` and `src/report.js:134`. None of those source files were given, so the line numbers are Unverified.
 
@@ -70,14 +72,17 @@ git mv src/server.js src/server.ts
 Change the two spawn paths (`src/run.js:86`, `src/server.test.mjs:16`) to `src/server.ts`, plus any import of `server.js` that `grep -rn "server.js" src bin package.json` finds. Do not touch `tsconfig`, eslint or types.
 
 **Proof:**
+
 - `node --test "src/**/*.test.mjs" 2>&1 | grep -ci experimental` is 0, or any warning is confirmed absent from compared output and logs.
 - The test count equals the baseline.
 - `score` and `report` leave `git status` clean.
 
 **Done:**
+
 - The result (warning or no warning, pass or fail) is written in two lines in the plan's "Unknown" section.
 - Leave the spike worktree and branch in place until Tom approves removing them (nothing is deleted without his yes).
 - Nothing in the real checkout changes.
 
 ---
+
 Drafted by Sonnet 5.5 on the batch API (2026-10-26); claims checked against `bench_ci.txt` (eslint matches only `.js`/`.mjs`; CI notes trial logs are decompressed for the secrets scan). Other Unverified marks stand.

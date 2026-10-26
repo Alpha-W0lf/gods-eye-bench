@@ -1,11 +1,13 @@
 import assert from 'node:assert/strict';
+import { spawnSync } from 'node:child_process';
 import { mkdtempSync, readFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { test } from 'node:test';
+import { pathToFileURL } from 'node:url';
 import { repoPath } from './config.js';
 import { connectMcp, resultText } from './mcpClient.js';
-import { parseServerArgs } from './server.js';
+import { parseServerArgs } from './server.ts';
 
 const SNAPSHOT = repoPath('snapshots', '2026-10-03');
 
@@ -13,7 +15,7 @@ function replayServer({ scenario = 'baseline', trace } = {}) {
   return connectMcp({
     command: process.execPath,
     args: [
-      repoPath('src', 'server.js'),
+      repoPath('src', 'server.ts'),
       '--snapshot',
       SNAPSHOT,
       '--scenario',
@@ -22,6 +24,19 @@ function replayServer({ scenario = 'baseline', trace } = {}) {
     ],
   });
 }
+
+// The server is the first TypeScript module: Node must load it with no
+// flag and no warning, since harnesses can pass the server's stderr through.
+test('the replay server loads as TypeScript without a flag or a warning', () => {
+  const url = pathToFileURL(repoPath('src', 'server.ts')).href;
+  const { status, stderr } = spawnSync(
+    process.execPath,
+    ['--input-type=module', '-e', `await import(${JSON.stringify(url)})`],
+    { encoding: 'utf8' },
+  );
+  assert.equal(stderr, '');
+  assert.equal(status, 0);
+});
 
 test('parseServerArgs requires a snapshot and rejects unknown arguments', () => {
   assert.deepEqual(parseServerArgs(['--snapshot', 's']), {
