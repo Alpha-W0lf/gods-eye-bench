@@ -86,3 +86,10 @@ Change the two spawn paths (`src/run.js:86`, `src/server.test.mjs:16`) to `src/s
 ---
 
 Drafted by Sonnet 5.5 on the batch API (2026-10-26); claims checked against `bench_ci.txt` (eslint matches only `.js`/`.mjs`; CI notes trial logs are decompressed for the secrets scan). Other Unverified marks stand.
+
+## 5. Progress (2026-10-26)
+
+- **Done:** `src/server.ts`, then `src/snapshot/`, `src/questions/` and `src/score/` are TypeScript; `npm run typecheck` (TypeScript 6.0.3, strict) runs in `npm run check` and CI; ESLint uses typescript-eslint for `.ts`. Each step: 97/97 tests, `geb verify` clean, `score` and `report` leave the tree unchanged.
+- **How each module group moves:** `git mv` and the importers' fixes in one commit, so every commit passes; types live in the module that owns them; no `any`; a cast or `!` only where the code already relies on it; every changed runtime line is named in the commit with why it is equivalent; a fresh reviewer passes it before it lands.
+- **Left in JavaScript:** `src/world/`, `src/adapters/`, the run, results and report modules (`run`, `trials`, `runfiles`, `results`, `report`, `partial`, `preflight`, `verify`, `recorder`), `config`, `gev`, `prompt`, `secrets`, `mcpClient`, and `bin/geb.js`. Then the docs pass (plan step 4) and a read of the public surface.
+- `tsconfig.json` includes every `.ts` file under `src/` and `bin/`, so nothing needs listing.
