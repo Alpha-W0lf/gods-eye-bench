@@ -1,0 +1,19 @@
+{
+  // Grows one module at a time as files move to TypeScript. JavaScript
+  // modules they import are read for types but not checked.
+  "files": ["src/server.ts"],
+  "compilerOptions": {
+    "strict": true,
+    "noEmit": true,
+    "target": "esnext",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "types": ["node"],
+    "allowJs": true,
+    "checkJs": false,
+    "allowImportingTsExtensions": true,
+    "erasableSyntaxOnly": true,
+    "verbatimModuleSyntax": true,
+    "skipLibCheck": true
+  }
+}

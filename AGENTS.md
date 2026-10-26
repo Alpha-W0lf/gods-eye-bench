@@ -9,7 +9,7 @@ and rebuilds every published number from committed logs.
 
 - Once: `nvm install` (reads `.nvmrc`), `npm ci`, `npm run setup` (clones the pinned God's Eye View
   into `.gev/`; the tests need it).
-- `npm run check` runs lint, format and every test, as CI does. Run it
+- `npm run check` runs lint, the type check, format and every test, as CI does. Run it
   before each commit; CI also scans the history with gitleaks
   (`npm run scan:secrets` locally).
 - One file: `node --test src/score/score.test.mjs`.

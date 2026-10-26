@@ -9,10 +9,13 @@ harness adapter, results for a model, and better questions.
 nvm install && npm ci && npm run setup && npm run check
 ```
 
-`npm run check` runs ESLint, Prettier and the test suite, which is what CI
-runs. Code style follows God's Eye View, so pieces can move upstream: ES
-modules, 2-space indent, single quotes, semicolons, JSDoc on exported
-functions, `*.test.mjs` beside the code with `node:test`.
+`npm run check` runs ESLint, the TypeScript type check, Prettier and the
+test suite, which is what CI runs. Modules are moving to TypeScript one at a
+time; each `.ts` file is listed in `tsconfig.json` and type-checked strictly.
+
+Code style follows God's Eye View, so pieces can move upstream: ES modules,
+2-space indent, single quotes, semicolons, JSDoc on exported functions,
+`*.test.mjs` beside the code with `node:test`.
 
 ## Add a harness
 

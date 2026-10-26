@@ -216,3 +216,15 @@ it, and its notes changed this:
   change as a rename, so later steps keep the rename and the fixes in one
   commit.
 - No published number moved.
+
+## TypeScript, type check (2026-10-26)
+
+`npm run typecheck` checks `src/server.ts` strictly, in `npm run check` and
+CI. A fresh review passed it; its notes changed this:
+
+- `server.ts` says its MCP message shapes are not checked against God's Eye
+  View, whose server is imported untyped.
+- The trace's `ok` flag now tests `result != null` rather than
+  `Boolean(result)`; they differ only for a falsy non-object result, which
+  JSON-RPC does not send.
+- No published number moved.

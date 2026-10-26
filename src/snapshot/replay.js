@@ -16,7 +16,7 @@ export const MISS_BODY = JSON.stringify({ error: 'not_in_snapshot' });
 export function createReplayFetch({
   responses,
   scenario = 'baseline',
-  onMiss = () => {},
+  onMiss = (_key) => {},
 }) {
   const rules = scenarioRules(scenario);
   return async (input, init = {}) => {

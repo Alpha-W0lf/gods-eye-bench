@@ -5,8 +5,9 @@
 From a public-release audit; details in `docs/reviews.md`.
 
 - **Changed: the replay server is `src/server.ts`,** the first module moved
-  to TypeScript. Node 24 runs it with no flag or warning (tested); lint now
-  reads `.ts` files while they hold no type syntax. No published number moved.
+  to TypeScript. Node 24 runs it with no flag or warning (tested), and
+  `npm run check` and CI type-check it strictly (`npm run typecheck`, TypeScript
+  6.0.3) and lint it with typescript-eslint. No published number moved.
 - **Changed: `geb record` spaces its calls 1.1 s apart.** God's Eye View
   already spaces its Nominatim requests; the recorder now does the same for
   every call, as a second safeguard (tested).
