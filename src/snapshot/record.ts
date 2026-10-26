@@ -3,9 +3,9 @@
  * a snapshot may store (ADR 0006). Everything else is answered but never kept.
  */
 
-import { requestKey } from './key.js';
-import { mayRecord, sourceForKey, SOURCES } from './sources.js';
-import { keptHeaders } from './store.js';
+import { requestKey } from './key.ts';
+import { mayRecord, sourceForKey, SOURCES, type Source } from './sources.ts';
+import { keptHeaders, type RecordedResponse } from './store.ts';
 
 /**
  * Wrap `fetchImpl` so allowed responses are collected. A request already kept
@@ -15,12 +15,18 @@ import { keptHeaders } from './store.js';
  * `skipped()` lists keys that were fetched but not kept.
  */
 export function createRecordingFetch({
-  fetchImpl = (...args) => globalThis.fetch(...args),
+  fetchImpl = (input, init) => globalThis.fetch(input, init),
   sources = SOURCES,
+}: {
+  fetchImpl?: typeof fetch;
+  sources?: readonly Source[];
 } = {}) {
-  const kept = new Map();
-  const skipped = new Set();
-  const recordingFetch = async (input, init = {}) => {
+  const kept = new Map<string, RecordedResponse>();
+  const skipped = new Set<string>();
+  const recordingFetch = async (
+    input: RequestInfo | URL,
+    init: RequestInit = {},
+  ): Promise<Response> => {
     const key = requestKey(input, init);
     const known = kept.get(key);
     if (known)
@@ -31,7 +37,7 @@ export function createRecordingFetch({
     const response = await fetchImpl(input, init);
     const body = await response.text();
     const source = sourceForKey(key, sources);
-    if (mayRecord(source, response.status)) {
+    if (source && mayRecord(source, response.status)) {
       kept.set(key, {
         key,
         source,

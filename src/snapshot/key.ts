@@ -9,12 +9,12 @@ import { createHash } from 'node:crypto';
 export const APP_BASE = 'http://localhost:4173';
 
 /** SHA-256 of a string or bytes, as lowercase hex. */
-export function sha256(data) {
+export function sha256(data: string | Uint8Array): string {
   return createHash('sha256').update(data).digest('hex');
 }
 
 /** The URL string of a fetch input: a string, URL or Request. */
-export function inputUrl(input) {
+export function inputUrl(input: RequestInfo | URL): string {
   return String(input instanceof Request ? input.url : input);
 }
 
@@ -23,7 +23,10 @@ export function inputUrl(input) {
  * `app:`, so the same request has one key on any port. A non-GET request with
  * a string body adds its hash, since its body is part of what is asked.
  */
-export function requestKey(input, init = {}) {
+export function requestKey(
+  input: RequestInfo | URL,
+  init: RequestInit = {},
+): string {
   const url = new URL(inputUrl(input), APP_BASE);
   url.searchParams.sort();
   const method = (

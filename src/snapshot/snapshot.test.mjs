@@ -3,18 +3,18 @@ import { mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { test } from 'node:test';
-import { freezeClock } from './clock.js';
-import { createRecordingFetch } from './record.js';
-import { blockNetwork, createReplayFetch, MISS_BODY } from './replay.js';
-import { applyScenario, scenarioRules } from './scenarios.js';
+import { freezeClock } from './clock.ts';
+import { createRecordingFetch } from './record.ts';
+import { blockNetwork, createReplayFetch, MISS_BODY } from './replay.ts';
+import { applyScenario, scenarioRules } from './scenarios.ts';
 import { callTools, PAUSE_MS } from '../recorder.js';
-import { mayRecord, sourceForKey } from './sources.js';
+import { mayRecord, sourceForKey } from './sources.ts';
 import {
   keptHeaders,
   loadSnapshot,
   snapshotChecksum,
   writeSnapshot,
-} from './store.js';
+} from './store.ts';
 
 const SOURCES = [
   {

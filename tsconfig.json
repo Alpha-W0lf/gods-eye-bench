@@ -1,7 +1,7 @@
 {
-  // Grows one module at a time as files move to TypeScript. JavaScript
-  // modules they import are read for types but not checked.
-  "files": ["src/server.ts"],
+  // Every .ts file is checked strictly; JavaScript modules they import are
+  // read for types but not checked, so files move over one at a time.
+  "include": ["src/**/*.ts", "bin/**/*.ts"],
   "compilerOptions": {
     "strict": true,
     "noEmit": true,

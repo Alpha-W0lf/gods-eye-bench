@@ -9,7 +9,7 @@ import { homedir, tmpdir } from 'node:os';
 import path from 'node:path';
 import { gunzipSync, gzipSync } from 'node:zlib';
 import { repoPath } from './config.js';
-import { sha256 } from './snapshot/key.js';
+import { sha256 } from './snapshot/key.ts';
 
 /** A run folder's files: its record, and its final and partial trial logs. */
 export const RUN_RECORD = 'run.json';

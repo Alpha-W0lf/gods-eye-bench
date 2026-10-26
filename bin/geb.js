@@ -18,7 +18,7 @@ import { heldoutSeed } from '../src/secrets.js';
 import { buildResults } from '../src/results.js';
 import { verifyAll } from '../src/verify.js';
 import { runBenchmark, slug } from '../src/run.js';
-import { loadSnapshot, stableJson } from '../src/snapshot/store.js';
+import { loadSnapshot, stableJson } from '../src/snapshot/store.ts';
 import { readInfrastructure } from '../src/world/infrastructure.js';
 
 const USAGE = `Usage:

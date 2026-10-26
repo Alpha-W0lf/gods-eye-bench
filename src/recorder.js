@@ -7,9 +7,9 @@ import { existsSync, mkdirSync } from 'node:fs';
 import { BENCH } from './config.js';
 import { assertPinnedCheckout, gevDir, importGev } from './gev.js';
 import { LOCATIONS } from './questions/locations.js';
-import { APP_BASE } from './snapshot/key.js';
-import { createRecordingFetch } from './snapshot/record.js';
-import { writeSnapshot } from './snapshot/store.js';
+import { APP_BASE } from './snapshot/key.ts';
+import { createRecordingFetch } from './snapshot/record.ts';
+import { writeSnapshot } from './snapshot/store.ts';
 
 /**
  * Calls that fetch every whole feed the questions read. Feeds are fetched

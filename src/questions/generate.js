@@ -5,7 +5,7 @@
  * draw never repeats a public question.
  */
 
-import { sha256 } from '../snapshot/key.js';
+import { sha256 } from '../snapshot/key.ts';
 import { buildWorld } from '../world/index.js';
 import { QUESTION_PLAN } from './catalog.js';
 import { seededRandom, shuffled } from './rng.js';

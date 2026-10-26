@@ -4,7 +4,7 @@ import { test } from 'node:test';
 import { gevDir } from '../gev.js';
 import { questionsPath, snapshotDir } from '../paths.js';
 import { buildPrompt } from '../prompt.js';
-import { stableJson, loadSnapshot } from '../snapshot/store.js';
+import { stableJson, loadSnapshot } from '../snapshot/store.ts';
 import { readInfrastructure } from '../world/infrastructure.js';
 import { QUESTION_PLAN } from './catalog.js';
 import { instanceTruth, questionFile, selectQuestions } from './generate.js';

@@ -5,7 +5,7 @@
  */
 
 /** Freeze `Date` at `ms`. Returns a function that restores the real `Date`. */
-export function freezeClock(ms) {
+export function freezeClock(ms: number): () => void {
   if (!Number.isFinite(ms)) throw new TypeError('freezeClock needs a time');
   const RealDate = globalThis.Date;
   globalThis.Date = new Proxy(RealDate, {

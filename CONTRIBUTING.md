@@ -11,7 +11,7 @@ nvm install && npm ci && npm run setup && npm run check
 
 `npm run check` runs ESLint, the TypeScript type check, Prettier and the
 test suite, which is what CI runs. Modules are moving to TypeScript one at a
-time; each `.ts` file is listed in `tsconfig.json` and type-checked strictly.
+time; every `.ts` file is type-checked strictly (`tsconfig.json`).
 
 Code style follows God's Eye View, so pieces can move upstream: ES modules,
 2-space indent, single quotes, semicolons, JSDoc on exported functions,

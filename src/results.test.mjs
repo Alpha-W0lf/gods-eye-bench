@@ -15,7 +15,7 @@ import { leaderboardSection, renderReadme, END, START } from './report.js';
 import path from 'node:path';
 import { buildResults, listRuns, readTrials } from './results.js';
 import { round } from './score/stats.js';
-import { stableJson } from './snapshot/store.js';
+import { stableJson } from './snapshot/store.ts';
 import { verifyAll } from './verify.js';
 
 test('incomplete runs report their coverage and never enter the ranking', () => {

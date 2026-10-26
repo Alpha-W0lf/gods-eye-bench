@@ -3,7 +3,7 @@
  * into plain records by code that never calls the tools under test.
  */
 
-import { applyScenario, scenarioRules } from '../snapshot/scenarios.js';
+import { applyScenario, scenarioRules } from '../snapshot/scenarios.ts';
 import {
   parseCyclones,
   parseEarthquakes,
