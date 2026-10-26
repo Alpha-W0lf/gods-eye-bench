@@ -17,10 +17,42 @@ import { APP_BASE } from './snapshot/key.js';
 import { blockNetwork, createReplayFetch } from './snapshot/replay.js';
 import { loadSnapshot } from './snapshot/store.js';
 
+export interface ServerOptions {
+  snapshot: string;
+  scenario: string;
+  trace?: string;
+  gev?: string;
+}
+
+/**
+ * The parts of a JSON-RPC message and tool result the trace reads. God's Eye
+ * View's server is imported untyped, so these are not checked against it.
+ */
+interface RpcMessage {
+  method?: string;
+  params?: { name?: string; arguments?: unknown };
+}
+interface ToolResult {
+  isError?: boolean;
+  content?: { type: string; text?: unknown }[];
+}
+interface RpcResponse {
+  result?: ToolResult;
+  error?: { message?: string };
+}
+interface McpServer {
+  handle(
+    message: RpcMessage,
+    context?: unknown,
+  ): Promise<RpcResponse | undefined>;
+}
+
+type Trace = (line: Record<string, unknown>) => void;
+
 /** Read `--snapshot`, `--scenario`, `--trace` and `--gev` from arguments. */
-export function parseServerArgs(argv) {
-  const options = { scenario: 'baseline' };
-  const names = {
+export function parseServerArgs(argv: string[]): ServerOptions {
+  const options: Partial<ServerOptions> = { scenario: 'baseline' };
+  const names: Record<string, keyof ServerOptions> = {
     '--snapshot': 'snapshot',
     '--scenario': 'scenario',
     '--trace': 'trace',
@@ -33,11 +65,11 @@ export function parseServerArgs(argv) {
     options[name] = argv[index + 1];
   }
   if (!options.snapshot) throw new Error('--snapshot is required');
-  return options;
+  return options as ServerOptions;
 }
 
 /** The text of a tool result's first content item, shortened for the trace. */
-function firstText(result) {
+function firstText(result: ToolResult | undefined): string | null {
   const text = result?.content?.find((item) => item.type === 'text')?.text;
   return typeof text === 'string' ? text.slice(0, 500) : null;
 }
@@ -46,7 +78,7 @@ function firstText(result) {
  * Wrap an MCP server so each `tools/call` is traced as one JSON line:
  * `{ type: 'call', tool, args, ok, text, ms }`. `trace(line)` receives each.
  */
-export function traceToolCalls(server, trace) {
+export function traceToolCalls(server: McpServer, trace: Trace): McpServer {
   return {
     handle: async (message, context) => {
       if (message?.method !== 'tools/call')
@@ -57,7 +89,7 @@ export function traceToolCalls(server, trace) {
         type: 'call',
         tool: message.params?.name ?? null,
         args: message.params?.arguments ?? {},
-        ok: Boolean(response?.result) && response.result.isError !== true,
+        ok: response?.result != null && response.result.isError !== true,
         text: firstText(response?.result) ?? response?.error?.message ?? null,
         ms: Math.round(performance.now() - started),
       });
@@ -76,6 +108,11 @@ export async function createReplayServer({
   scenario = 'baseline',
   gev = gevDir(),
   trace = () => {},
+}: {
+  snapshot: string;
+  scenario?: string;
+  gev?: string;
+  trace?: Trace;
 }) {
   assertPinnedCheckout(gev);
   const { manifest, checksum, responses } = loadSnapshot(snapshot);
@@ -84,7 +121,7 @@ export async function createReplayServer({
   const fetchImpl = createReplayFetch({
     responses,
     scenario,
-    onMiss: (key) => trace({ type: 'miss', key }),
+    onMiss: (key: string) => trace({ type: 'miss', key }),
   });
   const { createLocalMcpServer } = await importGev('server/mcp/server.js', gev);
   const server = createLocalMcpServer({ apiBase: APP_BASE, fetchImpl });
@@ -97,8 +134,9 @@ if (
 ) {
   try {
     const options = parseServerArgs(process.argv.slice(2));
-    const write = options.trace
-      ? (line) => appendFileSync(options.trace, `${JSON.stringify(line)}\n`)
+    const tracePath = options.trace;
+    const write: Trace = tracePath
+      ? (line) => appendFileSync(tracePath, `${JSON.stringify(line)}\n`)
       : () => {};
     const gev = options.gev ? path.resolve(options.gev) : gevDir();
     const { server, manifest } = await createReplayServer({
@@ -112,7 +150,7 @@ if (
     );
     await serveStdio(server, { input: process.stdin, output: process.stdout });
   } catch (error) {
-    console.error(error.message);
+    console.error(error instanceof Error ? error.message : String(error));
     process.exitCode = 1;
   }
 }

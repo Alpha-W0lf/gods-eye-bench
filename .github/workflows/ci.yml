@@ -28,6 +28,7 @@ jobs:
           key: gev-${{ hashFiles('config/bench.json') }}
       - run: npm run setup
       - run: npm run lint
+      - run: npm run typecheck
       - run: npm run format:check
       # The tests include a scan of every decompressed trial log, which
       # gitleaks cannot read.
