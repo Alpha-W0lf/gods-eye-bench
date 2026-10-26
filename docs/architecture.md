@@ -144,7 +144,7 @@ parsed world and a seeded random generator, it produces instances:
 }
 ```
 
-`src/questions/catalog.js` is the one place that says which templates are asked
+`src/questions/catalog.ts` is the one place that says which templates are asked
 under which scenario and how many instances each split draws. Kinds of
 question:
 

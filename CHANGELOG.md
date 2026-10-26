@@ -4,8 +4,9 @@
 
 From a public-release audit; details in `docs/reviews.md`.
 
-- **Changed: the replay server (`src/server.ts`) and the snapshot modules
-  (`src/snapshot/`) are TypeScript.** Node 24 runs them with no flag or
+- **Changed: the replay server (`src/server.ts`), the snapshot modules
+  (`src/snapshot/`) and the question modules (`src/questions/`) are
+  TypeScript.** Node 24 runs them with no flag or
   warning (tested), and `npm run check` and CI type-check every `.ts` file
   strictly (`npm run typecheck`, TypeScript 6.0.3) and lint it with
   typescript-eslint. No published number moved.

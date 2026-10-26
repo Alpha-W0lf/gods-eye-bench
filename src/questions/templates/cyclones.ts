@@ -1,15 +1,16 @@
 /** Questions about active tropical cyclones from NOAA NHC and CPHC. */
 
-import { clearMaximum, defineTemplate, firstData } from '../template.js';
+import { clearMaximum, defineTemplate, firstData } from '../template.ts';
+import type { Storm, ToolResult, ToolStorm, World } from '../template.ts';
 
 const COVERAGE =
   'tracked by the U.S. National Hurricane Center and Central Pacific Hurricane Center';
-const storms = (results) => firstData(results).storms ?? [];
+const storms = (results: ToolResult[]) => firstData(results).storms ?? [];
 
 /** One parameter set per storm in the recorded (baseline) world. */
-const byName = (world) =>
+const byName = (world: World) =>
   (world.cyclones.storms ?? []).map(({ name }) => ({ name }));
-const findStorm = (list, name) =>
+const findStorm = <S extends Storm | ToolStorm>(list: S[], name: string) =>
   list.find((storm) => storm.name.toLowerCase() === name.toLowerCase());
 
 export const count = defineTemplate({

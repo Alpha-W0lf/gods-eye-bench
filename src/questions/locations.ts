@@ -4,7 +4,13 @@
  * an answer (a box around the place, not the stated radius).
  */
 
-export const LOCATIONS = Object.freeze([
+export interface Location {
+  name: string;
+  lat: number;
+  lon: number;
+}
+
+export const LOCATIONS: readonly Location[] = Object.freeze([
   { name: 'Tokyo', lat: 35.68, lon: 139.69 },
   { name: 'Anchorage', lat: 61.22, lon: -149.9 },
   { name: 'Los Angeles', lat: 34.05, lon: -118.24 },

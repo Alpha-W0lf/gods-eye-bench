@@ -1,13 +1,21 @@
 /** Questions about Launch Library 2 launches in the last 30 days. */
 
-import { defineTemplate, firstData } from '../template.js';
+import { defineTemplate, firstData } from '../template.ts';
+import type { Launch, Plan, ToolResult } from '../template.ts';
 
-const rowsOf = (results) => firstData(results).rows ?? [];
-const ALL = [['get_recent_launches', { limit: 200 }]];
-const distinct = (values) => [...new Set(values.filter(Boolean))].sort();
+const rowsOf = (results: ToolResult[]) => firstData(results).rows ?? [];
+const ALL: Plan = [['get_recent_launches', { limit: 200 }]];
+// `filter(Boolean)` drops the nulls, which the type cannot see.
+const distinct = <T extends string>(values: (T | null)[]) =>
+  [...new Set(values.filter(Boolean) as T[])].sort();
 
 /** Country names as questions say them, and the words pad locations use. */
-export const COUNTRIES = Object.freeze({
+interface Country {
+  name: string;
+  words: string[];
+}
+
+export const COUNTRIES: Readonly<Record<string, Country>> = Object.freeze({
   US: { name: 'the United States', words: ['USA', 'United States'] },
   CN: { name: 'China', words: ['China'] },
   NZ: { name: 'New Zealand', words: ['New Zealand'] },
@@ -54,12 +62,14 @@ export const latestByProvider = defineTemplate({
       (launch) => launch.provider === provider && launch.net,
     );
     if (own.length < 2) return undefined;
-    const sorted = own.sort((a, b) => b.net.localeCompare(a.net));
+    const sorted = own.sort((a, b) => b.net!.localeCompare(a.net!));
     return sorted[0].net === sorted[1].net ? undefined : sorted[0].name;
   },
   accept: (value, { launches }) => {
     const launch = launches.find((item) => item.name === value);
-    return [launch?.mission, value.split(' | ').at(-1)].filter(Boolean);
+    return [launch?.mission, value.split(' | ').at(-1)].filter(
+      Boolean,
+    ) as string[];
   },
   plan: () => ALL,
   read: (results, { provider }) =>
@@ -99,7 +109,7 @@ export const countByCountry = defineTemplate({
   prompt: ({ country }) =>
     `How many launches in the last 30 days lifted off from ${country}?`,
   value: ({ launches }, { code }) => {
-    const named = (launch) =>
+    const named = (launch: Launch) =>
       COUNTRIES[code].words.some((word) =>
         String(launch.location).includes(word),
       );

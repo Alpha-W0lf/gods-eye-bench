@@ -9,7 +9,7 @@ import { BENCH, modelEntries, repoPath } from '../src/config.js';
 import { gevDir, setupGev } from '../src/gev.js';
 import { questionsPath, runDir, snapshotDir } from '../src/paths.js';
 import { hasTrials, RUN_RECORD } from '../src/runfiles.js';
-import { questionFile, selectQuestions } from '../src/questions/generate.js';
+import { questionFile, selectQuestions } from '../src/questions/generate.ts';
 import { exportPartial } from '../src/partial.js';
 import { requirePreflight } from '../src/preflight.js';
 import { recordSnapshot } from '../src/recorder.js';

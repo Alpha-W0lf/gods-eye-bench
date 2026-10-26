@@ -1,6 +1,6 @@
 /** Read an agent's final `ANSWER:` line. */
 
-import { DATA_STATUSES } from '../questions/template.js';
+import { DATA_STATUSES } from '../questions/template.ts';
 
 /**
  * Parse the last `ANSWER: {...}` line of a reply. Returns

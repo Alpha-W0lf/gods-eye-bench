@@ -6,7 +6,7 @@
 import { existsSync, mkdirSync } from 'node:fs';
 import { BENCH } from './config.js';
 import { assertPinnedCheckout, gevDir, importGev } from './gev.js';
-import { LOCATIONS } from './questions/locations.js';
+import { LOCATIONS } from './questions/locations.ts';
 import { APP_BASE } from './snapshot/key.ts';
 import { createRecordingFetch } from './snapshot/record.ts';
 import { writeSnapshot } from './snapshot/store.ts';
