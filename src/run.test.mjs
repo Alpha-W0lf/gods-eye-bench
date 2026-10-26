@@ -20,7 +20,7 @@ import {
   trialSummary,
 } from './run.js';
 import { redactLocalPaths } from './runfiles.js';
-import { aggregateTrials } from './score/aggregate.js';
+import { aggregateTrials } from './score/aggregate.ts';
 import { finalRecords, pendingTrials, trialError } from './trials.js';
 
 test('pendingTrials retries a timeout once, and harness errors until they pass', () => {

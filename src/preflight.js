@@ -16,7 +16,7 @@ import {
   readTrials,
 } from './runfiles.js';
 import { runBenchmark } from './run.js';
-import { scoreTrial } from './score/score.js';
+import { scoreTrial } from './score/score.ts';
 import { scoreable } from './trials.js';
 
 /** Templates whose first public instance makes the sentinel set. */

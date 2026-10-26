@@ -1,9 +1,9 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { aggregateTrials } from './aggregate.js';
-import { parseAnswer } from './answer.js';
-import { normalizeText, scoreTrial, valueMatches } from './score.js';
-import { mean, median, round, wilsonInterval } from './stats.js';
+import { aggregateTrials } from './aggregate.ts';
+import { parseAnswer } from './answer.ts';
+import { normalizeText, scoreTrial, valueMatches } from './score.ts';
+import { mean, median, round, wilsonInterval } from './stats.ts';
 
 test('parseAnswer reads the last ANSWER line and tolerates code ticks', () => {
   assert.deepEqual(

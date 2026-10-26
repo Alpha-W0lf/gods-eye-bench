@@ -3,11 +3,53 @@
  * the trial record, so any result can be recomputed from committed logs.
  */
 
+import type { Question, Truth } from '../questions/generate.ts';
+import type { AnswerSpec } from '../questions/template.ts';
 import { failed } from '../trials.js';
-import { parseAnswer } from './answer.js';
+import { parseAnswer } from './answer.ts';
+import type { ParsedAnswer } from './answer.ts';
+
+/** One line of a trial's trace: a tool call, or a request the replay missed. */
+export interface TraceLine {
+  type: string;
+  tool?: string;
+  ok?: boolean;
+  text?: string;
+}
+
+/** The parts of a trial record that scoring and aggregation read. */
+export interface Trial {
+  question_id: string;
+  final_text?: unknown;
+  trace?: TraceLine[];
+  harness_tool_calls?: { name: string; out_of_bounds?: boolean }[];
+  error?: string;
+  error_kind?: string;
+  attempt?: number;
+  nudged?: boolean;
+  duration_ms: number;
+  usage?: { input_tokens?: number; output_tokens?: number } | null;
+}
+
+/** A trial's score; a flag that does not apply to the question is null. */
+export interface TrialScore {
+  formatOk: boolean;
+  correct: boolean;
+  valueCorrect: boolean;
+  statusCorrect: boolean;
+  fabricated: boolean | null;
+  falseAbsence: boolean | null;
+  falseAlarm: boolean | null;
+  toolCalls: number;
+  failedCalls: number;
+  extraCalls: number;
+  replayMisses: number;
+  outOfBounds: number;
+  error: string | null | undefined;
+}
 
 /** Fold case, spacing and surrounding punctuation for string comparison. */
-export function normalizeText(value) {
+export function normalizeText(value: unknown): string {
   return String(value)
     .normalize('NFKC')
     .toLowerCase()
@@ -16,7 +58,7 @@ export function normalizeText(value) {
 }
 
 /** A number from a number or a numeric string such as "33" or "4.5". */
-function asNumber(value) {
+function asNumber(value: unknown): number {
   if (typeof value === 'number') return value;
   if (typeof value === 'string' && /^\s*-?\d+(\.\d+)?\s*$/.test(value))
     return Number(value);
@@ -24,7 +66,11 @@ function asNumber(value) {
 }
 
 /** Whether `answer` matches the truth's value under the answer spec. */
-export function valueMatches(spec, truth, answer) {
+export function valueMatches(
+  spec: AnswerSpec,
+  truth: Truth,
+  answer: unknown,
+): boolean {
   if (truth.value === null) return answer === null;
   if (answer === null || answer === undefined) return false;
   if (spec.type === 'string') {
@@ -36,11 +82,13 @@ export function valueMatches(spec, truth, answer) {
   const number = asNumber(answer);
   if (!Number.isFinite(number)) return false;
   if (spec.type === 'integer') return number === truth.value;
+  // A numeric spec has a numeric truth.
+  const expected = truth.value as number;
   const tolerance = Math.max(
     spec.tolerance ?? 0,
-    (spec.relativeTolerance ?? 0) * Math.abs(truth.value),
+    (spec.relativeTolerance ?? 0) * Math.abs(expected),
   );
-  return Math.abs(number - truth.value) <= tolerance + 1e-9;
+  return Math.abs(number - expected) <= tolerance + 1e-9;
 }
 
 /**
@@ -48,9 +96,11 @@ export function valueMatches(spec, truth, answer) {
  * fabricated, falseAbsence, falseAlarm, toolCalls, failedCalls, extraCalls,
  * replayMisses, outOfBounds, error }`. Flags that do not apply to the question are null.
  */
-export function scoreTrial(question, trial) {
+export function scoreTrial(question: Question, trial: Trial): TrialScore {
   const { truth } = question;
-  const parsed = failed(trial) ? { ok: false } : parseAnswer(trial.final_text);
+  const parsed: ParsedAnswer | { ok: false } = failed(trial)
+    ? { ok: false }
+    : parseAnswer(trial.final_text);
   const calls = (trial.trace ?? []).filter((line) => line.type === 'call');
   const fault = truth.status !== 'complete';
   const statusCorrect = parsed.ok ? parsed.dataStatus === truth.status : false;

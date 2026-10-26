@@ -3,21 +3,37 @@
  * honesty, fabrication, tool use, latency and tokens.
  */
 
-import { scoreTrial } from './score.js';
-import { mean, median, round, wilsonInterval } from './stats.js';
+import type { Question } from '../questions/generate.ts';
+import { scoreTrial } from './score.ts';
+import type { Trial, TrialScore } from './score.ts';
+import { mean, median, round, wilsonInterval } from './stats.ts';
+
+/** A trial with its question and score. */
+interface Scored {
+  question: Question;
+  trial: Trial;
+  score: TrialScore;
+}
+
+/** A question's mean score over its trials. */
+interface QuestionScore {
+  question: Question;
+  correct: number;
+  allCorrect: boolean;
+}
 
 /** Group items into a Map by `key(item)`, keeping order. */
-function groupBy(items, key) {
-  const groups = new Map();
+function groupBy<T, K>(items: T[], key: (item: T) => K): Map<K, T[]> {
+  const groups = new Map<K, T[]>();
   for (const item of items) {
     const name = key(item);
     if (!groups.has(name)) groups.set(name, []);
-    groups.get(name).push(item);
+    groups.get(name)!.push(item);
   }
   return groups;
 }
 
-const share = (flags) => {
+const share = (flags: (boolean | null)[]): number | null => {
   const known = flags.filter((flag) => flag !== null);
   return known.length ? round(mean(known.map(Number))) : null;
 };
@@ -26,11 +42,15 @@ const share = (flags) => {
  * The mean of a per-trial measure taken per question first, or null when no
  * question applies.
  */
-function perQuestionMean(scored, measure) {
+function perQuestionMean(
+  scored: Scored[],
+  measure: (item: Scored) => boolean | null,
+): number | null {
   const values = [...groupBy(scored, (item) => item.question.id).values()]
     .map((items) => items.map(measure).filter((flag) => flag !== null))
     .filter((flags) => flags.length)
-    .map((flags) => mean(flags.map(Number)));
+    // `flags` is never empty here, so its mean exists.
+    .map((flags) => mean(flags.map(Number))!);
   return values.length ? round(mean(values)) : null;
 }
 
@@ -40,7 +60,7 @@ function perQuestionMean(scored, measure) {
  * following it. Counted over the trials with a readable answer; too few
  * questions for an interval, so the counts are reported as they are.
  */
-function followedInjection(injected) {
+function followedInjection(injected: Scored[]) {
   const readable = injected.filter((item) => item.score.formatOk);
   if (!injected.length) return null;
   return {
@@ -54,9 +74,9 @@ function followedInjection(injected) {
  * Score every trial and summarise. `questions` are the run's questions;
  * `trials` its trial records. Trials for unknown questions throw.
  */
-export function aggregateTrials(questions, trials) {
+export function aggregateTrials(questions: Question[], trials: Trial[]) {
   const byId = new Map(questions.map((question) => [question.id, question]));
-  const scored = trials.map((trial) => {
+  const scored = trials.map((trial): Scored => {
     const question = byId.get(trial.question_id);
     if (!question)
       throw new Error(`Trial for unknown question ${trial.question_id}`);
@@ -64,13 +84,15 @@ export function aggregateTrials(questions, trials) {
   });
   const perQuestion = [
     ...groupBy(scored, (item) => item.question.id).values(),
-  ].map((items) => ({
+  ].map((items): QuestionScore => ({
     question: items[0].question,
-    correct: mean(items.map((item) => Number(item.score.correct))),
+    // A group is never empty, so its mean exists.
+    correct: mean(items.map((item) => Number(item.score.correct)))!,
     allCorrect: items.every((item) => item.score.correct),
   }));
   const accuracy = mean(perQuestion.map((item) => item.correct));
-  const interval = wilsonInterval(accuracy, perQuestion.length);
+  const interval =
+    accuracy === null ? null : wilsonInterval(accuracy, perQuestion.length);
   const faults = scored.filter(
     (item) => item.question.truth.status !== 'complete',
   );
@@ -90,10 +112,13 @@ export function aggregateTrials(questions, trials) {
   );
   // Trials that asked the replay for something it never recorded (ADR 0001).
   const missFree = scored.filter((item) => item.score.replayMisses === 0);
-  const usage = scored.map((item) => item.trial.usage).filter(Boolean);
+  const usage = scored
+    .map((item) => item.trial.usage)
+    .filter((value) => value !== null && value !== undefined);
   const tokens = usage
     .map((value) => (value.input_tokens ?? 0) + (value.output_tokens ?? 0))
     .filter((value) => value > 0);
+  const tokensMean = mean(tokens);
   return {
     questions: perQuestion.length,
     trials: scored.length,
@@ -141,7 +166,7 @@ export function aggregateTrials(questions, trials) {
       median(scored.map((item) => item.trial.duration_ms / 1000)),
       1,
     ),
-    tokens_mean: tokens.length ? Math.round(mean(tokens)) : null,
+    tokens_mean: tokensMean === null ? null : Math.round(tokensMean),
     by_difficulty: Object.fromEntries(
       [...difficulties].map(([level, items]) => [
         level,

@@ -29,8 +29,8 @@ import {
   RUN_RECORD,
   writeTrials,
 } from './runfiles.js';
-import { parseAnswer } from './score/answer.js';
-import { scoreTrial } from './score/score.js';
+import { parseAnswer } from './score/answer.ts';
+import { scoreTrial } from './score/score.ts';
 import { sha256 } from './snapshot/key.ts';
 import { stableJson } from './snapshot/store.ts';
 import { errorMessage, failed, finalRecords, pendingTrials } from './trials.js';

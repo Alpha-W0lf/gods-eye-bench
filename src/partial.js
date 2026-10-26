@@ -25,8 +25,8 @@ import {
   runQuestions,
   writeTrials,
 } from './runfiles.js';
-import { scoreTrial } from './score/score.js';
-import { mean, round } from './score/stats.js';
+import { scoreTrial } from './score/score.ts';
+import { mean, round } from './score/stats.ts';
 import { stableJson } from './snapshot/store.ts';
 import { finalRecords, isFinal } from './trials.js';
 
